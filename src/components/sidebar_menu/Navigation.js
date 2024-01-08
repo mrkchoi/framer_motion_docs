@@ -19,7 +19,7 @@ const variants = {
 
 export default function Navigation() {
   return (
-    <motion.ul variants={variants}>
+    <motion.ul variants={variants} className="sidebarmenu_ul">
       {itemIds.map((idx) => (
         <MenuItem key={idx} idx={idx} />
       ))}

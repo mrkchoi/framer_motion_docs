@@ -14,7 +14,7 @@
 }
 
 /* Sidebar Menu - START */
-nav {
+.sidebarmenu_nav {
   position: absolute;
   top: 0;
   left: 0;
@@ -22,7 +22,7 @@ nav {
   width: 300px;
 }
 
-.background {
+.sidebarmenu_background {
   position: absolute;
   top: 0;
   left: 0;
@@ -31,7 +31,7 @@ nav {
   background-color: white;
 }
 
-button {
+.sidebarmenu_btn {
   outline: none;
   border: none;
   -webkit-user-select: none;
@@ -47,20 +47,20 @@ button {
   background: transparent;
 }
 
-ul,
-li {
+.sidebarmenu_ul,
+.sidebarmenu_li {
   margin: 0;
   padding: 0;
 }
 
-ul {
+.sidebarmenu_ul {
   padding: 25px;
   position: absolute;
   top: 100px;
   width: 230px;
 }
 
-li {
+.sidebarmenu_li {
   list-style: none;
   margin-bottom: 20px;
   display: flex;
@@ -84,3 +84,35 @@ li {
 }
 
 /* Sidebar Menu - END */
+
+/* SlideBox */
+
+.progress-icon {
+  width: 80%;
+  height: 80%;
+}
+
+.circle-path {
+  transform: translate(5px, 5px);
+}
+/* SlideBox */
+
+/* FruitScroll */
+
+.card_bg {
+  clip-path: path(
+    "M 0 303.5 C 0 292.454 8.995 285.101 20 283.5 L 460 219.5 C 470.085 218.033 480 228.454 480 239.5 L 500 430 C 500 441.046 491.046 450 480 450 L 20 450 C 8.954 450 0 441.046 0 430 Z"
+  );
+}
+/* FruitScroll */
+
+/* Toggle */
+
+.switch[data-ison="true"] {
+  justify-content: flex-end;
+}
+/* Toggle */
+
+/* Tabs Fruit */
+
+/* Tabs Fruit */

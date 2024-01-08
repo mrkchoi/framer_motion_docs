@@ -38,8 +38,12 @@ export default function SidebarMenu() {
         animate={isOpen ? "open" : "closed"}
         ref={containerRef}
         custom={height}
+        className="sidebarmenu_nav"
       >
-        <motion.div className="background" variants={sidebar}></motion.div>
+        <motion.div
+          className="sidebarmenu_background"
+          variants={sidebar}
+        ></motion.div>
         <Navigation />
         <MenuToggle toggle={() => toggleOpen()} />
       </motion.nav>

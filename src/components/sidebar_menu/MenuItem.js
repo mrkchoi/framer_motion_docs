@@ -28,6 +28,7 @@ export default function MenuItem({ idx }) {
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
       variants={variants}
+      className="sidebarmenu_li"
     >
       <div className="icon-placeholder" style={style}></div>
       <div className="text-placeholder" style={style}></div>

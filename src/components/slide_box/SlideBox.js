@@ -27,7 +27,7 @@ export default function SlideBox() {
       style={{ background }}
     >
       <motion.div
-        className="box flex h-48 w-48 items-center justify-self-center rounded-3xl bg-white"
+        className="box absolute flex h-[150px] w-[150px] items-center justify-center rounded-3xl bg-white"
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
         style={{ x }}
@@ -38,7 +38,8 @@ export default function SlideBox() {
             strokeWidth="2"
             stroke={color}
             d="M 0, 20 a 20, 20 0 1,0 40,0 a 20, 20 0 1,0 -40,0"
-            style={{ translateX: 5, translateY: 5 }}
+            // style={{ translateX: 5, translateY: 5 }}
+            className="circle-path"
           />
           <motion.path
             fill="none"

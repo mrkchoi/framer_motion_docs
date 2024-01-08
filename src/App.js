@@ -6,6 +6,12 @@ import Intro from "./components/Intro";
 import Examples from "./components/Examples";
 import SidebarMenu from "./components/sidebar_menu/SidebarMenu";
 import SlideBox from "./components/slide_box/SlideBox";
+import Trippy from "./components/trippy/Trippy";
+import FruitScroll from "./components/fruit_scroll/FruitScroll";
+import SpringScroll from "./components/spring_scroll/SpringScroll";
+import ImageCarousel from "./components/image_carousel/ImageCarousel";
+import TabsFruit from "./components/tabs-fruit/TabsFruit";
+import Toggle from "./components/toggle/Toggle";
 
 const PAGES = [
   { path: "/stagger", element: <Stagger /> },
@@ -13,6 +19,12 @@ const PAGES = [
   { path: "/examples", element: <Examples /> },
   { path: "/sidebar-menu", element: <SidebarMenu /> },
   { path: "/slide-box", element: <SlideBox /> },
+  { path: "/fruit-scroll", element: <FruitScroll /> },
+  { path: "/spring-scroll", element: <SpringScroll /> },
+  { path: "/image-carousel", element: <ImageCarousel /> },
+  { path: "/toggle", element: <Toggle /> },
+  { path: "/tabs-fruit", element: <TabsFruit /> },
+  { path: "/trippy", element: <Trippy /> },
 ];
 
 function App() {
@@ -20,11 +32,17 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/stagger" element={<Stagger />} />
         <Route path="/intro" element={<Intro />} />
         <Route path="/examples" element={<Examples />} />
+        <Route path="/stagger" element={<Stagger />} />
         <Route path="/sidebar-menu" element={<SidebarMenu />} />
         <Route path="/slide-box" element={<SlideBox />} />
+        <Route path="/fruit-scroll" element={<FruitScroll />} />
+        <Route path="/spring-scroll" element={<SpringScroll />} />
+        <Route path="/image-carousel" element={<ImageCarousel />} />
+        <Route path="/toggle" element={<Toggle />} />
+        <Route path="/tabs-fruit" element={<TabsFruit />} />
+        <Route path="/trippy" element={<Trippy />} />
       </Routes>
     </BrowserRouter>
   );
