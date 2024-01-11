@@ -12,6 +12,8 @@ import SpringScroll from "./components/spring_scroll/SpringScroll";
 import ImageCarousel from "./components/image_carousel/ImageCarousel";
 import TabsFruit from "./components/tabs-fruit/TabsFruit";
 import Toggle from "./components/toggle/Toggle";
+import Layout from "./components/parallax/Layout";
+import SmoothCursor from "./components/smooth_cursor/SmoothCursor";
 
 const PAGES = [
   { path: "/stagger", element: <Stagger /> },
@@ -24,6 +26,8 @@ const PAGES = [
   { path: "/image-carousel", element: <ImageCarousel /> },
   { path: "/toggle", element: <Toggle /> },
   { path: "/tabs-fruit", element: <TabsFruit /> },
+  { path: "/parallax", element: <Layout /> },
+  { path: "/smooth-cursor", element: <SmoothCursor /> },
   { path: "/trippy", element: <Trippy /> },
 ];
 
@@ -42,6 +46,8 @@ function App() {
         <Route path="/image-carousel" element={<ImageCarousel />} />
         <Route path="/toggle" element={<Toggle />} />
         <Route path="/tabs-fruit" element={<TabsFruit />} />
+        <Route path="/parallax" element={<Layout />} />
+        <Route path="/smooth-cursor" element={<SmoothCursor />} />
         <Route path="/trippy" element={<Trippy />} />
       </Routes>
     </BrowserRouter>
