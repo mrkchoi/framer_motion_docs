@@ -15,6 +15,7 @@ import Toggle from "./components/toggle/Toggle";
 import Layout from "./components/parallax/Layout";
 import SmoothCursor from "./components/smooth_cursor/SmoothCursor";
 import ZoomParallax from "./components/zoom_parallax/ZoomParallax";
+import InfiniteMarquee from "./components/infinite_marquee/InfiniteMarquee";
 
 const PAGES = [
   { path: "/stagger", element: <Stagger /> },
@@ -30,6 +31,7 @@ const PAGES = [
   { path: "/parallax", element: <Layout /> },
   { path: "/smooth-cursor", element: <SmoothCursor /> },
   { path: "/zoom-parallax", element: <ZoomParallax /> },
+  { path: "/infinite-marquee", element: <InfiniteMarquee /> },
   { path: "/trippy", element: <Trippy /> },
 ];
 
@@ -51,6 +53,7 @@ function App() {
         <Route path="/parallax" element={<Layout />} />
         <Route path="/smooth-cursor" element={<SmoothCursor />} />
         <Route path="/zoom-parallax" element={<ZoomParallax />} />
+        <Route path="/infinite-marquee" element={<InfiniteMarquee />} />
         <Route path="/trippy" element={<Trippy />} />
       </Routes>
     </BrowserRouter>
