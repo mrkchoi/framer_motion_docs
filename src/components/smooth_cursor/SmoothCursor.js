@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { motion, useSpring, useMotionValue } from "framer-motion";
 
 function SmoothCursor({ cursorSize = 20, color = "black" }) {
-  const smoothCursorColor = `bg-${color}`;
+  // const smoothCursorColor = `bg-${color}`;
 
   const mouse = {
     x: useMotionValue(0),
@@ -27,10 +27,7 @@ function SmoothCursor({ cursorSize = 20, color = "black" }) {
 
   return (
     <motion.div
-      className={[
-        "fixed left-0 top-0 h-[20px] w-[20px] rounded-full",
-        smoothCursorColor,
-      ].join(" ")}
+      className={"fixed left-0 top-0 h-[20px] w-[20px] rounded-full bg-black"}
       style={{ left: smoothMouse.x, top: smoothMouse.y }}
     ></motion.div>
   );

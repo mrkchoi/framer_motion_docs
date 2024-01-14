@@ -1,7 +1,11 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        "zoom-parallax": "url('/src/images/zoom-parallax/1.jpeg')",
+      },
+    },
   },
   plugins: [],
 };

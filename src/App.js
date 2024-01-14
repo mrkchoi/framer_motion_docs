@@ -14,6 +14,7 @@ import TabsFruit from "./components/tabs-fruit/TabsFruit";
 import Toggle from "./components/toggle/Toggle";
 import Layout from "./components/parallax/Layout";
 import SmoothCursor from "./components/smooth_cursor/SmoothCursor";
+import ZoomParallax from "./components/zoom_parallax/ZoomParallax";
 
 const PAGES = [
   { path: "/stagger", element: <Stagger /> },
@@ -28,6 +29,7 @@ const PAGES = [
   { path: "/tabs-fruit", element: <TabsFruit /> },
   { path: "/parallax", element: <Layout /> },
   { path: "/smooth-cursor", element: <SmoothCursor /> },
+  { path: "/zoom-parallax", element: <ZoomParallax /> },
   { path: "/trippy", element: <Trippy /> },
 ];
 
@@ -48,6 +50,7 @@ function App() {
         <Route path="/tabs-fruit" element={<TabsFruit />} />
         <Route path="/parallax" element={<Layout />} />
         <Route path="/smooth-cursor" element={<SmoothCursor />} />
+        <Route path="/zoom-parallax" element={<ZoomParallax />} />
         <Route path="/trippy" element={<Trippy />} />
       </Routes>
     </BrowserRouter>
