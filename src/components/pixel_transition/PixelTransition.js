@@ -28,8 +28,8 @@ export default function PixelTransition() {
         </button>
       </div>
       {dimensions.height > 0 && (
-        <CenteredPixelTransition open={open} dimensions={dimensions} />
-        // <HorizontalPixelTransition open={open} dimensions={dimensions} />
+        // <CenteredPixelTransition open={open} dimensions={dimensions} />
+        <HorizontalPixelTransition open={open} dimensions={dimensions} />
         // <VerticalPixelTransition open={open} dimensions={dimensions} />
       )}
       <Nav open={open} />
@@ -225,7 +225,7 @@ function Nav({ open }) {
       >
         <li>
           <a
-            href="/"
+            href="#link"
             className="underline decoration-transparent transition-all duration-150 hover:decoration-black"
           >
             Home
@@ -233,7 +233,7 @@ function Nav({ open }) {
         </li>
         <li>
           <a
-            href="/"
+            href="#link"
             className="underline decoration-transparent transition-all duration-150 hover:decoration-black"
           >
             About
@@ -241,7 +241,7 @@ function Nav({ open }) {
         </li>
         <li>
           <a
-            href="/"
+            href="#link"
             className="underline decoration-transparent transition-all duration-150 hover:decoration-black"
           >
             Works
@@ -249,7 +249,7 @@ function Nav({ open }) {
         </li>
         <li>
           <a
-            href="/"
+            href="#link"
             className="underline decoration-transparent transition-all duration-150 hover:decoration-black"
           >
             Contact

@@ -17,6 +17,7 @@ import SmoothCursor from "./components/smooth_cursor/SmoothCursor";
 import ZoomParallax from "./components/zoom_parallax/ZoomParallax";
 import InfiniteMarquee from "./components/infinite_marquee/InfiniteMarquee";
 import PixelTransition from "./components/pixel_transition/PixelTransition";
+import CharacterScroll from "./components/character_scroll/CharacterScroll";
 
 const PAGES = [
   { path: "/stagger", element: <Stagger /> },
@@ -35,6 +36,7 @@ const PAGES = [
   { path: "/zoom-parallax", element: <ZoomParallax /> },
   { path: "/infinite-marquee", element: <InfiniteMarquee /> },
   { path: "/pixel-transition", element: <PixelTransition /> },
+  { path: "/character-scroll", element: <CharacterScroll /> },
 ];
 
 function App() {
@@ -58,6 +60,7 @@ function App() {
         <Route path="/zoom-parallax" element={<ZoomParallax />} />
         <Route path="/infinite-marquee" element={<InfiniteMarquee />} />
         <Route path="/pixel-transition" element={<PixelTransition />} />
+        <Route path="/character-scroll" element={<CharacterScroll />} />
       </Routes>
     </BrowserRouter>
   );
