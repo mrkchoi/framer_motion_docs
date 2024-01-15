@@ -49,6 +49,34 @@ export default function InfiniteMarquee() {
           { text: "Expert", outline: false },
         ]}
       />
+      <InfiniteMarqueeRow
+        direction="left"
+        speed="50s"
+        fontWeight="bold"
+        fontSize="10rem"
+        lineHeight="9rem"
+        uppercase={false}
+        content={[
+          { text: "Christine", outline: true },
+          { text: "Choi", outline: false },
+          { text: "Visual", outline: true },
+          { text: "Designer", outline: false },
+        ]}
+      />
+      <InfiniteMarqueeRow
+        direction="left"
+        speed="15s"
+        fontWeight="bold"
+        fontSize="10rem"
+        lineHeight="9rem"
+        uppercase={false}
+        content={[
+          { text: "Frontend", outline: true },
+          { text: "Engineer", outline: false },
+          { text: "Javascript", outline: true },
+          { text: "Expert", outline: false },
+        ]}
+      />
     </div>
   );
 }

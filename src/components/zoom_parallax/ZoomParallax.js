@@ -46,7 +46,7 @@ export default function ZoomParallax() {
             <img
               src={picture6}
               alt=""
-              className="relative left-[17vw] top-[28vh] h-[25vh] w-[32vw]"
+              className="relative left-[17vw] top-[28vh] h-[25vh] w-[auto]"
             />
           </motion.div>
           <motion.div
@@ -56,7 +56,7 @@ export default function ZoomParallax() {
             <img
               src={picture2}
               alt=""
-              className="relative bottom-[30vh] left-[1vw] h-[28vh] w-[26vw]"
+              className="relative bottom-[30vh] left-[1vw] h-[28vh] w-[auto]"
             />
           </motion.div>
           <motion.div
@@ -66,7 +66,7 @@ export default function ZoomParallax() {
             <img
               src={picture4}
               alt=""
-              className="relative right-[13vw] top-[28vh] h-[25vh] w-[20vw]"
+              className="relative right-[13vw] top-[28vh] h-[25vh] w-[auto]"
             />
           </motion.div>
           <motion.div
@@ -76,7 +76,7 @@ export default function ZoomParallax() {
             <img
               src={picture3}
               alt=""
-              className="relative right-[25vw] top-[-2.5vh] h-[30vh] w-[20vw]"
+              className="relative right-[25vw] top-[-2.5vh] h-[30vh] w-[auto]"
             />
           </motion.div>
           <motion.div
@@ -86,14 +86,14 @@ export default function ZoomParallax() {
             <img
               src={picture5}
               alt=""
-              className="relative bottom-[2.5vw] left-[27vw] h-[30vh] w-[21vw]"
+              className="relative bottom-[2.5vw] left-[27vw] h-[30vh] w-[auto]"
             />
           </motion.div>
           <motion.div
             className="el absolute top-0 flex h-[100%] w-[100%] items-center justify-center"
             style={{ scale: scale4 }}
           >
-            <div className="imgContainer bg-zoom-parallax relative h-[25vh] w-[25vw] bg-cover"></div>
+            <div className="imgContainer relative h-[25vh] w-[25vw] bg-zoom-parallax bg-cover"></div>
           </motion.div>
         </div>
       </div>
