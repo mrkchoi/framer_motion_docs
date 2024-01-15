@@ -16,11 +16,13 @@ import Layout from "./components/parallax/Layout";
 import SmoothCursor from "./components/smooth_cursor/SmoothCursor";
 import ZoomParallax from "./components/zoom_parallax/ZoomParallax";
 import InfiniteMarquee from "./components/infinite_marquee/InfiniteMarquee";
+import PixelTransition from "./components/pixel_transition/PixelTransition";
 
 const PAGES = [
   { path: "/stagger", element: <Stagger /> },
   { path: "/intro", element: <Intro /> },
   { path: "/examples", element: <Examples /> },
+  { path: "/trippy", element: <Trippy /> },
   { path: "/sidebar-menu", element: <SidebarMenu /> },
   { path: "/slide-box", element: <SlideBox /> },
   { path: "/fruit-scroll", element: <FruitScroll /> },
@@ -32,7 +34,7 @@ const PAGES = [
   { path: "/smooth-cursor", element: <SmoothCursor /> },
   { path: "/zoom-parallax", element: <ZoomParallax /> },
   { path: "/infinite-marquee", element: <InfiniteMarquee /> },
-  { path: "/trippy", element: <Trippy /> },
+  { path: "/pixel-transition", element: <PixelTransition /> },
 ];
 
 function App() {
@@ -40,9 +42,10 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/stagger" element={<Stagger />} />
         <Route path="/intro" element={<Intro />} />
         <Route path="/examples" element={<Examples />} />
-        <Route path="/stagger" element={<Stagger />} />
+        <Route path="/trippy" element={<Trippy />} />
         <Route path="/sidebar-menu" element={<SidebarMenu />} />
         <Route path="/slide-box" element={<SlideBox />} />
         <Route path="/fruit-scroll" element={<FruitScroll />} />
@@ -54,7 +57,7 @@ function App() {
         <Route path="/smooth-cursor" element={<SmoothCursor />} />
         <Route path="/zoom-parallax" element={<ZoomParallax />} />
         <Route path="/infinite-marquee" element={<InfiniteMarquee />} />
-        <Route path="/trippy" element={<Trippy />} />
+        <Route path="/pixel-transition" element={<PixelTransition />} />
       </Routes>
     </BrowserRouter>
   );

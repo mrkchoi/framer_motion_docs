@@ -1,0 +1,15 @@
+.pixelBg {
+  display: flex;
+}
+.blockCol {
+  display: flex;
+  width: 5vw;
+  height: 100%;
+  flex-direction: column;
+}
+
+.block {
+  width: 100%;
+  height: 5vw;
+  background-color: #ff6a00;
+}
