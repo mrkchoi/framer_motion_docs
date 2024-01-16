@@ -19,6 +19,7 @@ import InfiniteMarquee from "./components/infinite_marquee/InfiniteMarquee";
 import PixelTransition from "./components/pixel_transition/PixelTransition";
 import CharacterScroll from "./components/character_scroll/CharacterScroll";
 import CursorHoverMask from "./components/cursor_hover_mask/CursorHoverMask";
+import TextDisperse from "./components/text-disperse/TextDisperse";
 
 const PAGES = [
   { path: "/stagger", element: <Stagger /> },
@@ -39,6 +40,7 @@ const PAGES = [
   { path: "/pixel-transition", element: <PixelTransition /> },
   { path: "/character-scroll", element: <CharacterScroll /> },
   { path: "/cursor-hover-mask", element: <CursorHoverMask /> },
+  { path: "/text-disperse", element: <TextDisperse /> },
 ];
 
 function App() {
@@ -64,6 +66,7 @@ function App() {
         <Route path="/pixel-transition" element={<PixelTransition />} />
         <Route path="/character-scroll" element={<CharacterScroll />} />
         <Route path="/cursor-hover-mask" element={<CursorHoverMask />} />
+        <Route path="/text-disperse" element={<TextDisperse />} />
       </Routes>
     </BrowserRouter>
   );
