@@ -20,6 +20,7 @@ import PixelTransition from "./components/pixel_transition/PixelTransition";
 import CharacterScroll from "./components/character_scroll/CharacterScroll";
 import CursorHoverMask from "./components/cursor_hover_mask/CursorHoverMask";
 import TextDisperse from "./components/text-disperse/TextDisperse";
+import PixelCursor from "./components/pixel_cursor/PixelCursor";
 
 const PAGES = [
   { path: "/stagger", element: <Stagger /> },
@@ -41,6 +42,7 @@ const PAGES = [
   { path: "/character-scroll", element: <CharacterScroll /> },
   { path: "/cursor-hover-mask", element: <CursorHoverMask /> },
   { path: "/text-disperse", element: <TextDisperse /> },
+  { path: "/pixel-cursor", element: <PixelCursor /> },
 ];
 
 function App() {
@@ -67,6 +69,7 @@ function App() {
         <Route path="/character-scroll" element={<CharacterScroll />} />
         <Route path="/cursor-hover-mask" element={<CursorHoverMask />} />
         <Route path="/text-disperse" element={<TextDisperse />} />
+        <Route path="/pixel-cursor" element={<PixelCursor />} />
       </Routes>
     </BrowserRouter>
   );

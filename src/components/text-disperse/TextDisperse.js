@@ -7,7 +7,7 @@ export default function TextDisperse() {
   const [isActive, setIsActive] = useState(false);
 
   return (
-    <div className="relative flex h-screen w-screen items-center justify-center bg-black uppercase text-white">
+    <div className="relative flex h-screen w-screen items-center justify-center bg-black uppercase text-white antialiased">
       <div className="main flex cursor-default flex-col text-8xl">
         <div className="row flex justify-between gap-1">
           <span>Kenny</span>

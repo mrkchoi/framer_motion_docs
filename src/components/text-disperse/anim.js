@@ -68,8 +68,8 @@ export const transforms = [
 
 export const disperse = {
   open: (idx) => ({
-    x: transforms[idx].x + "rem",
-    y: transforms[idx].y + "rem",
+    x: transforms[idx].x + "em",
+    y: transforms[idx].y + "em",
     rotateZ: transforms[idx].rotationZ,
     transition: { duration: 0.75, ease: [0.33, 1, 0.68, 1] },
     zIndex: 1,
