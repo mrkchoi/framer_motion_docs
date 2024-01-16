@@ -19,7 +19,7 @@ export default function CharacterScroll() {
   }, []);
 
   return (
-    <div className="flex h-[600vh] w-screen flex-col justify-around bg-black">
+    <div className="flex h-[500vh] w-screen flex-col justify-around bg-black">
       <ParagraphScroll />
       <WordScroll />
       <CharScroll />
