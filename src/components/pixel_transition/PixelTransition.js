@@ -70,7 +70,7 @@ function CenteredPixelTransition({ open, dimensions }) {
     ]);
     return shuffledIndices.map((randomIdx, idx) => (
       <motion.div
-        className="block"
+        className="blockPixelTransition"
         key={idx}
         variants={variants}
         initial="initial"
@@ -124,7 +124,7 @@ function HorizontalPixelTransition({ open, dimensions }) {
     ]);
     return shuffledIndices.map((randomIdx, idx) => (
       <motion.div
-        className="block"
+        className="blockPixelTransition"
         key={idx}
         variants={variants}
         initial="initial"
@@ -178,7 +178,7 @@ function VerticalPixelTransition({ open, dimensions }) {
     ]);
     return shuffledIndices.map((randomIdx, idx) => (
       <motion.div
-        className="block"
+        className="blockPixelTransition"
         key={idx}
         variants={variants}
         initial="initial"

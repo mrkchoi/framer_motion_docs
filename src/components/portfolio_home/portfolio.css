@@ -1,0 +1,7 @@
+.navBorderBottom {
+  transform-origin: left;
+  transform: scaleX(0.5);
+}
+
+/* cubic-bezier(.3,0,.21,1) */
+/* cubic-bezier(.37,.78,.21,1) */

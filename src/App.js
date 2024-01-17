@@ -23,6 +23,7 @@ import TextDisperse from "./components/text-disperse/TextDisperse";
 import PixelCursor from "./components/pixel_cursor/PixelCursor";
 import TextMask from "./components/text_mask_slide/TextMask";
 import ImageReveal from "./components/image_reveal/ImageReveal";
+import Portfolio from "./components/portfolio_home/Portfolio";
 
 const PAGES = [
   { path: "/stagger", element: <Stagger /> },
@@ -47,6 +48,7 @@ const PAGES = [
   { path: "/pixel-cursor", element: <PixelCursor /> },
   { path: "/text-mask", element: <TextMask /> },
   { path: "/image-reveal", element: <ImageReveal /> },
+  { path: "/portfolio", element: <Portfolio /> },
 ];
 
 function App() {
@@ -76,6 +78,7 @@ function App() {
         <Route path="/pixel-cursor" element={<PixelCursor />} />
         <Route path="/text-mask" element={<TextMask />} />
         <Route path="/image-reveal" element={<ImageReveal />} />
+        <Route path="/portfolio" element={<Portfolio />} />
       </Routes>
     </BrowserRouter>
   );
