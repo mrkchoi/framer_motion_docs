@@ -11,7 +11,7 @@ const variants = {
   animate: (idx) => ({
     y: 0,
     transition: {
-      duration: 0.75,
+      duration: 0.5,
       delay: 0.02 * idx,
       // delay: 0.02 * Math.random() * Math.min(idx, 10),
     },
