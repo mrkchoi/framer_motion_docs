@@ -28,6 +28,8 @@ import TransitionSlide from "./components/page_transition/slide/TransitionSlide"
 import ScrollMarquee from "./components/scroll_marquee/ScrollMarquee";
 import Gsap01 from "./components/gsap_01/Gsap01";
 import SmoothScroll from "./components/smooth_scroll/SmoothScroll";
+import ScrollTrigger01 from "./components/scroll_trigger_01/ScrollTrigger01";
+import SmoothMenu from "./components/smooth_menu/SmoothMenu";
 
 const PAGES = [
   { path: "/stagger", element: <Stagger /> },
@@ -57,6 +59,8 @@ const PAGES = [
   { path: "/scroll-marquee", element: <ScrollMarquee /> },
   { path: "/gsap-01", element: <Gsap01 /> },
   { path: "/smooth-scroll", element: <SmoothScroll /> },
+  { path: "/scroll-trigger-01", element: <ScrollTrigger01 /> },
+  { path: "/smooth-menu", element: <SmoothMenu /> },
 ];
 
 function App() {
@@ -91,6 +95,8 @@ function App() {
         <Route path="/scroll-marquee" element={<ScrollMarquee />} />
         <Route path="/gsap-01" element={<Gsap01 />} />
         <Route path="/smooth-scroll" element={<SmoothScroll />} />
+        <Route path="/scroll-trigger-01" element={<ScrollTrigger01 />} />
+        <Route path="/smooth-menu" element={<SmoothMenu />} />
       </Routes>
     </BrowserRouter>
   );

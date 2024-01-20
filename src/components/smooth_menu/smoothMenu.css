@@ -1,0 +1,93 @@
+.smoothMenu__main {
+  width: 100vw;
+  height: 100vh;
+  background-color: #222;
+  position: relative;
+}
+.smoothMenu__inner {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  /* z-index: 10; */
+}
+.smoothMenu__content--container {
+  position: absolute;
+  bottom: 20vh;
+  left: 10vw;
+}
+.smoothMenu__btn {
+  cursor: pointer;
+  position: fixed;
+  z-index: 100;
+  bottom: 40vh;
+  left: 10vw;
+}
+
+.smoothMenu__btn:before {
+  position: absolute;
+  content: "";
+  width: 3.5em;
+  height: 3.5em;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: -1;
+  transform: scale(0);
+  transition: transform 0.5s ease;
+}
+.smoothMenu__btn:hover:before {
+  transform: scale(1);
+}
+
+.smoothMenu__svg path {
+  fill: black;
+}
+.smoothMenu__content {
+  max-width: 45vw;
+}
+.smoothMenu__content p {
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+.smoothMenu__overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  transform-origin: top;
+  pointer-events: none;
+  /* z-index: -1; */
+}
+.smoothMenu__nav--wrapper {
+  position: absolute;
+  bottom: 20vh;
+  right: 20vw;
+}
+.smoothMenu__nav {
+}
+.smoothMenu__item {
+  cursor: pointer;
+  color: white;
+  font-size: 3rem;
+  font-weight: 200;
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+}
+
+.smoothMenu__item a {
+  display: inline-block;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 150ms ease-in-out;
+}
+.smoothMenu__item a:hover {
+  border-bottom: 1px solid white;
+}
+.smoothMenu__main {
+}

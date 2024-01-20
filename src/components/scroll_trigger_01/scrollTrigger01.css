@@ -1,0 +1,26 @@
+.scrollTrigger__body {
+}
+.scrollTrigger__spacer {
+  height: 100vh;
+}
+.scrollTrigger__animatedElement {
+  color: white;
+  width: 300px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: #9400df;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  left: -400px;
+}
+.scrollTrigger__animatedElement h2 {
+  font-weight: bold;
+}
+
+.scrollTrigger__animatedElement p {
+  font-size: 0.85rem;
+  line-height: 1.4rem;
+  margin-bottom: 0;
+}
