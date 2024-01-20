@@ -81,7 +81,7 @@ export default function InfiniteMarquee() {
   );
 }
 
-function InfiniteMarqueeRow({
+export function InfiniteMarqueeRow({
   direction = "left",
   speed = "27s",
   fontWeight = "bold",

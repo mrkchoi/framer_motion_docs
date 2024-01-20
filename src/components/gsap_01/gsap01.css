@@ -1,0 +1,12 @@
+.gsap01__box,
+.gsap01__box2,
+.gsap01__box3 {
+  height: 50px;
+  width: 50px;
+  background-color: #aaa;
+  border-radius: 10px;
+}
+
+#canvas {
+  border: 1px solid black;
+}

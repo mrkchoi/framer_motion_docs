@@ -14,6 +14,7 @@ const variants = {
       duration: 0.5,
       delay: 0.02 * idx,
       // delay: 0.02 * Math.random() * Math.min(idx, 10),
+      ease: [0.56, 0.14, 0.38, 1],
     },
   }),
   exit: { y: "100%" },
@@ -41,6 +42,7 @@ export default function TextMask() {
   );
 }
 
+// cubic-bezier(.56,.14,.38,1)
 function Content() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-25%" });
