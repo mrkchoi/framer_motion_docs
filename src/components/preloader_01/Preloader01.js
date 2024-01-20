@@ -4,7 +4,7 @@ import Lenis from "@studio-freight/lenis";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import image from "./preloader01.jpeg";
-
+import ScrollTrigger from "gsap/ScrollTrigger";
 const heroText = "flav.";
 
 export default function Preloader01() {
@@ -65,17 +65,27 @@ export default function Preloader01() {
 
     timeline
       .to(".preloader01__countdown", { opacity: 0 })
-      .to(".preloader01__overlay--item", { y: "-100%", stagger: 0.05 }, "<")
+      .to(".preloader01__overlay--item", { y: "-110%", stagger: 0.05 }, "<")
       .to(
         ".preloader01__hero--letter",
         { y: 0, stagger: 0.05, duration: 1 },
-        "-=1.5",
+        "-=1.75",
       )
-      .to(".preloader01__img--container", { y: 0 }, "-=1.75");
+      .to(".preloader01__img--container", { y: 0 }, "-=2");
 
-    //   gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger);
 
-    // const parallaxTimeline = gsap.timeline({ trigger:, scrollTrigger: { scrub: true } });
+    const parallaxTimeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".preloader01__img",
+        scrub: true,
+        start: "top 55%",
+        // markers: true,
+      },
+    });
+    parallaxTimeline.to(".preloader01__img", {
+      translateY: -200,
+    });
   });
 
   return (

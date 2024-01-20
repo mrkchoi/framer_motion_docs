@@ -83,6 +83,8 @@
   position: relative;
 }
 .preloader01__img {
+  position: relative;
+
   max-width: 90vw;
   border-radius: 10px;
   border: 3px solid #555;
