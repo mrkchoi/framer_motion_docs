@@ -33,6 +33,7 @@ import SmoothMenu from "./components/smooth_menu/SmoothMenu";
 import Preloader01 from "./components/preloader_01/Preloader01";
 import SideMenu from "./components/side_menu/SideMenu";
 import TextScroll from "./components/text_scroll/TextScroll";
+import GallerySlide from "./components/gallery_slide/GallerySlide";
 
 const PAGES = [
   { path: "/stagger", element: <Stagger /> },
@@ -67,6 +68,7 @@ const PAGES = [
   { path: "/preloader01", element: <Preloader01 /> },
   { path: "/side-menu", element: <SideMenu /> },
   { path: "/text-scroll", element: <TextScroll /> },
+  { path: "/gallery-slide", element: <GallerySlide /> },
 ];
 
 function App() {
@@ -106,6 +108,7 @@ function App() {
         <Route path="/preloader01" element={<Preloader01 />} />
         <Route path="/side-menu" element={<SideMenu />} />
         <Route path="/text-scroll" element={<TextScroll />} />
+        <Route path="/gallery-slide" element={<GallerySlide />} />
       </Routes>
     </BrowserRouter>
   );

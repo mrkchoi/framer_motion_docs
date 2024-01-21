@@ -79,7 +79,7 @@ export default function Preloader01() {
       scrollTrigger: {
         trigger: ".preloader01__img",
         scrub: true,
-        start: "top 55%",
+        start: "25% 55%",
         // markers: true,
       },
     });
