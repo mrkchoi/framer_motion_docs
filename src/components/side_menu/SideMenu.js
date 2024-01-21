@@ -39,8 +39,8 @@ export default function SideMenu() {
 
     timeline
       .to(menuRef.current, {
-        top: "-1rem",
-        right: "-1rem",
+        top: "2rem",
+        right: "2rem",
         width: "400px",
         height: "525px",
       })
