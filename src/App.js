@@ -31,6 +31,7 @@ import SmoothScroll from "./components/smooth_scroll/SmoothScroll";
 import ScrollTrigger01 from "./components/scroll_trigger_01/ScrollTrigger01";
 import SmoothMenu from "./components/smooth_menu/SmoothMenu";
 import Preloader01 from "./components/preloader_01/Preloader01";
+import SideMenu from "./components/side_menu/SideMenu";
 
 const PAGES = [
   { path: "/stagger", element: <Stagger /> },
@@ -63,6 +64,7 @@ const PAGES = [
   { path: "/scroll-trigger-01", element: <ScrollTrigger01 /> },
   { path: "/smooth-menu", element: <SmoothMenu /> },
   { path: "/preloader01", element: <Preloader01 /> },
+  { path: "/side-menu", element: <SideMenu /> },
 ];
 
 function App() {
@@ -100,6 +102,7 @@ function App() {
         <Route path="/scroll-trigger-01" element={<ScrollTrigger01 />} />
         <Route path="/smooth-menu" element={<SmoothMenu />} />
         <Route path="/preloader01" element={<Preloader01 />} />
+        <Route path="/side-menu" element={<SideMenu />} />
       </Routes>
     </BrowserRouter>
   );

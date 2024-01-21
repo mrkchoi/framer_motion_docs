@@ -1,0 +1,91 @@
+.sideMenu__main {
+  --color: #c9fd74;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  padding: 3rem;
+  overflow: hidden;
+}
+.sideMenu__wrapper {
+  background-color: var(--color);
+  position: relative;
+  align-self: flex-start;
+  /* padding: 1rem; */
+  border-radius: 25px;
+  right: 0.25rem;
+  top: 0.25rem;
+  width: 75px;
+  height: 25px;
+  overflow: hidden;
+}
+.sideMenu__btn--container {
+  position: fixed;
+  right: 3rem;
+}
+.sideMenu__btn {
+  background-color: var(--color);
+  padding: 0.5rem 2rem;
+  border-radius: 25px;
+  text-transform: uppercase;
+}
+.sideMenu__btn.open {
+  background-color: black;
+  color: var(--color);
+}
+.sideMenu__btn div {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+.sideMenu__btn--text {
+  display: block;
+  position: relative;
+  transform: translateY(0%);
+  transition: transform 300ms ease-in-out;
+}
+.sideMenu__btn--textExtra {
+  position: absolute;
+}
+.sideMenu__btn:hover .sideMenu__btn--text {
+  transform: translateY(-100%);
+}
+.sideMenu__nav--outer {
+  padding-top: 5rem;
+  padding-left: 2rem;
+  padding-right: 1rem;
+  padding-bottom: 2rem;
+  opacity: 0;
+  visibility: hidden;
+}
+.sideMenu__nav--container {
+  margin-bottom: 3rem;
+  perspective: 120px;
+  perspective-origin: top;
+}
+.sideMenu__nav--item {
+  display: inline-block;
+  font-size: 2.5rem;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 300ms ease-in-out;
+}
+.sideMenu__nav--item:hover {
+  border-bottom: 2px solid black;
+}
+.sideMenu__footer--container {
+  display: flex;
+  justify-content: space-between;
+}
+.sideMenu__footer--inner {
+  flex: 1;
+}
+.sideMenu__footer--item {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 300ms ease-in-out;
+}
+.sideMenu__footer--item:hover {
+  border-bottom: 1px solid black;
+}
