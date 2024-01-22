@@ -1,7 +1,8 @@
 import React, { useState, useRef } from "react";
 import gsap from "gsap";
-import "./sideMenu.css";
 import { useGSAP } from "@gsap/react";
+
+import "./sideMenu.css";
 
 export default function SideMenu() {
   const [open, setOpen] = useState(false);
@@ -16,17 +17,6 @@ export default function SideMenu() {
       defaults: { duration: 0.65, ease: "power2.inOut" },
     });
     timelineRef.current = timeline;
-
-    // timeline.set(menuRef.current, {
-    //   top: 0,
-    //   right: 0,
-    //   width: "100px",
-    //   height: "25px",
-    // });
-    // timeline.set(menuContentRef.current, {
-    //   opacity: 0,
-    //   visibility: "none",
-    // });
 
     const menuItems = gsap.utils.toArray(".sideMenu__nav--item");
     const footerItems = gsap.utils.toArray(".sideMenu__footer--item");

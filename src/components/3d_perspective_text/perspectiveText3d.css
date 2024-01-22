@@ -1,0 +1,50 @@
+.perspectiveText3D__body {
+  width: 100vw;
+  height: 100vw;
+  background-color: #ddd;
+}
+.perspectiveText3D__main {
+  width: 100vw;
+  height: 100vh;
+}
+.perspectiveText3D__container {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+.perspectiveText3D__item {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 400ms ease-in-out;
+}
+.perspectiveText3D__item p {
+  font-size: 7rem;
+  line-height: 7rem;
+  font-weight: bold;
+  transition: all 400ms ease-in-out;
+}
+.perspectiveText3D__item--primary {
+  color: white;
+}
+.perspectiveText3D__item--secondary {
+  position: absolute;
+  top: 0;
+  color: black;
+  opacity: 0;
+  transform: rotateX(-90deg) translateY(3.5vw);
+  transform-origin: bottom center;
+}
+
+.perspectiveText3D__item:hover {
+  transform: rotateX(90deg);
+}
+
+.perspectiveText3D__item:hover .perspectiveText3D__item--primary {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.perspectiveText3D__item:hover .perspectiveText3D__item--secondary {
+  opacity: 1;
+}

@@ -34,6 +34,9 @@ import Preloader01 from "./components/preloader_01/Preloader01";
 import SideMenu from "./components/side_menu/SideMenu";
 import TextScroll from "./components/text_scroll/TextScroll";
 import GallerySlide from "./components/gallery_slide/GallerySlide";
+import Text3D from "./components/3d_text_single/Text3D";
+import PerspectiveText3D from "./components/3d_perspective_text/PerspectiveText3D";
+import ProjectGalleryModal from "./components/project_gallery_modal/ProjectGalleryModal";
 
 const PAGES = [
   { path: "/stagger", element: <Stagger /> },
@@ -69,6 +72,9 @@ const PAGES = [
   { path: "/side-menu", element: <SideMenu /> },
   { path: "/text-scroll", element: <TextScroll /> },
   { path: "/gallery-slide", element: <GallerySlide /> },
+  { path: "/text-3d", element: <Text3D /> },
+  { path: "/3d-perspective-text", element: <PerspectiveText3D /> },
+  { path: "/project-gallery-modal", element: <ProjectGalleryModal /> },
 ];
 
 function App() {
@@ -109,6 +115,12 @@ function App() {
         <Route path="/side-menu" element={<SideMenu />} />
         <Route path="/text-scroll" element={<TextScroll />} />
         <Route path="/gallery-slide" element={<GallerySlide />} />
+        <Route path="/text-3d" element={<Text3D />} />
+        <Route path="/3d-perspective-text" element={<PerspectiveText3D />} />
+        <Route
+          path="/project-gallery-modal"
+          element={<ProjectGalleryModal />}
+        />
       </Routes>
     </BrowserRouter>
   );
