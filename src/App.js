@@ -37,6 +37,7 @@ import GallerySlide from "./components/gallery_slide/GallerySlide";
 import Text3D from "./components/3d_text_single/Text3D";
 import PerspectiveText3D from "./components/3d_perspective_text/PerspectiveText3D";
 import ProjectGalleryModal from "./components/project_gallery_modal/ProjectGalleryModal";
+import BlockMenu from "./components/block_menu/BlockMenu";
 
 const PAGES = [
   { path: "/stagger", element: <Stagger /> },
@@ -75,6 +76,7 @@ const PAGES = [
   { path: "/text-3d", element: <Text3D /> },
   { path: "/3d-perspective-text", element: <PerspectiveText3D /> },
   { path: "/project-gallery-modal", element: <ProjectGalleryModal /> },
+  { path: "/block-menu", element: <BlockMenu /> },
 ];
 
 function App() {
@@ -121,6 +123,7 @@ function App() {
           path="/project-gallery-modal"
           element={<ProjectGalleryModal />}
         />
+        <Route path="/block-menu" element={<BlockMenu />} />
       </Routes>
     </BrowserRouter>
   );
