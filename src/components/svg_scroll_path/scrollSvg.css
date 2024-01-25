@@ -1,0 +1,14 @@
+.scrollSvg__squiggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  z-index: 2;
+}
+
+.scrollSvg__squiggle path {
+  stroke: black;
+  stroke-width: 1.5rem;
+  opacity: 0;
+}

@@ -38,6 +38,8 @@ import Text3D from "./components/3d_text_single/Text3D";
 import PerspectiveText3D from "./components/3d_perspective_text/PerspectiveText3D";
 import ProjectGalleryModal from "./components/project_gallery_modal/ProjectGalleryModal";
 import BlockMenu from "./components/block_menu/BlockMenu";
+import ImagePreloader from "./components/image_preloader/ImagePreloader";
+import ScrollSVG from "./components/svg_scroll_path/ScrollSVG";
 
 const PAGES = [
   { path: "/stagger", element: <Stagger /> },
@@ -77,6 +79,8 @@ const PAGES = [
   { path: "/3d-perspective-text", element: <PerspectiveText3D /> },
   { path: "/project-gallery-modal", element: <ProjectGalleryModal /> },
   { path: "/block-menu", element: <BlockMenu /> },
+  { path: "/image-preloader", element: <ImagePreloader /> },
+  { path: "/scroll-svg", element: <ScrollSVG /> },
 ];
 
 function App() {
@@ -124,6 +128,8 @@ function App() {
           element={<ProjectGalleryModal />}
         />
         <Route path="/block-menu" element={<BlockMenu />} />
+        <Route path="/image-preloader" element={<ImagePreloader />} />
+        <Route path="/scroll-svg" element={<ScrollSVG />} />
       </Routes>
     </BrowserRouter>
   );
