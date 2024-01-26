@@ -1,0 +1,58 @@
+@font-face {
+  font-family: "Pangaia";
+  src: url("./PPPangaia-Medium.otf");
+}
+
+.hybridScroll__main {
+  font-family: "Pangaia";
+  width: 100%;
+  position: relative;
+}
+
+.hybridScroll__container {
+  padding: 5rem;
+}
+
+.hybridScroll__container h1 {
+  font-size: 4rem;
+}
+
+.hybridScroll__container p {
+  width: 50%;
+  margin: 2rem 0;
+}
+
+.hybridScroll__section {
+  height: 100vh;
+}
+
+.hybridScroll__stickyParent {
+  height: 500vh;
+}
+
+.hybridScroll__sticky {
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  border: 1px solid red;
+}
+
+.hybridScroll__sticky--section {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 500vw;
+  will-change: transform;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5vw;
+}
+
+.hybridScroll__img {
+  width: 60vw;
+  height: 80%;
+  object-fit: cover;
+  object-position: center;
+}

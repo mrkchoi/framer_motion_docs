@@ -40,6 +40,7 @@ import ProjectGalleryModal from "./components/project_gallery_modal/ProjectGalle
 import BlockMenu from "./components/block_menu/BlockMenu";
 import ImagePreloader from "./components/image_preloader/ImagePreloader";
 import ScrollSVG from "./components/svg_scroll_path/ScrollSVG";
+import HybridScroll from "./components/hybrid_scroll/HybridScroll";
 
 const PAGES = [
   { path: "/stagger", element: <Stagger /> },
@@ -81,6 +82,7 @@ const PAGES = [
   { path: "/block-menu", element: <BlockMenu /> },
   { path: "/image-preloader", element: <ImagePreloader /> },
   { path: "/scroll-svg", element: <ScrollSVG /> },
+  { path: "/hybrid-scroll", element: <HybridScroll /> },
 ];
 
 function App() {
@@ -130,6 +132,7 @@ function App() {
         <Route path="/block-menu" element={<BlockMenu />} />
         <Route path="/image-preloader" element={<ImagePreloader />} />
         <Route path="/scroll-svg" element={<ScrollSVG />} />
+        <Route path="/hybrid-scroll" element={<HybridScroll />} />
       </Routes>
     </BrowserRouter>
   );

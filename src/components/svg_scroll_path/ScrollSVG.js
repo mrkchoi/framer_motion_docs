@@ -36,7 +36,7 @@ export default function ScrollSVG() {
   };
 
   return (
-    <di>
+    <div>
       <svg
         width="1217"
         height="1869"
@@ -53,6 +53,6 @@ export default function ScrollSVG() {
           strokeLinecap="round"
         />
       </svg>
-    </di>
+    </div>
   );
 }
