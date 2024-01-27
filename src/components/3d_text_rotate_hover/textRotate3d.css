@@ -1,0 +1,58 @@
+@font-face {
+  font-family: "Pangaia";
+  src: url("./PPPangaia-Medium.otf");
+}
+
+.textRotate3d__main {
+  font-family: "Pangaia";
+  font-size: 2rem;
+  background-color: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+.textRotate3d__menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 70vh;
+}
+.textRotate3d__menuItem {
+  display: inline-block;
+  position: relative;
+  line-height: 1rem;
+  text-transform: uppercase;
+}
+.textRotate3d__menuItemText {
+}
+.textRotate3d__menuItem > div:nth-child(1) span {
+  transform-style: preserve-3d;
+  transition: 0.4s;
+  transition-delay: calc(0.05s * var(--index));
+  transform: translate3d(0, 0, 0);
+  transform-origin: bottom;
+  display: inline-block;
+}
+.textRotate3d__menuItem > div:nth-child(2) span {
+  transform-style: preserve-3d;
+  transition: 0.4s;
+  transition-delay: calc(0.05s * var(--index));
+  transform: translate3d(0, 100%, 0) rotateX(-90deg);
+  transform-origin: top;
+  display: inline-block;
+}
+.textRotate3d__menuItem:hover > div:nth-child(1) span {
+  transform: translate3d(0, -100%, 0) rotateX(-90deg);
+}
+.textRotate3d__menuItem:hover > div:nth-child(2) span {
+  transform: translate3d(0, 0, 0) rotateX(0);
+}
+
+.textRotate3d__main {
+}
+.textRotate3d__main {
+}

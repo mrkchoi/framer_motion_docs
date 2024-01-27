@@ -41,6 +41,7 @@ import BlockMenu from "./components/block_menu/BlockMenu";
 import ImagePreloader from "./components/image_preloader/ImagePreloader";
 import ScrollSVG from "./components/svg_scroll_path/ScrollSVG";
 import HybridScroll from "./components/hybrid_scroll/HybridScroll";
+import TextRotate3d from "./components/3d_text_rotate_hover/TextRotate3d";
 
 const PAGES = [
   { path: "/stagger", element: <Stagger /> },
@@ -83,6 +84,7 @@ const PAGES = [
   { path: "/image-preloader", element: <ImagePreloader /> },
   { path: "/scroll-svg", element: <ScrollSVG /> },
   { path: "/hybrid-scroll", element: <HybridScroll /> },
+  { path: "/text-rotate-3d", element: <TextRotate3d /> },
 ];
 
 function App() {
@@ -133,6 +135,7 @@ function App() {
         <Route path="/image-preloader" element={<ImagePreloader />} />
         <Route path="/scroll-svg" element={<ScrollSVG />} />
         <Route path="/hybrid-scroll" element={<HybridScroll />} />
+        <Route path="/text-rotate-3d" element={<TextRotate3d />} />
       </Routes>
     </BrowserRouter>
   );
