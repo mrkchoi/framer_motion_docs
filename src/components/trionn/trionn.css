@@ -1,0 +1,142 @@
+@font-face {
+  font-family: "Pangaia";
+  src: url("./PPPangaia-Bold.otf") format("otf");
+}
+
+.trionn__main {
+  --color-primary: #e0eeee;
+  --color-secondary: #252525;
+  --color-lightblue: #c5fcfc;
+  --color-background: #121315;
+  width: 100vw;
+  height: auto;
+  background-color: var(--color-background);
+  color: var(--color-primary);
+  display: flex;
+  height: 500vh;
+}
+
+.trionn__container {
+  padding: 3rem 5rem;
+  width: 100%;
+}
+
+.trionn__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6rem;
+}
+
+.trionn__nav {
+  text-transform: uppercase;
+  color: white;
+}
+
+.trionn__spacer {
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trionn__section {
+  margin-top: 30vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.trionn__title {
+  font-size: 11rem;
+  text-transform: uppercase;
+  line-height: 9rem;
+  font-weight: bold;
+  font-family: "Pangaia";
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.trionn__titleSpan {
+  display: block;
+  /* background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    var(--color-secondary)
+  ); */
+  background: linear-gradient(
+    90deg,
+    var(--color-primary) 50%,
+    var(--color-secondary) 0
+  );
+  background-size: 200% 100%;
+  background-position-x: 100%;
+  color: transparent;
+  background-clip: text;
+}
+
+.trionn__title span:nth-child(1) {
+  transform: translate3d(40px, 0, 0);
+}
+
+.trionn__title span:nth-child(2) {
+  transform: translate3d(-40px, 0, 0);
+}
+
+.trionn__subtitle {
+  font-size: 2rem;
+  line-height: 2.4rem;
+  font-weight: 300;
+}
+
+.trionn__subtitleSpan--wrapper {
+  overflow: hidden;
+}
+
+.trionn__subtitleSpan {
+  display: block;
+  overflow: hidden;
+  transform: translate3d(0, 100%, 0);
+}
+
+.trionn__cta {
+  align-self: flex-end;
+}
+
+.trionn__btn {
+  --speed: 600ms;
+  border: 2px solid var(--color-primary);
+  padding: 1.2rem 2.8rem;
+  border-radius: 3rem;
+  transition: all var(--speed) ease-in-out;
+  transition-delay: 100ms;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.trionn__btn::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-primary);
+  /* z-index: -1; */
+  clip-path: circle(100% at 50% 320%);
+  z-index: -1;
+  transition: all var(--speed) ease-in-out;
+}
+
+.trionn__btn:hover {
+  color: black;
+}
+.trionn__btn:hover::before {
+  clip-path: circle(100% at 50% 100%);
+}

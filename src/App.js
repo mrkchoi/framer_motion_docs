@@ -42,6 +42,8 @@ import ImagePreloader from "./components/image_preloader/ImagePreloader";
 import ScrollSVG from "./components/svg_scroll_path/ScrollSVG";
 import HybridScroll from "./components/hybrid_scroll/HybridScroll";
 import TextRotate3d from "./components/3d_text_rotate_hover/TextRotate3d";
+import Trionn from "./components/trionn/Trionn";
+import GlobeNav from "./components/globe_nav/GlobeNav";
 
 const PAGES = [
   { path: "/stagger", element: <Stagger /> },
@@ -85,6 +87,8 @@ const PAGES = [
   { path: "/scroll-svg", element: <ScrollSVG /> },
   { path: "/hybrid-scroll", element: <HybridScroll /> },
   { path: "/text-rotate-3d", element: <TextRotate3d /> },
+  { path: "/trionn", element: <Trionn /> },
+  { path: "/globe-nav", element: <GlobeNav /> },
 ];
 
 function App() {
@@ -136,6 +140,8 @@ function App() {
         <Route path="/scroll-svg" element={<ScrollSVG />} />
         <Route path="/hybrid-scroll" element={<HybridScroll />} />
         <Route path="/text-rotate-3d" element={<TextRotate3d />} />
+        <Route path="/trionn" element={<Trionn />} />
+        <Route path="/globe-nav" element={<GlobeNav />} />
       </Routes>
     </BrowserRouter>
   );
@@ -145,7 +151,7 @@ function Home() {
   return (
     <div className="container mx-auto">
       <h1 className="mb-6 mt-6 text-2xl font-bold">Motion:</h1>
-      <nav>
+      <nav className="mb-6 mt-6">
         <ul>
           {PAGES.map((page, idx) => (
             <li key={idx}>
