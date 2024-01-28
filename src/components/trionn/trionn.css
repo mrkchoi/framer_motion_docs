@@ -103,7 +103,7 @@
 }
 
 .trionn__btn {
-  --speed: 600ms;
+  --speed: 400ms;
   border: 2px solid var(--color-primary);
   padding: 1.2rem 2.8rem;
   border-radius: 3rem;

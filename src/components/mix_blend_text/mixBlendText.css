@@ -1,0 +1,35 @@
+.mixBlend__main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 200vh;
+  background-color: black;
+  flex-direction: column;
+}
+.mixBlend__spacer {
+  height: 50vh;
+  width: 100%;
+}
+.mixBlend__img {
+  max-width: 60vw;
+  height: auto;
+}
+.mixBlend__text--wrapper {
+  mix-blend-mode: difference;
+  position: absolute;
+  left: 5vw;
+}
+.mixBlend__text {
+  color: white;
+  font-size: 9rem;
+  line-height: 0.85;
+  font-weight: bold;
+  position: absolute;
+  text-transform: uppercase;
+}
+.mixBlend__text--opacity {
+  z-index: 1;
+  color: rgba(255, 255, 255, 1);
+  mix-blend-mode: difference;
+}

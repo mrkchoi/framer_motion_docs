@@ -27,7 +27,7 @@ import Portfolio from "./components/portfolio_home/Portfolio";
 import TransitionSlide from "./components/page_transition/slide/TransitionSlide";
 import ScrollMarquee from "./components/scroll_marquee/ScrollMarquee";
 import Gsap01 from "./components/gsap_01/Gsap01";
-import SmoothScroll from "./components/smooth_scroll/SmoothScroll";
+import SmoothScrollLanding from "./components/smooth_scroll/SmoothScroll";
 import ScrollTrigger01 from "./components/scroll_trigger_01/ScrollTrigger01";
 import SmoothMenu from "./components/smooth_menu/SmoothMenu";
 import Preloader01 from "./components/preloader_01/Preloader01";
@@ -43,7 +43,8 @@ import ScrollSVG from "./components/svg_scroll_path/ScrollSVG";
 import HybridScroll from "./components/hybrid_scroll/HybridScroll";
 import TextRotate3d from "./components/3d_text_rotate_hover/TextRotate3d";
 import Trionn from "./components/trionn/Trionn";
-import GlobeNav from "./components/globe_nav/GlobeNav";
+import GlobeNav from "./components/3d_globe_nav/GlobeNav";
+import MixBlendText from "./components/mix_blend_text/MixBlendText";
 
 const PAGES = [
   { path: "/stagger", element: <Stagger /> },
@@ -72,7 +73,7 @@ const PAGES = [
   { path: "/transition-slide/home", element: <TransitionSlide /> },
   { path: "/scroll-marquee", element: <ScrollMarquee /> },
   { path: "/gsap-01", element: <Gsap01 /> },
-  { path: "/smooth-scroll", element: <SmoothScroll /> },
+  { path: "/smooth-scroll", element: <SmoothScrollLanding /> },
   { path: "/scroll-trigger-01", element: <ScrollTrigger01 /> },
   { path: "/smooth-menu", element: <SmoothMenu /> },
   { path: "/preloader01", element: <Preloader01 /> },
@@ -88,6 +89,7 @@ const PAGES = [
   { path: "/hybrid-scroll", element: <HybridScroll /> },
   { path: "/text-rotate-3d", element: <TextRotate3d /> },
   { path: "/trionn", element: <Trionn /> },
+  { path: "/mix-blend-text", element: <MixBlendText /> },
   { path: "/globe-nav", element: <GlobeNav /> },
 ];
 
@@ -122,7 +124,7 @@ function App() {
         <Route path="/transition-slide/*" element={<TransitionSlide />} />
         <Route path="/scroll-marquee" element={<ScrollMarquee />} />
         <Route path="/gsap-01" element={<Gsap01 />} />
-        <Route path="/smooth-scroll" element={<SmoothScroll />} />
+        <Route path="/smooth-scroll" element={<SmoothScrollLanding />} />
         <Route path="/scroll-trigger-01" element={<ScrollTrigger01 />} />
         <Route path="/smooth-menu" element={<SmoothMenu />} />
         <Route path="/preloader01" element={<Preloader01 />} />
@@ -141,6 +143,7 @@ function App() {
         <Route path="/hybrid-scroll" element={<HybridScroll />} />
         <Route path="/text-rotate-3d" element={<TextRotate3d />} />
         <Route path="/trionn" element={<Trionn />} />
+        <Route path="/mix-blend-text" element={<MixBlendText />} />
         <Route path="/globe-nav" element={<GlobeNav />} />
       </Routes>
     </BrowserRouter>

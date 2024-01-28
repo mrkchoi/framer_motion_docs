@@ -10,7 +10,7 @@ import img1 from "./images/valle_de_la_muerte.jpeg";
 import img2 from "./images/miscani_lake.jpeg";
 import img3 from "./images/miniques_lagoon.jpg";
 
-export default function SmoothScroll() {
+export default function SmoothScrollLanding() {
   return (
     <main className="h-[300vh] w-screen bg-black">
       <Intro />

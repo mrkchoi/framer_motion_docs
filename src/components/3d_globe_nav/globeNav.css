@@ -1,0 +1,106 @@
+.globeNav__main {
+  --bg-color: #0f0f0f;
+  --title-color: rgb(183, 171, 152);
+  --title-bg-color: #1c1c1c;
+  --overlay-color: #ec4e39;
+
+  width: 100%;
+  background-color: var(--bg-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 300vh;
+}
+
+.globeNav__container {
+  height: 60vw;
+  max-height: 800px;
+  max-width: 1200px;
+  width: 100%;
+  /* margin-bottom: 100vh; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* border: 1px solid red; */
+}
+.globeNav__projects {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.globeNav__project {
+  border-top: 1px solid rgba(183, 171, 152, 0.25);
+  flex: 1;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+.globeNav__project:last-of-type {
+  border-bottom: 1px solid rgba(183, 171, 152, 0.25);
+}
+.globeNav__projectTitle {
+  font-size: 5rem;
+  line-height: 0.85;
+  text-transform: uppercase;
+  font-weight: bold;
+  /* color: var(--title-color); */
+  background: linear-gradient(
+    90deg,
+    var(--title-color) 50%,
+    var(--title-bg-color) 50%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  background-position-x: 100%;
+  color: transparent;
+  display: inline-block;
+  padding-left: 7vw;
+}
+
+.globeNav__projectOverlay {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: var(--overlay-color);
+  height: 100%;
+  clip-path: inset(50% 0 50%);
+  transition: clip-path 400ms ease-in-out;
+}
+
+.globeNav__projectOverlay--title {
+  font-size: 5rem;
+  line-height: 0.85;
+  text-transform: uppercase;
+  font-weight: bold;
+  /* color: var(--title-color); */
+  background: linear-gradient(
+    90deg,
+    var(--title-color) 50%,
+    var(--title-bg-color) 50%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  background-position-x: 100%;
+  color: transparent;
+  display: inline-block;
+  padding-left: 7vw;
+  margin-right: 5vw;
+}
+
+.globeNav__projectOverlay--description {
+  justify-self: flex-end;
+  margin-right: 7vw;
+  max-width: 40vw;
+  font-size: 0.9rem;
+  color: var(--title-bg-color);
+}
