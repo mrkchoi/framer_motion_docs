@@ -45,6 +45,7 @@ import TextRotate3d from "./components/3d_text_rotate_hover/TextRotate3d";
 import Trionn from "./components/trionn/Trionn";
 import GlobeNav from "./components/3d_globe_nav/GlobeNav";
 import MixBlendText from "./components/mix_blend_text/MixBlendText";
+import MagneticButton from "./components/magnetic_buttons/MagneticButton";
 
 const PAGES = [
   { path: "/stagger", element: <Stagger /> },
@@ -91,6 +92,7 @@ const PAGES = [
   { path: "/trionn", element: <Trionn /> },
   { path: "/mix-blend-text", element: <MixBlendText /> },
   { path: "/globe-nav", element: <GlobeNav /> },
+  { path: "/magnetic-button", element: <MagneticButton /> },
 ];
 
 function App() {
@@ -145,6 +147,7 @@ function App() {
         <Route path="/trionn" element={<Trionn />} />
         <Route path="/mix-blend-text" element={<MixBlendText />} />
         <Route path="/globe-nav" element={<GlobeNav />} />
+        <Route path="/magnetic-button" element={<MagneticButton />} />
       </Routes>
     </BrowserRouter>
   );
