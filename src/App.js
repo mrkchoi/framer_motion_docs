@@ -46,6 +46,7 @@ import Trionn from "./components/trionn/Trionn";
 import GlobeNav from "./components/3d_globe_nav/GlobeNav";
 import MixBlendText from "./components/mix_blend_text/MixBlendText";
 import MagneticButton from "./components/magnetic_buttons/MagneticButton";
+import PressPlay from "./components/press_play/PressPlay";
 
 const PAGES = [
   { path: "/stagger", element: <Stagger /> },
@@ -93,6 +94,7 @@ const PAGES = [
   { path: "/mix-blend-text", element: <MixBlendText /> },
   { path: "/globe-nav", element: <GlobeNav /> },
   { path: "/magnetic-button", element: <MagneticButton /> },
+  { path: "/press-play", element: <PressPlay /> },
 ];
 
 function App() {
@@ -148,6 +150,7 @@ function App() {
         <Route path="/mix-blend-text" element={<MixBlendText />} />
         <Route path="/globe-nav" element={<GlobeNav />} />
         <Route path="/magnetic-button" element={<MagneticButton />} />
+        <Route path="/press-play" element={<PressPlay />} />
       </Routes>
     </BrowserRouter>
   );

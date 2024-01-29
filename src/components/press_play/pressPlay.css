@@ -1,0 +1,93 @@
+@font-face {
+  font-family: "Neue Haas";
+  src: url("./NeueHaasDisplayBold.woff") format("woff");
+}
+
+.pressPlay__main {
+  --red: #ff2803;
+  --yellow: #f9b71b;
+  --blue: #1795f0;
+  --green: #30e462;
+  --gap: 4rem;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Neue Haas", sans-serif;
+  overflow: hidden;
+}
+.pressPlay__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.pressPlay__item--outer {
+  width: 100%;
+  text-align: center;
+}
+.pressPlay__item--inner {
+  position: relative;
+}
+.pressPlay__title {
+  width: 100%;
+  font-size: max(5rem, min(100px, 10vh));
+  text-transform: uppercase;
+  line-height: 1;
+  transition: all 400ms ease-in-out;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.pressPlay__title--primary {
+  position: relative;
+  display: block;
+  background-color: white;
+  transform: rotateX(0deg);
+  transform-origin: top;
+  will-change: transform;
+  opacity: 1;
+}
+.pressPlay__titleSecondary--wrapper {
+  display: flex;
+  justify-content: space-around;
+  min-width: 100%;
+  overflow-y: visible;
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+  opacity: 0;
+  transform-origin: bottom;
+  transition: all 400ms ease-in-out;
+  transform: translate3d(0, -100%, 0) rotateX(-90deg);
+}
+.pressPlay__title--secondary {
+  top: 0;
+  left: 0;
+  flex: 1;
+  color: black;
+  will-change: transform;
+  animation: scrollLeft 40s linear infinite;
+}
+
+.pressPlay__item--outer:hover .pressPlay__title--primary {
+  transform: translate3d(0, 100%, 0) rotateX(-90deg);
+  opacity: 0;
+}
+.pressPlay__item--outer:hover .pressPlay__titleSecondary--wrapper {
+  transform: translate3d(0, 0, 0) rotateX(0);
+  opacity: 1;
+}
+
+@keyframes scrollLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}

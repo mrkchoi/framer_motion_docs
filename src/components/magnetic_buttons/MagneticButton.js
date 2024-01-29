@@ -4,11 +4,11 @@ import { useGSAP } from "@gsap/react";
 
 import "./magneticButton.css";
 
-const lerp = (start, end, t) => {
-  return start * (1 - t) + end * t;
-};
+// const lerp = (start, end, t) => {
+//   return start * (1 - t) + end * t;
+// };
 
-const cursorSize = 15;
+let cursorSize = 15;
 
 export default function MagneticButton() {
   const cursorRef = useRef(null);
