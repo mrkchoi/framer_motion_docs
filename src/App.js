@@ -47,6 +47,8 @@ import GlobeNav from "./components/3d_globe_nav/GlobeNav";
 import MixBlendText from "./components/mix_blend_text/MixBlendText";
 import MagneticButton from "./components/magnetic_buttons/MagneticButton";
 import PressPlay from "./components/press_play/PressPlay";
+import HorizonStudio from "./components/horizon_studio/HorizonStudio";
+import Nascent from "./components/nascent/Nascent";
 
 const PAGES = [
   { path: "/stagger", element: <Stagger /> },
@@ -95,6 +97,8 @@ const PAGES = [
   { path: "/globe-nav", element: <GlobeNav /> },
   { path: "/magnetic-button", element: <MagneticButton /> },
   { path: "/press-play", element: <PressPlay /> },
+  { path: "/horizon-studio", element: <HorizonStudio /> },
+  { path: "/nascent", element: <Nascent /> },
 ];
 
 function App() {
@@ -151,6 +155,8 @@ function App() {
         <Route path="/globe-nav" element={<GlobeNav />} />
         <Route path="/magnetic-button" element={<MagneticButton />} />
         <Route path="/press-play" element={<PressPlay />} />
+        <Route path="/horizon-studio" element={<HorizonStudio />} />
+        <Route path="/nascent" element={<Nascent />} />
       </Routes>
     </BrowserRouter>
   );

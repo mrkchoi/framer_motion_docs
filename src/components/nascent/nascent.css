@@ -1,0 +1,115 @@
+@font-face {
+  font-family: "MessinaSans";
+  src: url("./fonts/Messina Sans.woff") format("woff");
+}
+@font-face {
+  font-family: "MessinaSansBold";
+  src: url("./fonts/Messina Sans Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "PPEditorialNew";
+  src: url("./fonts/PP Editorial New.woff") format("woff");
+}
+
+.nascent__spacer {
+  width: 100%;
+  height: 100vh;
+}
+
+.nascent__main {
+  --black: rgb(20, 20, 20);
+  background-color: var(--black);
+  color: white;
+  font-family: "MessinaSans", sans-serif;
+}
+
+.nascent__main em {
+  font-family: "PPEditorialNew";
+}
+
+.nascent__top {
+  padding: 8rem 6rem;
+}
+.nascent__titleContainer {
+  display: flex;
+  margin-bottom: 4rem;
+}
+.nascent__title {
+  font-size: clamp(3rem, 5vw, 6rem);
+  line-height: 1;
+  width: 60vw;
+}
+.nascent__subtitleContainer {
+}
+.nascent__subtitle {
+  font-size: clamp(1.8rem, 2.5vw, 3rem);
+  line-height: 1.1;
+  max-width: 75vw;
+}
+.nascent__ctaContainer {
+  display: flex;
+  align-self: flex-end;
+  align-items: center;
+  cursor: pointer;
+}
+.nascent__svgArrow circle {
+  fill: white;
+}
+.nascent__svgArrow path {
+  fill: black;
+}
+.nascent__cta {
+  margin-left: 1rem;
+  font-size: clamp(1rem, 1vw, 2rem);
+  flex: 1;
+  text-transform: uppercase;
+}
+.nascent__bottomContainer {
+  width: 100%;
+  overflow: hidden;
+}
+.nascent__row {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow-y: visible;
+  position: relative;
+  white-space: nowrap;
+}
+.nascent__rowInner {
+  display: flex;
+  overflow-y: visible;
+  align-items: center;
+  position: relative;
+}
+.nascent__row:nth-of-type(1) .nascent__rowInner {
+  transform: translate3d(10vw, 0, 0);
+}
+.nascent__row:nth-of-type(2) .nascent__rowInner {
+  transform: translate3d(-50vw, 0, 0);
+}
+.nascent__row:nth-of-type(3) .nascent__rowInner {
+  transform: translate3d(20vw, 0, 0);
+}
+.nascent__row:nth-of-type(4) .nascent__rowInner {
+  transform: translate3d(-60vw, 0, 0);
+}
+.nascent__row:nth-of-type(5) .nascent__rowInner {
+  transform: translate3d(30vw, 0, 0);
+}
+
+.nascent__row svg {
+  margin: 0 2rem;
+  width: 3rem;
+  height: 3rem;
+}
+.nascent__rowContent {
+  font-size: clamp(5rem, 8vw, 8rem);
+  text-transform: uppercase;
+  flex-wrap: nowrap;
+  line-height: 1.2;
+}
+.nascent__svgPlus {
+}
+.nascent__top {
+}

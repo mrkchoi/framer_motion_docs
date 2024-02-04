@@ -1,0 +1,211 @@
+.horizonStudio__main {
+  --black: #222;
+  --wipe: #eaeaea;
+  --speed: 300ms;
+}
+
+.horizonStudio__navOuter {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+.horizonStudio__navHalf {
+  width: 50%;
+}
+.horizonStudio__navHalf--left {
+  display: flex;
+  flex-direction: column;
+}
+.horizonStudio__navItem {
+  cursor: pointer;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--black);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.horizonStudio__navItem--left {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+}
+.horizonStudio__navItem--pre {
+}
+.horizonStudio__navItem--title {
+  position: relative;
+  font-size: 4rem;
+  line-height: 1;
+  transform: translate3d(0, 0, 0);
+  transition: transform var(--speed) ease-in-out;
+}
+.horizonStudio__navItem--right {
+  position: relative;
+  z-index: 2;
+}
+.horizonStudio__navItemBtn {
+  border: 1px solid var(--black);
+  padding: 1rem;
+  font-size: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.horizonStudio__navItemBtn--inner {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  /* border: 1px solid black; */
+}
+.horizonStudio__navItemBtn svg {
+  transition: transform var(--speed) ease-in-out;
+}
+.horizonStudio__navItemBtn svg:first-of-type {
+  position: relative;
+}
+.horizonStudio__navItemBtn svg:nth-of-type(2) {
+  position: absolute;
+  transform: translate3d(-2rem, 0, 0);
+}
+.horizonStudio__navItem--wipe {
+  position: absolute;
+  z-index: 1;
+  background-color: var(--wipe);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  transform: translate3d(0, 100%, 0);
+  transition: transform var(--speed) ease-in-out;
+}
+.horizonStudio__navItem:hover .horizonStudio__navItem--wipe {
+  transform: translate3d(0, 0, 0);
+}
+.horizonStudio__navItem:hover .horizonStudio__navItem--title {
+  transform: translate3d(1rem, 0, 0);
+}
+.horizonStudio__navItem:hover .horizonStudio__navItemBtn svg:nth-of-type(1) {
+  transform: translate3d(2rem, 0, 0);
+}
+.horizonStudio__navItem:hover .horizonStudio__navItemBtn svg:nth-of-type(2) {
+  transform: translate3d(0, 0, 0);
+}
+
+.horizonStudio__navHalf--right {
+  background-color: var(--black);
+  color: white;
+  padding: 4rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.horizonStudio__navContact--outer {
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  justify-content: space-between;
+}
+.horizonStudio__navHeader {
+}
+.horizonStudio__navHeader svg {
+  max-width: 100%;
+  max-width: 30vw;
+}
+.horizonStudio__navHeader--address {
+}
+.horizonStudio__navHeader--address span {
+  display: block;
+  font-size: 1.4rem;
+  line-height: 1;
+  font-weight: 200;
+}
+.horizonStudio__navHeader--address span:nth-of-type(3) {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  font-weight: lighter;
+}
+.horizonStudio__navContact--wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 6rem;
+}
+.horizonStudio__navContactRow {
+  display: flex;
+  margin-bottom: 2rem;
+}
+.horizonStudio__navContactItem {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.horizonStudio__navContactItem--marker {
+  font-weight: lighter;
+  border: 1px solid white;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  font-size: 0.8rem;
+  border-radius: 50%;
+}
+.horizonStudio__navContactItem--content {
+  display: flex;
+  flex-direction: column;
+}
+.horizonStudio__navContactItem--title {
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+.horizonStudio__navContactItem--link {
+  font-size: 0.8rem;
+  font-weight: lighter;
+}
+.horizonStudio__navFooter {
+  height: 19%;
+  width: 100%;
+  border-top: 1px solid white;
+}
+.horizonStudio__navFooter--content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-end;
+  justify-content: center;
+  height: 100%;
+}
+.horizonStudio__navFooter--year {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  line-height: 1;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+.horizonStudio__navFooter--year svg {
+  width: 3rem;
+  height: 3rem;
+}
+.horizonStudio__navFooter--subtext {
+  font-size: 0.8rem;
+  font-weight: lighter;
+}
+.horizonStudio__navBtn--close {
+}
+
+.horizonStudio__navContactItem {
+}
+.horizonStudio__navContactItem {
+}
