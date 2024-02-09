@@ -51,6 +51,7 @@ import HorizonStudio from "./components/horizon_studio/HorizonStudio";
 import Nascent from "./components/nascent/Nascent";
 import Drei01 from "./components/drei_01/Drei01";
 import Transition01 from "./components/transition_01/Transition01";
+import Transition02 from "./components/transition_02/Transition02";
 
 const PAGES = [
   { path: "/stagger", element: <Stagger /> },
@@ -103,6 +104,7 @@ const PAGES = [
   { path: "/nascent", element: <Nascent /> },
   { path: "/drei01", element: <Drei01 /> },
   { path: "/transition01", element: <Transition01 /> },
+  { path: "/transition02", element: <Transition02 /> },
 ];
 
 function App() {
@@ -164,6 +166,7 @@ function App() {
           <Route path="/nascent" element={<Nascent />} />
           <Route path="/drei01" element={<Drei01 />} />
           <Route path="/transition01/*" element={<Transition01 />} />
+          <Route path="/transition02/*" element={<Transition02 />} />
         </Routes>
       </BrowserRouter>
     </>

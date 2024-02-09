@@ -1,0 +1,46 @@
+@import url("https://p.typekit.net/p.css?s=1&k=ehl0ehl&ht=tk&f=26058.26062.46078&a=1494256&app=typekit&e=css");
+
+@font-face {
+  font-family: "acumin-pro";
+  src:
+    url("https://use.typekit.net/af/a2c82e/00000000000000003b9acaf4/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/a2c82e/00000000000000003b9acaf4/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/a2c82e/00000000000000003b9acaf4/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3")
+      format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "acumin-pro";
+  src:
+    url("https://use.typekit.net/af/46da36/00000000000000003b9acaf6/27/l?subset_id=2&fvd=n4&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/46da36/00000000000000003b9acaf6/27/d?subset_id=2&fvd=n4&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/46da36/00000000000000003b9acaf6/27/a?subset_id=2&fvd=n4&v=3")
+      format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+}
+
+@font-face {
+  font-family: "kudryashev-d-excontrast-sans";
+  src:
+    url("https://use.typekit.net/af/c881eb/00000000000000007735e0cf/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/c881eb/00000000000000007735e0cf/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/c881eb/00000000000000007735e0cf/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3")
+      format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: normal;
+}
