@@ -49,6 +49,8 @@ import MagneticButton from "./components/magnetic_buttons/MagneticButton";
 import PressPlay from "./components/press_play/PressPlay";
 import HorizonStudio from "./components/horizon_studio/HorizonStudio";
 import Nascent from "./components/nascent/Nascent";
+import Drei01 from "./components/drei_01/Drei01";
+import Transition01 from "./components/transition_01/Transition01";
 
 const PAGES = [
   { path: "/stagger", element: <Stagger /> },
@@ -99,66 +101,72 @@ const PAGES = [
   { path: "/press-play", element: <PressPlay /> },
   { path: "/horizon-studio", element: <HorizonStudio /> },
   { path: "/nascent", element: <Nascent /> },
+  { path: "/drei01", element: <Drei01 /> },
+  { path: "/transition01", element: <Transition01 /> },
 ];
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/stagger" element={<Stagger />} />
-        <Route path="/intro" element={<Intro />} />
-        <Route path="/examples" element={<Examples />} />
-        <Route path="/trippy" element={<Trippy />} />
-        <Route path="/sidebar-menu" element={<SidebarMenu />} />
-        <Route path="/slide-box" element={<SlideBox />} />
-        <Route path="/fruit-scroll" element={<FruitScroll />} />
-        <Route path="/spring-scroll" element={<SpringScroll />} />
-        <Route path="/image-carousel" element={<ImageCarousel />} />
-        <Route path="/toggle" element={<Toggle />} />
-        <Route path="/tabs-fruit" element={<TabsFruit />} />
-        <Route path="/parallax" element={<Layout />} />
-        <Route path="/smooth-cursor" element={<SmoothCursor />} />
-        <Route path="/zoom-parallax" element={<ZoomParallax />} />
-        <Route path="/infinite-marquee" element={<InfiniteMarquee />} />
-        <Route path="/pixel-transition" element={<PixelTransition />} />
-        <Route path="/character-scroll" element={<CharacterScroll />} />
-        <Route path="/cursor-hover-mask" element={<CursorHoverMask />} />
-        <Route path="/text-disperse" element={<TextDisperse />} />
-        <Route path="/pixel-cursor" element={<PixelCursor />} />
-        <Route path="/text-mask" element={<TextMask />} />
-        <Route path="/image-reveal" element={<ImageReveal />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/transition-slide/*" element={<TransitionSlide />} />
-        <Route path="/scroll-marquee" element={<ScrollMarquee />} />
-        <Route path="/gsap-01" element={<Gsap01 />} />
-        <Route path="/smooth-scroll" element={<SmoothScrollLanding />} />
-        <Route path="/scroll-trigger-01" element={<ScrollTrigger01 />} />
-        <Route path="/smooth-menu" element={<SmoothMenu />} />
-        <Route path="/preloader01" element={<Preloader01 />} />
-        <Route path="/side-menu" element={<SideMenu />} />
-        <Route path="/text-scroll" element={<TextScroll />} />
-        <Route path="/gallery-slide" element={<GallerySlide />} />
-        <Route path="/text-3d" element={<Text3D />} />
-        <Route path="/3d-perspective-text" element={<PerspectiveText3D />} />
-        <Route
-          path="/project-gallery-modal"
-          element={<ProjectGalleryModal />}
-        />
-        <Route path="/block-menu" element={<BlockMenu />} />
-        <Route path="/image-preloader" element={<ImagePreloader />} />
-        <Route path="/scroll-svg" element={<ScrollSVG />} />
-        <Route path="/hybrid-scroll" element={<HybridScroll />} />
-        <Route path="/text-rotate-3d" element={<TextRotate3d />} />
-        <Route path="/trionn" element={<Trionn />} />
-        <Route path="/mix-blend-text" element={<MixBlendText />} />
-        <Route path="/globe-nav" element={<GlobeNav />} />
-        <Route path="/magnetic-button" element={<MagneticButton />} />
-        <Route path="/press-play" element={<PressPlay />} />
-        <Route path="/horizon-studio" element={<HorizonStudio />} />
-        <Route path="/nascent" element={<Nascent />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/stagger" element={<Stagger />} />
+          <Route path="/intro" element={<Intro />} />
+          <Route path="/examples" element={<Examples />} />
+          <Route path="/trippy" element={<Trippy />} />
+          <Route path="/sidebar-menu" element={<SidebarMenu />} />
+          <Route path="/slide-box" element={<SlideBox />} />
+          <Route path="/fruit-scroll" element={<FruitScroll />} />
+          <Route path="/spring-scroll" element={<SpringScroll />} />
+          <Route path="/image-carousel" element={<ImageCarousel />} />
+          <Route path="/toggle" element={<Toggle />} />
+          <Route path="/tabs-fruit" element={<TabsFruit />} />
+          <Route path="/parallax" element={<Layout />} />
+          <Route path="/smooth-cursor" element={<SmoothCursor />} />
+          <Route path="/zoom-parallax" element={<ZoomParallax />} />
+          <Route path="/infinite-marquee" element={<InfiniteMarquee />} />
+          <Route path="/pixel-transition" element={<PixelTransition />} />
+          <Route path="/character-scroll" element={<CharacterScroll />} />
+          <Route path="/cursor-hover-mask" element={<CursorHoverMask />} />
+          <Route path="/text-disperse" element={<TextDisperse />} />
+          <Route path="/pixel-cursor" element={<PixelCursor />} />
+          <Route path="/text-mask" element={<TextMask />} />
+          <Route path="/image-reveal" element={<ImageReveal />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/transition-slide/*" element={<TransitionSlide />} />
+          <Route path="/scroll-marquee" element={<ScrollMarquee />} />
+          <Route path="/gsap-01" element={<Gsap01 />} />
+          <Route path="/smooth-scroll" element={<SmoothScrollLanding />} />
+          <Route path="/scroll-trigger-01" element={<ScrollTrigger01 />} />
+          <Route path="/smooth-menu" element={<SmoothMenu />} />
+          <Route path="/preloader01" element={<Preloader01 />} />
+          <Route path="/side-menu" element={<SideMenu />} />
+          <Route path="/text-scroll" element={<TextScroll />} />
+          <Route path="/gallery-slide" element={<GallerySlide />} />
+          <Route path="/text-3d" element={<Text3D />} />
+          <Route path="/3d-perspective-text" element={<PerspectiveText3D />} />
+          <Route
+            path="/project-gallery-modal"
+            element={<ProjectGalleryModal />}
+          />
+          <Route path="/block-menu" element={<BlockMenu />} />
+          <Route path="/image-preloader" element={<ImagePreloader />} />
+          <Route path="/scroll-svg" element={<ScrollSVG />} />
+          <Route path="/hybrid-scroll" element={<HybridScroll />} />
+          <Route path="/text-rotate-3d" element={<TextRotate3d />} />
+          <Route path="/trionn" element={<Trionn />} />
+          <Route path="/mix-blend-text" element={<MixBlendText />} />
+          <Route path="/globe-nav" element={<GlobeNav />} />
+          <Route path="/magnetic-button" element={<MagneticButton />} />
+          <Route path="/press-play" element={<PressPlay />} />
+          <Route path="/horizon-studio" element={<HorizonStudio />} />
+          <Route path="/nascent" element={<Nascent />} />
+          <Route path="/drei01" element={<Drei01 />} />
+          <Route path="/transition01/*" element={<Transition01 />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

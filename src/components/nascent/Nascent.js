@@ -41,7 +41,7 @@ export default function Nascent() {
       types: "lines",
     });
 
-    gsap.to(".nascent__rowInner:nth-child(odd)", {
+    gsap.to(".nascent__row:nth-of-type(odd) .nascent__rowInner", {
       scrollTrigger: {
         trigger: ".nascent__bottomContainer",
         start: "top 100%",
@@ -50,7 +50,7 @@ export default function Nascent() {
       },
       x: "-30vw",
     });
-    gsap.to(".nascent__rowInner:nth-child(even)", {
+    gsap.to(".nascent__row:nth-of-type(even) .nascent__rowInner", {
       scrollTrigger: {
         trigger: ".nascent__bottomContainer",
         start: "top 100%",

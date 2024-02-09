@@ -1,0 +1,57 @@
+.transition01__main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.transition01__header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+.transition01__logo {
+}
+.transition01__nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.transition01__nav li {
+  list-style: none;
+  margin: 0 1rem;
+}
+.transition01__logo-svg {
+  width: 75px;
+  height: auto;
+}
+
+.transition01__viewWrapper {
+  width: 100%;
+  flex: 1;
+}
+.transition01__view {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.transition01__view h1 {
+  color: black;
+  font-size: 4rem;
+  text-transform: uppercase;
+}
+.transition01__home {
+  background-color: cyan;
+}
+.transition01__about {
+  background-color: pink;
+}
+.transition01__contact {
+  background-color: lime;
+}

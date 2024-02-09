@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState, Suspense } from "react";
 import SmoothScroll from "../lenis/SmoothScroll";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -36,7 +36,9 @@ function GlobeNav() {
     <SmoothScroll>
       <div className="globeNav__main">
         <div className="globeNav__container">
-          <Earth meshRef={meshRef} />
+          <Suspense fallback={<div>Loading...</div>}>
+            <Earth meshRef={meshRef} />
+          </Suspense>
           <Projects />
         </div>
       </div>

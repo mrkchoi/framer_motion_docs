@@ -21,6 +21,7 @@
   background-color: var(--black);
   color: white;
   font-family: "MessinaSans", sans-serif;
+  padding-bottom: 8rem;
 }
 
 .nascent__main em {
