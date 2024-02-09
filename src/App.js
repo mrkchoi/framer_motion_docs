@@ -52,6 +52,7 @@ import Nascent from "./components/nascent/Nascent";
 import Drei01 from "./components/drei_01/Drei01";
 import Transition01 from "./components/transition_01/Transition01";
 import Transition02 from "./components/transition_02/Transition02";
+import Study from "./components/study/Study";
 
 const PAGES = [
   { path: "/stagger", element: <Stagger /> },
@@ -105,6 +106,7 @@ const PAGES = [
   { path: "/drei01", element: <Drei01 /> },
   { path: "/transition01", element: <Transition01 /> },
   { path: "/transition02", element: <Transition02 /> },
+  { path: "/study", element: <Study /> },
 ];
 
 function App() {
@@ -167,6 +169,7 @@ function App() {
           <Route path="/drei01" element={<Drei01 />} />
           <Route path="/transition01/*" element={<Transition01 />} />
           <Route path="/transition02/*" element={<Transition02 />} />
+          <Route path="/study" element={<Study />} />
         </Routes>
       </BrowserRouter>
     </>

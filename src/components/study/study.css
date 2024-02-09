@@ -1,0 +1,71 @@
+.study__main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background-color: antiquewhite;
+}
+.study__wrapper {
+}
+.study__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.study__text {
+  font-weight: 600;
+  padding: 1rem 0;
+}
+.study__arrowWrapper {
+  display: flex;
+  position: relative;
+  border: 2px solid black;
+  background-color: black;
+  padding: 0.5rem;
+  border-radius: 50%;
+  will-change: transform;
+  overflow: hidden;
+  box-shadow:
+    0 0 1px 0px white inset,
+    0 0 1px 0px white;
+}
+.study__arrowSvg {
+  transition: transform 300ms ease-in-out;
+  color: white;
+}
+.study__arrowSvg1 {
+  position: relative;
+}
+.study__arrowSvg2 {
+  position: absolute;
+  transform: translate3d(-1.5rem, 0, 0);
+}
+.study__btn:hover .study__arrowSvg1 {
+  transform: translate3d(1.5rem, 0, 0);
+}
+.study__btn:hover .study__arrowSvg2 {
+  transform: translate3d(0, 0, 0);
+}
+.study__btn:hover .study__arrowWrapper {
+  background-color: transparent;
+}
+.study__btn:hover .study__arrowSvg {
+  color: black;
+}
+
+.study__circle {
+  position: fixed;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid black;
+  box-shadow:
+    0 0 1px 0px white inset,
+    0 0 1px 0px white;
+}
