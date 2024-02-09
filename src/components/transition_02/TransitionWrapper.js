@@ -22,8 +22,8 @@ const TransitionWrapper = ({ children }) => {
           gsap
             .timeline({ paused: true, defaults: { ease: "power4.inOut" } })
             .to(".transition02__transitionOverlayTop", {
-              autoAlpha: 1,
-              yPercent: -100,
+              // autoAlpha: 1,
+              yPercent: 200,
               duration: 1,
             })
             .play();
@@ -35,7 +35,7 @@ const TransitionWrapper = ({ children }) => {
           gsap
             .timeline({ paused: true, defaults: { ease: "power4.inOut" } })
             .to(".transition02__transitionOverlayBottom", {
-              autoAlpha: 1,
+              // autoAlpha: 1,
               yPercent: 100,
               duration: 1,
             })
@@ -50,10 +50,19 @@ const TransitionWrapper = ({ children }) => {
         onExit={() => {
           const node = ref.current;
 
+          gsap.set(".transition02__transitionOverlayTop", {
+            // autoAlpha: 0,
+            yPercent: -100,
+          });
+          gsap.set(".transition02__transitionOverlayBottom", {
+            // autoAlpha: 0,
+            yPercent: 100,
+          });
+
           gsap
             .timeline({ paused: true, defaults: { ease: "power4.inOut" } })
             .to(".transition02__transitionOverlayTop", {
-              autoAlpha: 1,
+              // autoAlpha: 1,
               yPercent: 0,
               duration: 1,
             })
@@ -62,7 +71,7 @@ const TransitionWrapper = ({ children }) => {
           gsap
             .timeline({ paused: true, defaults: { ease: "power4.inOut" } })
             .to(".transition02__transitionOverlayBottom", {
-              autoAlpha: 1,
+              // autoAlpha: 1,
               yPercent: 0,
               duration: 1,
             })

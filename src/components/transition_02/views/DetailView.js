@@ -1,8 +1,23 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 function DetailView({ year, title, title2, img, location, material, path }) {
   const navigate = useNavigate();
+
+  useGSAP(() => {
+    gsap.set(".transition02__detailViewImg", {
+      scale: 1.2,
+    });
+    const tl = gsap.timeline();
+
+    tl.to(".transition02__detailViewImg", {
+      duration: 1,
+      scale: 1,
+      ease: "power2.inOut",
+    });
+  });
 
   return (
     <div className="transition02__view transition02__detailView">
@@ -29,7 +44,15 @@ function DetailView({ year, title, title2, img, location, material, path }) {
             <div className="transition02__detailViewContentLeftBottom">
               <button
                 className="transition02__detailViewContentLeftBottomBtn"
-                onClick={() => navigate("/transition02")}
+                onClick={() => {
+                  gsap.to(".transition02__detailViewImg", {
+                    duration: 1,
+                    scale: 1.2,
+                    ease: "power2.inOut",
+                  });
+                  navigate("/transition02");
+                  // navigate("/transition02");
+                }}
               >
                 <svg width="100" height="18" viewBox="0 0 50 9">
                   <path

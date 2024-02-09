@@ -78,7 +78,10 @@ function HomeItem({ id, year, title, img, subtitle, path }) {
       <div className="transition02__homeGridItemTop">
         <span className="transition02__homeYear">{year}</span>
         <h1 className="transition02__homeTitle">{title}</h1>
-        <div className="transition02__homeImgWrapper">
+        <div
+          className="transition02__homeImgWrapper"
+          onClick={() => navigate(`/transition02/${path}`)}
+        >
           <div
             ref={imageRef}
             className="transition02__homeImg"
