@@ -182,12 +182,24 @@ h6 {
 }
 .transition02__detailViewImgOverlay {
   position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.transition02__detailViewTitleWrapper {
+  overflow: hidden;
+  position: relative;
 }
 .transition02__detailViewTitle {
   font-size: max(2rem, min(16vw, 14rem));
+  display: flex;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 .transition02__detailViewContent {
   display: flex;
@@ -200,6 +212,7 @@ h6 {
   justify-content: space-between;
   min-width: 10rem;
   flex: 1;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 .transition02__detailViewContentLeftTop {
   display: flex;

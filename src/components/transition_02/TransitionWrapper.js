@@ -2,10 +2,22 @@ import React, { useRef } from "react";
 import { Transition, SwitchTransition } from "react-transition-group";
 import { useLocation } from "react-router-dom";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const TransitionWrapper = ({ children }) => {
   const location = useLocation();
   const ref = useRef(null);
+
+  useGSAP(() => {
+    gsap.set(".transition02__transitionOverlayTop", {
+      // autoAlpha: 0,
+      yPercent: -100,
+    });
+    gsap.set(".transition02__transitionOverlayBottom", {
+      // autoAlpha: 0,
+      yPercent: 100,
+    });
+  });
 
   return (
     <SwitchTransition>
@@ -15,10 +27,7 @@ const TransitionWrapper = ({ children }) => {
         timeout={1000}
         onEnter={() => {
           // const node = ref.current;
-          // gsap.set(".transition02__transitionOverlayTop", {
-          //   autoAlpha: 0,
-          //   yPercent: 0,
-          // });
+
           gsap
             .timeline({ paused: true, defaults: { ease: "power4.inOut" } })
             .to(".transition02__transitionOverlayTop", {
