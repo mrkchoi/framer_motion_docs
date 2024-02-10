@@ -3,7 +3,7 @@ import gsap from "gsap";
 import "./study.css";
 import { useGSAP } from "@gsap/react";
 
-const CURSOR_SIZE = 55;
+const CURSOR_SIZE = 60;
 
 function Study() {
   const cursorRef = useRef(null);
@@ -12,14 +12,15 @@ function Study() {
     gsap.set(cursorRef.current, {
       width: `${CURSOR_SIZE}px`,
       height: `${CURSOR_SIZE}px`,
-      backgroundColor: "transparent",
+      scale: 0.5,
+      // backgroundColor: "transparent",
       opacity: 0,
     });
     const xTo = gsap.quickTo(cursorRef.current, "x", {
-      duration: 0.5,
+      duration: 0.4,
     });
     const yTo = gsap.quickTo(cursorRef.current, "y", {
-      duration: 0.5,
+      duration: 0.4,
     });
 
     const handleMouseMove = (e) => {
@@ -39,14 +40,16 @@ function Study() {
           className="study__btn"
           onMouseEnter={() => {
             gsap.to(cursorRef.current, {
-              duration: 0.5,
+              duration: 0.2,
               opacity: 1,
+              scale: 1,
             });
           }}
           onMouseLeave={() => {
             gsap.to(cursorRef.current, {
               duration: 0.1,
               opacity: 0,
+              scale: 0.5,
             });
           }}
         >
