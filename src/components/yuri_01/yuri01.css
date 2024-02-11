@@ -1,0 +1,62 @@
+.yuri01__main {
+  --color-bg: #101014;
+  --color-text: #f0f0f0;
+  --color-title: #7f7f8f;
+  --color-year: #b9b3af;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  background-color: var(--color-bg);
+  padding: 8rem 4rem;
+  color: var(--color-title);
+  font-family: sans-serif;
+  position: relative;
+}
+
+.yuri01__intro {
+  width: 100%;
+  margin-bottom: 4rem;
+}
+.yuri01__headerTitle {
+  width: 100%;
+  font-size: 4rem;
+  color: var(--color-text);
+  font-weight: bold;
+  font-family: "kudryashev-d-excontrast-sans", serif;
+}
+.yuri01__spacer {
+  height: 10vh;
+}
+.yuri01__grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-gap: 3vw;
+  width: 100%;
+  grid-auto-rows: auto;
+}
+
+.yuri01__item {
+  grid-column: var(--c) / span var(--s);
+  grid-row: var(--r);
+}
+
+.yuri01__item--img {
+}
+
+.yuri01__item--caption {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.5rem 0;
+}
+.yuri01__item--caption h3 {
+}
+.yuri01__item--caption span {
+}
+
+.yuri01__spacerBottom {
+  padding-bottom: 50vh;
+  width: 100%;
+}
