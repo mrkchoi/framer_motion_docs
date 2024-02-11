@@ -3,6 +3,8 @@
   --color-text: #f0f0f0;
   --color-title: #7f7f8f;
   --color-year: #b9b3af;
+  --img-ratio: 1.3;
+  --s: 1;
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -40,9 +42,33 @@
 .yuri01__item {
   grid-column: var(--c) / span var(--s);
   grid-row: var(--r);
+  position: relative;
+}
+
+.yuri01__item--imgWrapper {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: auto;
+  /* aspect-ratio: var(--img-ratio); */
 }
 
 .yuri01__item--img {
+  width: 100%;
+  height: 100%;
+  background-position: 50%;
+  background-size: cover;
+  position: relative;
+  opacity: 0;
+  visibility: hidden;
+}
+.yuri01__item--imgGL {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
 }
 
 .yuri01__item--caption {
