@@ -54,6 +54,7 @@ import Transition01 from "./components/transition_01/Transition01";
 import Transition02 from "./components/transition_02/Transition02";
 import Study from "./components/study/Study";
 import Matter01 from "./components/matter_01/Matter01";
+import Zajno from "./components/zajno/Zajno";
 
 const PAGES = [
   { path: "/stagger", element: <Stagger /> },
@@ -109,6 +110,7 @@ const PAGES = [
   { path: "/transition02", element: <Transition02 /> },
   { path: "/study", element: <Study /> },
   { path: "/matter01", element: <Matter01 /> },
+  { path: "/zajno", element: <Zajno /> },
 ];
 
 function App() {
@@ -173,6 +175,7 @@ function App() {
           <Route path="/transition02/*" element={<Transition02 />} />
           <Route path="/study" element={<Study />} />
           <Route path="/matter01" element={<Matter01 />} />
+          <Route path="/zajno" element={<Zajno />} />
         </Routes>
       </BrowserRouter>
     </>
