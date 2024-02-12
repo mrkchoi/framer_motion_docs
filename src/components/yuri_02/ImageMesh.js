@@ -3,7 +3,9 @@ import { extend, useFrame, useThree } from "@react-three/fiber";
 import { shaderMaterial } from "@react-three/drei";
 
 function ImageMesh({
+  uFillColor,
   texture,
+  uPixels,
   textureSize,
   elementSize,
   meshRef,
@@ -26,6 +28,9 @@ function ImageMesh({
       <planeGeometry args={[1, 1]} />
       {/* <meshBasicMaterial map={texture} side={THREE.DoubleSide} /> */}
       <imageShaderMaterial
+        uFillColor={uFillColor}
+        transparent={true}
+        uPixels={uPixels}
         uTexture={texture}
         uTextureSize={new THREE.Vector2(textureSize.width, textureSize.height)}
         uElementSize={new THREE.Vector2(elementSize.width, elementSize.height)}
@@ -40,11 +45,16 @@ export default ImageMesh;
 
 const ImageShaderMaterial = shaderMaterial(
   {
+    uTime: 0,
+    uFillColor: new THREE.Color("#f60"),
+    uProgress: 0,
+    uPixels: null,
+    uType: 0,
     uTexture: null,
     uTextureSize: null,
     uElementSize: null,
-    uTime: 0,
   },
+  // Vertex Shader
   /* GLSL */ `
     varying vec2 vUv;
     uniform float uTime;
@@ -54,8 +64,9 @@ const ImageShaderMaterial = shaderMaterial(
       gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
     }
   `,
+  // Fragment Shader
   /* GLSL */ `
-    //	Classic Perlin 2D Noise 
+    //	Classic Perlin 2D Noise
     //	by Stefan Gustavson
     //
     vec2 fade(vec2 t) {return t*t*t*(t*(t*6.0-15.0)+10.0);}
@@ -79,7 +90,7 @@ const ImageShaderMaterial = shaderMaterial(
       vec2 g10 = vec2(gx.y,gy.y);
       vec2 g01 = vec2(gx.z,gy.z);
       vec2 g11 = vec2(gx.w,gy.w);
-      vec4 norm = 1.79284291400159 - 0.85373472095314 * 
+      vec4 norm = 1.79284291400159 - 0.85373472095314 *
         vec4(dot(g00, g00), dot(g01, g01), dot(g10, g10), dot(g11, g11));
       g00 *= norm.x;
       g01 *= norm.y;
@@ -105,7 +116,7 @@ const ImageShaderMaterial = shaderMaterial(
       vec2 uv = vUv;
       // uv.y += sin(uv.x * 10.0 + uTime) * 0.02;
       // uv.x += sin(uv.y * 10.0 + uTime) * 0.02;
-      uv.y += cnoise(uv * 5.0 + uTime) * 0.1;
+      uv.y += cnoise(uv * 10.0 + uTime) * 0.5;
       uv.x += cnoise(uv * 20.0 + uTime) * 0.02;
       vec4 color = texture2D(uTexture, uv);
       gl_FragColor = color;

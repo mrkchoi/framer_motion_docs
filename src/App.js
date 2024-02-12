@@ -56,6 +56,9 @@ import Study from "./components/study/Study";
 import Matter01 from "./components/matter_01/Matter01";
 import Zajno from "./components/zajno/Zajno";
 import Yuri01 from "./components/yuri_01/Yuri01";
+import Yuri02 from "./components/yuri_02/Yuri02";
+import Shader01 from "./components/shader_01/Shader01";
+import Shader02 from "./components/shader_02/Shader02";
 
 const PAGES = [
   { path: "/stagger", element: <Stagger /> },
@@ -113,6 +116,9 @@ const PAGES = [
   { path: "/matter01", element: <Matter01 /> },
   { path: "/zajno", element: <Zajno /> },
   { path: "/yuri01", element: <Yuri01 /> },
+  { path: "/yuri02", element: <Yuri02 /> },
+  { path: "/shader01", element: <Shader01 /> },
+  { path: "/shader02", element: <Shader02 /> },
 ];
 
 function App() {
@@ -179,6 +185,9 @@ function App() {
           <Route path="/matter01" element={<Matter01 />} />
           <Route path="/zajno" element={<Zajno />} />
           <Route path="/yuri01" element={<Yuri01 />} />
+          <Route path="/yuri02" element={<Yuri02 />} />
+          <Route path="/shader01" element={<Shader01 />} />
+          <Route path="/shader02" element={<Shader02 />} />
         </Routes>
       </BrowserRouter>
     </>
