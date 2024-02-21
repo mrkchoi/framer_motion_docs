@@ -1,0 +1,252 @@
+@font-face {
+  font-family: "suisse bold";
+  src: url("./fonts/SuisseIntl-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "suisse book";
+  src: url("./fonts/SuisseIntl-Book.woff2") format("woff2");
+}
+
+.vucko__main {
+  --light-text: ##888a8b;
+  font-family: "suisse book", sans-serif;
+  width: 100%;
+  /* height: 300vh; */
+  background-color: white;
+  overflow-x: hidden;
+  antialiased: subpixel-antialiased;
+}
+
+.vucko__header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3rem 4rem;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  mix-blend-mode: difference;
+  color: white;
+}
+.vucko__headerLeft {
+  display: flex;
+  align-items: center;
+}
+.vucko__logoWrapper {
+  position: relative;
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  transform: rotateX(0deg);
+  /* height: 1rem; */
+  will-change: transform;
+  display: flex;
+  align-items: center;
+}
+.vucko__logoFront,
+.vucko__logoBack {
+  font-family: "suisse bold", sans-serif;
+  /* line-height: 1; */
+  text-transform: uppercase;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform-origin: 50% 50%;
+  transform: rotateX(0deg);
+  /* position: absolute; */
+  display: inline-block;
+  will-change: transform;
+  backface-visibility: hidden;
+  transition: all 400ms ease-in-out;
+  font-size: 1.8vw;
+}
+
+.vucko__logoBack {
+  transform: rotateX(180deg) translateX(-100%);
+  backface-visibility: hidden;
+}
+
+.vucko__logoWrapper:hover .vucko__logoFront {
+  transform: rotateX(180deg);
+}
+.vucko__logoWrapper:hover .vucko__logoBack {
+  transform: rotateX(360deg) translateX(-100%);
+}
+.vucko__time {
+  margin-left: 8rem;
+  font-size: 1.4vw;
+}
+.vucko__headerRight {
+}
+.vucko__nav {
+  display: flex;
+  gap: 0.3rem;
+}
+.vucko__nav:hover .vucko__navItem {
+  color: rgb(155, 155, 155);
+}
+.vucko__navItem {
+  cursor: pointer;
+  font-size: 1.4vw;
+  transition: color 200ms ease-in-out;
+}
+
+.vucko__navItem:hover {
+  color: rgb(255, 255, 255) !important;
+}
+.vucko__hero {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  padding: 4rem;
+  padding-top: 8rem;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.vucko__heroTop {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.vucko__showreelWrapper {
+  align-self: flex-start;
+  position: absolute;
+  width: 27vw;
+  aspect-ratio: 16/9;
+  padding-top: 6rem;
+  z-index: 4;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+}
+.vucko__showreel {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border-radius: 10px;
+  will-change: transform;
+}
+.vucko__showreelVideo {
+  border-radius: 10px;
+  cursor: pointer;
+}
+.vucko__showreelTextWrapper {
+  margin-top: 0.75rem;
+}
+.vucko__showreelText {
+  display: block;
+  font-size: 1.3vw;
+  line-height: 1.5vw;
+}
+.vucko_heroText {
+  font-size: 24vw;
+  line-height: 24vw;
+  font-family: "suisse bold", sans-serif;
+  text-transform: uppercase;
+  z-index: 3;
+}
+
+.vucko_heroTextChar {
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  display: inline-block;
+  will-change: transform;
+  position: relative;
+  /* transform: rotateX(10deg); */
+}
+
+.vucko__heroBottom {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.vucko__heroBottomLeft {
+}
+.vucko__heroBottomLeftTitle {
+  font-family: "suisse book";
+  font-size: 3vw;
+  line-height: 3.4vw;
+  max-width: 45vw;
+  margin-bottom: 2rem;
+}
+.vucko__heroBottomLeftLink {
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 200ms ease-in-out;
+}
+.vucko__heroBottomLeftLink:hover {
+  border-bottom: 1px solid black;
+}
+.vucko__heroBottomRight {
+  align-self: flex-end;
+}
+.vucko__heroBottomRightText {
+  font-family: "suisse book";
+}
+
+.vucko__spacer {
+  height: 50vw;
+}
+
+.vucko__section {
+  padding: 4rem;
+  margin-bottom: 10vh;
+}
+.vucko__section {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+}
+.vucko__sectionLeft {
+  width: 30vw;
+}
+.vucko__sectionLeftContent {
+  font-size: 4rem;
+  line-height: 4rem;
+}
+.vucko__sectionRight {
+  flex: 1;
+}
+.vucko__sectionRightContent {
+}
+.vucko__sectionRightTitle {
+  font-family: "suisse book";
+  font-size: 3.4vw;
+  line-height: 3.8vw;
+}
+
+.vucko__sectionRightTitle .line {
+  overflow: hidden;
+  position: relative;
+}
+.vucko__sectionRightSubWrapper {
+  display: flex;
+  width: 100%;
+  margin-top: 6rem;
+}
+.vucko__sectionRightSubLeft {
+  width: 30%;
+}
+.vucko__sectionRightSubRight {
+  flex: 1;
+  max-width: 30vw;
+}
+.vucko__sectionRightSubRightTitle {
+  margin-bottom: 2rem;
+}
+.vucko__sectionRightSubRightContent p {
+  margin-bottom: 2rem;
+  font-weight: 400;
+  color: rgb(155, 155, 155);
+}
+.vucko__sectionRightSubRightFooter {
+}
+.vucko__learnMoreButton {
+  margin-top: 2rem;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 200ms ease-in-out;
+}
+
+.vucko__learnMoreButton:hover {
+  border-bottom: 1px solid black;
+}

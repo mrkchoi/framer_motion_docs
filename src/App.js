@@ -1,5 +1,7 @@
 import "./App.css";
+import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Lenis from "@studio-freight/lenis";
 
 import Stagger from "./components/Stagger";
 import Intro from "./components/Intro";
@@ -59,6 +61,10 @@ import Yuri01 from "./components/yuri_01/Yuri01";
 import Yuri02 from "./components/yuri_02/Yuri02";
 import Shader01 from "./components/shader_01/Shader01";
 import Shader02 from "./components/shader_02/Shader02";
+import Loket from "./components/loket/Loket";
+import Gallery01 from "./components/gallery_01/Gallery01";
+import Vucko from "./components/vucko/Vucko";
+import Gradient01 from "./components/gradient01/Gradient01";
 
 const PAGES = [
   { path: "/stagger", element: <Stagger /> },
@@ -119,6 +125,10 @@ const PAGES = [
   { path: "/yuri02", element: <Yuri02 /> },
   { path: "/shader01", element: <Shader01 /> },
   { path: "/shader02", element: <Shader02 /> },
+  { path: "/loket", element: <Loket /> },
+  { path: "/gallery01", element: <Gallery01 /> },
+  { path: "/vucko", element: <Vucko /> },
+  { path: "/gradient01", element: <Gradient01 /> },
 ];
 
 function App() {
@@ -188,6 +198,10 @@ function App() {
           <Route path="/yuri02" element={<Yuri02 />} />
           <Route path="/shader01" element={<Shader01 />} />
           <Route path="/shader02" element={<Shader02 />} />
+          <Route path="/loket" element={<Loket />} />
+          <Route path="/gallery01" element={<Gallery01 />} />
+          <Route path="/vucko" element={<Vucko />} />
+          <Route path="/gradient01" element={<Gradient01 />} />
         </Routes>
       </BrowserRouter>
     </>
@@ -195,6 +209,17 @@ function App() {
 }
 
 function Home() {
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  }, []);
+
   return (
     <div className="container mx-auto">
       <h1 className="mb-6 mt-6 text-2xl font-bold">Motion:</h1>

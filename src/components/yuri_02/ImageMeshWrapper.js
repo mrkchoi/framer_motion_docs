@@ -15,13 +15,13 @@ const PIXELS = [
 
 function ImageMeshWrapper({ ...props }) {
   const { fillColor } = useControls({
-    fillColor: "#403fb7",
+    fillColor: "white",
   });
   const [texture, setTexture] = useState(null);
   const [textureSize, setTextureSize] = useState({ width: 0, height: 0 });
   const [elementSize, setElementSize] = useState({ width: 0, height: 0 });
   const [meshRef, setMeshRef] = useState(null);
-  const [isIntersecting, setIsIntersecting] = useState(false);
+  // const [isIntersecting, setIsIntersecting] = useState(false);
   const viewRef = useRef(null);
   const imageRef = useRef(null);
   const screenSize = useScreenSize();
@@ -42,21 +42,21 @@ function ImageMeshWrapper({ ...props }) {
       });
   }, [props.url]);
 
-  useGSAP(
-    () => {
-      if (meshRef?.material) {
-        // console.log(meshRef);
-        gsap.to(meshRef.material.uniforms, {
-          uProgress: isIntersecting ? 1 : 0,
-          duration: 1.5,
-          ease: "none",
-        });
-      }
-    },
-    {
-      dependencies: [isIntersecting, meshRef],
-    },
-  );
+  // useGSAP(
+  //   () => {
+  //     if (meshRef?.material) {
+  //       // console.log(meshRef);
+  //       gsap.to(meshRef.material.uniforms, {
+  //         uProgress: isIntersecting ? 1 : 0,
+  //         duration: 1.5,
+  //         ease: "none",
+  //       });
+  //     }
+  //   },
+  //   {
+  //     dependencies: [isIntersecting, meshRef],
+  //   },
+  // );
 
   useEffect(() => {
     if (meshRef) {
@@ -71,10 +71,10 @@ function ImageMeshWrapper({ ...props }) {
       let bounds = viewRef.current.getBoundingClientRect();
       setElementSize({ width: bounds.width, height: bounds.height });
       meshRef.scale.set(textureSize.width, textureSize.height, 1);
-      const observer = new IntersectionObserver(([entry]) => {
-        setIsIntersecting(entry.isIntersecting);
-      });
-      observer.observe(viewRef.current);
+      // const observer = new IntersectionObserver(([entry]) => {
+      //   setIsIntersecting(entry.isIntersecting);
+      // });
+      // observer.observe(viewRef.current);
     }
   }, [meshRef]);
 
@@ -102,7 +102,7 @@ function ImageMeshWrapper({ ...props }) {
         <View {...props} ref={viewRef}>
           {/* <OrbitControls enableDamping={true} /> */}
           <ImageMesh
-            uFillColor={new THREE.Color(fillColor)}
+            uColor={new THREE.Color(fillColor)}
             texture={texture}
             uPixels={PIXELS}
             textureSize={textureSize}

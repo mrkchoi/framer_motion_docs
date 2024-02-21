@@ -1,0 +1,67 @@
+.gallery01__main {
+  width: 100%;
+  height: 100vh;
+  /* overflow-y: hidden; */
+}
+.gallery01__stickyParent {
+  height: 900vw;
+}
+
+.gallery01__sticky {
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  /* border: 1px solid green; */
+}
+
+.gallery01__stickySection {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 900vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* border: 1px solid red; */
+  /* background-color: black; */
+}
+
+.gallery01__card {
+  width: 30vw;
+  /* height: 15vw; */
+  aspect-ratio: 5/3;
+  background-color: transparent;
+  position: relative;
+}
+.gallery01__cardGL {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.gallery01__cardInner {
+  /* height: 300px; */
+  /* background-color: cyan; */
+  /* width: 100%;
+  height: 100%; */
+  /* border: 1px solid black; */
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: -2rem;
+}
+.gallery01__card:nth-child(3n + 2) {
+  width: 20vw;
+}
+.gallery01__card:first-child {
+  margin-left: 30rem;
+}
+.gallery01__card:nth-child(odd) {
+  margin-bottom: 32rem;
+}
+.gallery01__card:nth-child(even) {
+  margin-top: 32rem;
+}
