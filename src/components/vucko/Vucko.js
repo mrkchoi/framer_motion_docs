@@ -14,13 +14,12 @@ function Vucko() {
   const showreelRef = useRef(null);
   const showreelVideoRef = useRef(null);
   const heroBottomRef = useRef(null);
+  const sectionRef = useRef(null);
   const sectionTitleRef = useRef(null);
 
-  // const [mouseX, setMouseX] = useState(0);
   const mouseRef = useRef(0);
   const xTranslateValueRef = useRef(0);
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  // const [maxX, setMaxX] = useState(0);
 
   useEffect(() => {
     const lenis = new Lenis();
@@ -35,17 +34,14 @@ function Vucko() {
 
   const handleResize = () => {
     setWindowWidth(window.innerWidth);
-    // const bounds = showreelRef.current.getBoundingClientRect();
-    // setMaxX(window.innerWidth - bounds.width - PADDING * 2);
   };
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     window.addEventListener("resize", handleResize);
-    // window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
       window.removeEventListener("resize", handleResize);
-      // window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
@@ -147,18 +143,18 @@ function Vucko() {
       //   types: "lines",
       // });
 
-      gsap.set(".vucko__section", { opacity: 0 });
+      gsap.set(sectionRef.current, { opacity: 0 });
 
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: sectionTitleRef.current,
-          start: "top 80%",
-          end: "bottom 20%",
-          markers: true,
+          trigger: sectionRef.current,
+          start: "top 60%",
+          end: "50% 30%",
+          // markers: true,
           scrub: 1,
         },
       });
-      tl.to(".vucko__section", { opacity: 1, duration: 0.5 });
+      tl.to(sectionRef.current, { opacity: 1 });
     },
     { scope: sectionTitleRef.current },
   );
@@ -232,7 +228,7 @@ function Vucko() {
         </div>
       </div>
       <div className="vucko__spacer"></div>
-      <div className="vucko__section">
+      <div ref={sectionRef} className="vucko__section">
         <div className="vucko__sectionLeft">
           <div className="vucko__sectionLeftContent">→</div>
         </div>

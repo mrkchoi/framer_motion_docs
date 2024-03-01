@@ -26,7 +26,7 @@ function Loket() {
 
     requestAnimationFrame(raf);
 
-    gsap.set(".loket__char", { y: 40, opacity: 0, rotateX: 60, skewX: 10 });
+    gsap.set(".loket__char", { y: 40, opacity: 0, rotateX: 40, skewX: 15 });
     gsap.set(".loket__imgWrapper", {
       scale: 0.8,
       y: 50,

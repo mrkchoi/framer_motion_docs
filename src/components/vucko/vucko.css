@@ -145,6 +145,8 @@
   font-family: "suisse bold", sans-serif;
   text-transform: uppercase;
   z-index: 3;
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 .vucko_heroTextChar {

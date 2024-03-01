@@ -1,0 +1,11 @@
+.gradient01__main {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+    255deg,
+    rgb(250, 34, 14),
+    rgb(112, 114, 239) 30%,
+    rgb(186, 176, 180) 65%,
+    rgb(255, 255, 255)
+  );
+}

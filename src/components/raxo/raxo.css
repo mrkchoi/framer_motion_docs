@@ -1,0 +1,39 @@
+.raxo__main {
+  width: 100%;
+  height: 300vh;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* border: 1px solid red; */
+}
+
+.raxo__container {
+  display: flex;
+  align-items: flex-end;
+  margin: 0 auto;
+  width: 100%;
+  /* margin-top: 80vh; */
+  /* height: 100vh; */
+  height: 100vh;
+  /* border: 1px solid red; */
+}
+
+.raxo__container svg {
+  width: 100%;
+  height: initial !important;
+}
+
+.raxo__videoWrapper {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.raxo__video {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  will-change: transform;
+  width: 100%;
+}

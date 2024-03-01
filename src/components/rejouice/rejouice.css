@@ -1,0 +1,316 @@
+.rejouice__main {
+  width: 100%;
+  height: 100vh;
+  --orange: #ff5f38;
+  --white: #fffcf1;
+  --ease: cubic-bezier(0.43, 0.195, 0.02, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.rejouice__header {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  width: 100%;
+}
+.rejouice__logo {
+  color: var(--white);
+}
+.rejouice__menuOpen {
+  color: var(--white);
+}
+
+.rejouice__btnUnderline {
+  position: relative;
+  cursor: pointer;
+}
+
+.rejouice__btnUnderline::before {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transform: scaleX(0) translateZ(0);
+  transform-origin: 100% 0;
+  transition: transform 0.3s ease-in-out;
+  will-change: transform;
+  margin-bottom: 0.5rem;
+  background-color: black;
+  width: 100%;
+  height: 1px;
+  content: "";
+}
+
+.rejouice__btnUnderline:hover.rejouice__btnUnderline::before {
+  transform: scaleX(1) translateZ(0);
+  transform-origin: 0 0;
+}
+
+.rejouice__menuOpen.rejouice__btnUnderline::before {
+  background-color: var(--white);
+}
+
+/* NAV */
+.rejouice__nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 0;
+  pointer-events: none;
+}
+.rejouice__navIsOpen {
+  pointer-events: all;
+}
+.rejouice__navInner {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  will-change: height;
+  background-color: var(--orange);
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+}
+
+.rejouice__navHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  width: 100%;
+}
+.rejouice__menuClose {
+}
+.rejouice__navMain {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+  padding: 2rem;
+  padding-top: 10vh;
+  width: 100%;
+}
+.rejouice__navMainLeft {
+  /* flex: 1; */
+}
+.rejouice__navMainLeftImgWrapper {
+}
+.rejouice__navMainLeftImg {
+  transform: scale(0);
+  transform-origin: center center;
+  will-change: transform;
+  border-radius: 5px;
+  max-width: 350px;
+}
+.rejouice__navMainLeftImgFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  width: 100%;
+  font-weight: 300;
+  font-size: 0.8rem;
+}
+.rejouice__navMainLeftImgFooterLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+}
+.rejouice__navMainLeftImgFooterLeftSvgWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: black;
+  padding: 0.25rem;
+  width: 1rem;
+  height: 1rem;
+}
+.rejouice__navMainLeftImgFooterLeft svg {
+  fill: white;
+}
+.rejouice__navMainLeftImgFooterRight {
+}
+.rejouice__navMainRight {
+  /* flex: 1; */
+  margin-right: 20vw;
+}
+.rejouice__navMenu {
+  margin-bottom: 10vh;
+  font-weight: 300;
+  font-size: max(3vw, 2rem);
+  line-height: max(3.4vw, 2.4rem);
+}
+.rejouice__navMenuItem {
+}
+.rejouice__navMenuLink {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+.rejouice__navSpan1 {
+  display: inline-block;
+  position: relative;
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.5s var(--ease);
+  will-change: transform;
+}
+.rejouice__navSpan2 {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate3d(0, 100%, 0);
+  transition: transform 0.5s var(--ease);
+  will-change: transform;
+}
+.rejouice__navMenuLink:hover .rejouice__navSpan1 {
+  transform: translate3d(0, -100%, 0);
+}
+.rejouice__navMenuLink:hover .rejouice__navSpan2 {
+  transform: translate3d(0, 0, 0);
+}
+.rejouice__navMenuLink {
+}
+.rejouice__navMenuLink {
+}
+.rejouice__navMenuLink.rejouice__btnUnderline::before {
+  height: 2px;
+}
+.rejouice__navMenuLink span {
+}
+.rejouice__navMenuBtn {
+  display: block;
+  position: relative;
+  transition: background-position 0.5s var(--ease);
+  border: 1px solid black;
+  border-radius: 3px;
+  background-image: linear-gradient(
+    to right,
+    black 0%,
+    black 100%,
+    black 100%,
+    transparent 200%
+  );
+  background-position: -200px;
+  background-repeat: no-repeat;
+  padding: 0.6rem 1.4rem;
+  overflow: hidden;
+  font-size: 0.75rem;
+}
+.rejouice__navMenuBtnSpan1 {
+  display: inline-block;
+  position: relative;
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.5s var(--ease);
+  will-change: transform;
+  width: 100%;
+  height: 100%;
+}
+.rejouice__navMenuBtnSpan2 {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate3d(0, 2.8rem, 0);
+  transition: transform 0.5s var(--ease);
+  will-change: transform;
+  width: 100%;
+  height: 100%;
+  color: var(--orange);
+}
+.rejouice__navMenuBtn:hover {
+  background-position: 0;
+}
+.rejouice__navMenuBtn:hover .rejouice__navMenuBtnSpan1 {
+  transform: translate3d(0, -2.2rem, 0);
+}
+.rejouice__navMenuBtn:hover .rejouice__navMenuBtnSpan2 {
+  transform: translate3d(0, 0.6rem, 0);
+}
+
+.rejouice__navFooter {
+  width: 100%;
+  font-size: 0.8rem;
+}
+.rejouice__navFooterInner {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  will-change: transform;
+  margin: 0 2rem;
+  border-top: 1px solid black;
+  padding: 0.75rem 0;
+}
+.rejouice__navFooterLeft {
+}
+.rejouice__navFooterLeftContent {
+}
+.rejouice__navFooterRight {
+}
+.rejouice__navFooterMenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.rejouice__navFooterMenuItem {
+}
+.rejouice__navFooterMenuItem a {
+  display: flex;
+  gap: 0.1rem;
+}
+.rejouice__navFooterMenuItem a span {
+}
+.rejouice__navFooterMenuItem a svg {
+  transition: transform 0.5s var(--ease);
+  will-change: transform;
+}
+
+.rejouice__navFooterMenuItem a:hover svg {
+  transform: rotateZ(45deg);
+}
+
+.rejouice__navFooterMenu {
+}
+.rejouice__navFooterMenu {
+}
+.rejouice__navFooterMenu {
+}
+.rejouice__navFooterMenu {
+}
+.rejouice__navFooterMenu {
+}
+.rejouice__navFooterMenu {
+}
+
+.rejouice__mainVideo {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+.rejouice__mainFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 0 2rem;
+  width: 100%;
+}
+
+.rejouice__mainFooterSvg {
+}

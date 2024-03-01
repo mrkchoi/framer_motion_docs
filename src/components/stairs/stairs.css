@@ -1,0 +1,217 @@
+.stairs__main {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  --white: #eee;
+  --black: #111;
+  --yellow: #d3fd50;
+}
+.stairs__header {
+  position: relative;
+  width: 100%;
+}
+.stairs__menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  background-color: var(--black);
+  width: 150px;
+  height: 100px;
+  color: var(--white);
+}
+
+.stairs__menu:hover .stairs__menuBg {
+  height: 100%;
+}
+.stairs__menu:hover .stairs__menuBtnContent {
+  color: var(--black);
+}
+.stairs__menu:hover .stairs__menuSvg line {
+  stroke: var(--black);
+}
+.stairs__menuSvg {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+.stairs__menuSvg line {
+  transition: stroke 0.15s ease-in-out;
+}
+.stairs__menuBtnContent {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.5rem;
+  transition: color 0.15s ease-in-out;
+  text-transform: uppercase;
+}
+.stairs__menuBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: height 0.15s ease-in-out;
+  background-color: var(--yellow);
+  width: 100%;
+  height: 0;
+}
+.stairs__menu--open {
+  background-color: var(--white);
+}
+.stairs__menu--open .stairs__menuBtnContent {
+  color: var(--black);
+}
+.stairs__menu--open .stairs__menuSvg line {
+  stroke: var(--black);
+}
+
+.stairs__navWrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  /* pointer-events: none; */
+}
+.stairs__navBackgroundWrapper {
+  width: 100%;
+  height: 100%;
+}
+.stairs__navBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+}
+.stairs__navStairsWrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.stairs__navStair {
+  background-color: var(--black);
+  /* border: 1px solid red; */
+  width: 20vw;
+  height: 0;
+}
+.stairs__navMain {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  visibility: visible;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+.stairs__navContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.stairs__navItem {
+  position: relative;
+  cursor: pointer;
+  border-top: 1px solid var(--white);
+  width: 100%;
+  height: 7vw;
+  font-size: 6vw;
+  line-height: 7vw;
+  text-align: center;
+}
+.stairs__navItem:last-of-type {
+  border-bottom: 1px solid var(--white);
+}
+.stairs__navItem:hover .stairs__navItemOverlayWrapper {
+  opacity: 1;
+}
+
+.stairs__navItemLink {
+}
+.stairs__navItemLinkText {
+  display: inline-block;
+  transform: rotateX(90deg);
+  transform-origin: top;
+  transform-style: preserve-3d;
+  perspective: 80vw;
+  will-change: transform;
+  text-transform: uppercase;
+}
+
+.stairs__navItemOverlayWrapper {
+  display: flex;
+  position: absolute;
+  top: 0;
+  /* right: 0; */
+  left: 0;
+  flex-wrap: nowrap;
+  /* justify-content: space-around; */
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+  background-color: var(--yellow);
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  color: var(--black);
+  white-space: nowrap;
+}
+
+.stairs__navItemOverlayOuter {
+  display: flex;
+  position: relative;
+  flex-shrink: 0;
+  align-items: center;
+  /* width: 100%; */
+  height: 100%;
+  /* text-transform: uppercase; */
+}
+.stairs__navItemOverlayInner {
+  display: flex;
+  position: relative;
+  flex-shrink: 0;
+  align-items: center;
+  animation: marquee 12s linear infinite;
+  width: auto;
+  height: 100%;
+  text-transform: uppercase;
+}
+.stairs__navItemOverlayImg {
+  margin: 0 2vw;
+  border-radius: 3px;
+  width: 8vw;
+  height: 5vw;
+  object-fit: cover;
+}
+.stairs__navItemOverlayContent {
+}
+.stairs__navItemLink {
+}
+.stairs__navItemLink {
+}
+.stairs__navItemLink {
+}
+.stairs__navItemLink {
+}
+.stairs__navItemLink {
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}

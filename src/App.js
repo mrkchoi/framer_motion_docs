@@ -65,6 +65,11 @@ import Loket from "./components/loket/Loket";
 import Gallery01 from "./components/gallery_01/Gallery01";
 import Vucko from "./components/vucko/Vucko";
 import Gradient01 from "./components/gradient01/Gradient01";
+import Raxo from "./components/raxo/Raxo";
+import Flip01 from "./components/flip01/Flip01";
+import Rejouice from "./components/rejouice/Rejouice";
+import Bezier from "./components/bezier/Bezier";
+import Stairs from "./components/stairs/Stairs";
 
 const PAGES = [
   { path: "/stagger", element: <Stagger /> },
@@ -129,6 +134,11 @@ const PAGES = [
   { path: "/gallery01", element: <Gallery01 /> },
   { path: "/vucko", element: <Vucko /> },
   { path: "/gradient01", element: <Gradient01 /> },
+  { path: "/raxo", element: <Raxo /> },
+  { path: "/flip01", element: <Flip01 /> },
+  { path: "/rejouice", element: <Rejouice /> },
+  { path: "/bezier", element: <Bezier /> },
+  { path: "/stairs", element: <Stairs /> },
 ];
 
 function App() {
@@ -202,6 +212,11 @@ function App() {
           <Route path="/gallery01" element={<Gallery01 />} />
           <Route path="/vucko" element={<Vucko />} />
           <Route path="/gradient01" element={<Gradient01 />} />
+          <Route path="/raxo" element={<Raxo />} />
+          <Route path="/flip01" element={<Flip01 />} />
+          <Route path="/rejouice" element={<Rejouice />} />
+          <Route path="/bezier" element={<Bezier />} />
+          <Route path="/stairs" element={<Stairs />} />
         </Routes>
       </BrowserRouter>
     </>

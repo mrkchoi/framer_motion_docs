@@ -1,0 +1,102 @@
+.bezier__main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #111;
+  width: 100%;
+  height: 100vh;
+  color: #eee;
+}
+.bezier__container {
+  max-width: 70vw;
+}
+.bezier__contentWrapper {
+  display: grid;
+  grid-template-columns: 12;
+}
+.bezier__contentRow {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+.bezier__contentLeft {
+  grid-column: span 3;
+  /* width: 30%; */
+}
+.bezier__contentLeft span {
+  /* margin-top: 0.5rem; */
+  display: inline-block;
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+}
+.bezier__contentRight {
+  grid-column: span 9;
+}
+.bezier__contentRight p {
+  font-size: max(1rem, 2.5vw);
+  line-height: 2.8vw;
+}
+.bezier__contentRow2 {
+  display: flex;
+  gap: 5vw;
+}
+
+.bezier__contentTagWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.bezier__contentTag {
+  display: inline-block;
+  transition: all 0.15s ease-in-out;
+  will-change: background-color, color;
+  cursor: pointer;
+  border: 1px solid #eee;
+  border-radius: 25px;
+  padding: 0.25rem 0.5rem;
+  font-size: max(0.8rem, 1vw);
+  text-transform: uppercase;
+}
+
+.bezier__contentTag:hover {
+  background-color: #eee;
+  color: #111;
+}
+
+.bezier__lineWrapper {
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 1px;
+}
+.bezier__lineBox {
+  display: flex;
+  position: relative;
+  top: -20px;
+  z-index: 1;
+  width: 100%;
+  height: 40px;
+}
+.bezier__lineBox:hover {
+  top: -150px;
+  height: 300px;
+}
+.bezier__svg {
+  position: absolute;
+  top: -150px;
+  width: 100%;
+  height: 300px;
+}
+.bezier__svg path {
+  stroke-width: 1px;
+  stroke: #eee;
+  fill: none;
+}
+.bezier__main {
+}
+.bezier__main {
+}
+.bezier__main {
+}
