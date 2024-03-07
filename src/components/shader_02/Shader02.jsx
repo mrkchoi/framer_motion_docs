@@ -1,6 +1,5 @@
 import { Suspense, useState } from "react";
-import { Canvas, Dom } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
 import MeshWrapper from "./MeshWrapper";
 import "./shader02.css";
 

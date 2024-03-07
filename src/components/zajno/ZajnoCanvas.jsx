@@ -1,11 +1,5 @@
 import React, { useRef, useMemo, useEffect } from "react";
-import {
-  Canvas,
-  useFrame,
-  useLoader,
-  useThree,
-  useTexture,
-} from "@react-three/fiber";
+import { Canvas, useLoader } from "@react-three/fiber";
 import { TextureLoader } from "three/src/loaders/TextureLoader";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import * as THREE from "three";
