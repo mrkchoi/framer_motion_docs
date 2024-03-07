@@ -1,0 +1,275 @@
+@font-face {
+  src: url("./fonts/Inferi-NormalItalic.woff2") format("woff2");
+  font-family: "Inf";
+}
+@font-face {
+  src: url("./fonts/Circus.woff2") format("woff2");
+  font-family: "Circus";
+}
+
+.curved__main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  --blue: #194e6c;
+  --red: #dc321e;
+  --yellow: #ffaa00;
+  --orange: #ff7000;
+  --white: #fff;
+  --bg: rgb(41, 41, 41);
+  --gray: #999;
+  --cubic: cubic-bezier(0.76, 0, 0.24, 1);
+}
+.curved__navWrapper {
+  position: relative;
+}
+.curved__btn {
+  display: flex;
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  transition: transform 0.3s ease-in-out;
+  will-change: transform background-color;
+  border-radius: 50%;
+  background-color: var(--bg);
+  width: 3.5rem;
+  height: 3.5rem;
+}
+.curved__btn.active {
+  background-color: var(--white);
+}
+
+.curved__burger {
+  width: 100%;
+}
+.curved__burger::before,
+.curved__burger::after {
+  display: block;
+  position: relative;
+  transition: transform 0.2s ease-in-out;
+  will-change: transform background-color;
+  margin: 0 auto;
+  background-color: white;
+  width: 1.75rem;
+  height: 1px;
+  content: "";
+}
+
+.curved__burger::before {
+  transform: translate3d(0, -0.2rem, 0) rotate(0);
+}
+
+.curved__burger::after {
+  transform: translate3d(0, 0.2rem, 0) rotate(0);
+}
+.curved__btn.active .curved__burger::before {
+  top: 1px;
+  transform: translate3d(0, 0, 0) rotate(-45deg);
+  background-color: var(--bg);
+}
+.curved__btn.active .curved__burger::after {
+  transform: translate3d(0, 0, 0) rotate(45deg);
+  background-color: var(--bg);
+}
+
+.curved__menuWrapper {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 1;
+  transition: transform 1s var(--cubic);
+  will-change: transform;
+  background-color: var(--bg);
+  padding: 5vw;
+  padding-top: 8rem;
+  height: 100vh;
+  color: white;
+  font-family: "Circus", serif;
+}
+.curved__menuWrapper {
+  transform: translate3d(calc(100% + 100px), 0, 0);
+}
+.curved__menuWrapper.active {
+  transform: translate3d(0, 0, 0);
+}
+.curved__menuMain {
+  min-width: 20vw;
+}
+.curved__menuHeader {
+  position: relative;
+  margin-bottom: max(2rem, 4vw);
+  border-bottom: 1px solid var(--gray);
+  color: var(--gray);
+  font-size: 0.85rem;
+  line-height: 2.4rem;
+  text-transform: uppercase;
+}
+.curved__menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.curved__menuItem {
+  font-size: max(2rem, 3vw);
+  line-height: max(2.5rem, 3.5vw);
+}
+.curved__menuLink {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+.curved__menuLinkText {
+  display: inline-block;
+  position: relative;
+  transform: translate3d(0, 100%, 0);
+  will-change: transform;
+}
+.curved__menuLinkText1 {
+}
+.curved__menuLinkTextChar {
+  display: inline-block;
+  transition: color 0.125s ease-in-out;
+  will-change: transform color;
+}
+
+.curved__menuLinkTextChar.shake1 {
+  animation: shake1 0.5s linear forwards;
+}
+.curved__menuLinkTextChar.shake2 {
+  animation: shake2 0.5s linear forwards;
+}
+
+@keyframes shake1 {
+  0% {
+    transform: translate3d(0, -6px, 0);
+  }
+  25% {
+    transform: translate3d(0, 6px, 0);
+  }
+  50% {
+    transform: translate3d(0, -6px, 0);
+  }
+  75% {
+    transform: translate3d(0, 6px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes shake2 {
+  0% {
+    transform: translate3d(0, 6px, 0);
+  }
+  25% {
+    transform: translate3d(0, -6px, 0);
+  }
+  50% {
+    transform: translate3d(0, 6px, 0);
+  }
+  75% {
+    transform: translate3d(0, -6px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.curved__menuFooter {
+}
+.curved__footerMenu {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: flex-start;
+  will-change: transform;
+  width: 100%;
+}
+.curved__footerMenuItem {
+  position: relative;
+  font-size: 0.85rem;
+}
+.curved__footerMenuItem::before {
+  display: block;
+  position: absolute;
+  bottom: -0.25rem;
+  transform: scaleX(0);
+  transform-origin: 100% 0;
+  transition: transform 0.3s ease-in-out;
+  will-change: transform;
+  margin: 0.5rem 0;
+  background-color: var(--white);
+  width: 100%;
+  height: 1px;
+  content: "";
+}
+.curved__footerMenuItem:hover::before {
+  transform: scaleX(1);
+  transform-origin: 0 0;
+}
+
+.curved__footerLink {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+.curved__footerLinkText {
+  display: inline-block;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+  will-change: transform;
+}
+.curved__footerLinkText1 {
+}
+.curved__svg {
+  position: absolute;
+  top: 0;
+  left: -99px;
+  width: 100px;
+  height: 100%;
+  stroke-width: 2px;
+  fill: var(--bg);
+  stroke: var(--bg);
+}
+
+.curved__svgPath {
+}
+
+.curved__main {
+}
+.curved__main {
+}
+.curved__main {
+}
+.curved__main {
+}
+.curved__main {
+}
+.curved__main {
+}
+.curved__main {
+}
+.curved__main {
+}
+.curved__main {
+}
+.curved__main {
+}
+.curved__main {
+}
+.curved__main {
+}
+.curved__main {
+}
+.curved__main {
+}
+.curved__main {
+}

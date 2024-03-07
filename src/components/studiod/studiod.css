@@ -1,0 +1,251 @@
+@font-face {
+  src: url("./assets/fonts/IvarText-Italic.woff2") format("woff2");
+  font-family: "Ivar";
+}
+@font-face {
+  src: url("./assets/fonts/PolySans-Slim.woff2") format("woff2");
+  font-family: "PolySans";
+}
+.studiod__main {
+  --dark-bg: rgb(30, 29, 28);
+  --sphere-border: hsla(0, 0%, 100%, 0.4);
+  background-color: var(--dark-bg);
+  width: 100%;
+  min-height: 100vh;
+  color: white;
+  font-family: "PolySans", sans-serif;
+}
+.studiod__header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  padding: 2rem;
+  width: 100%;
+}
+.studiod__headerLeft {
+}
+.studiod__logo {
+  font-size: 1.75rem;
+}
+.studiod__headerRight {
+}
+.studiod__menuBtn {
+  display: flex;
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  transition: transform 0.3s ease-in-out;
+  will-change: transform background-color;
+  border-radius: 50%;
+  background-color: white;
+  width: 3rem;
+  height: 3rem;
+}
+.studiod__burger {
+  width: 100%;
+}
+.studiod__burger::before,
+.studiod__burger::after {
+  display: block;
+  position: relative;
+  transition: transform 0.2s ease-in-out;
+  will-change: transform background-color;
+  margin: 0 auto;
+  background-color: black;
+  width: 1.75rem;
+  height: 1px;
+  content: "";
+}
+
+.studiod__burger::before {
+  transform: translate3d(0, -0.15rem, 0) rotate(0);
+}
+
+.studiod__burger::after {
+  transform: translate3d(0, 0.15rem, 0) rotate(0);
+}
+.studiod__menuBtn.active .studiod__burger::before {
+  top: 1px;
+  transform: translate3d(0, 0, 0) rotate(-45deg);
+}
+.studiod__menuBtn.active .studiod__burger::after {
+  transform: translate3d(0, 0, 0) rotate(45deg);
+}
+
+.studiod__section {
+  width: 100%;
+}
+.studiod__stickyParent {
+  position: relative;
+  width: 100%;
+  height: 300vh;
+}
+.studiod__videoWrapper {
+  position: sticky;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0.7;
+  z-index: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.studiod__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.studiod__stickySection {
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(12, 1fr);
+  z-index: 1;
+  padding: 2rem;
+  width: 100%;
+  height: 100vh;
+}
+.studiod__stickySection1 {
+  margin-top: -100vh;
+}
+.studiod__stickySectionContent {
+  grid-column: 3 / span 4;
+  padding-top: 50vh;
+  width: 100%;
+}
+.studiod__stickySectionContent2 {
+  grid-column: 3 / span 6;
+}
+.studiod__stickySectionContent3 {
+  grid-column: 3 / span 6;
+  padding-top: 20vh;
+}
+.studiod__stickySectionTitle {
+  font-size: 4vw;
+  line-height: 4vw;
+}
+.studiod__stickySectionContent3 .studiod__stickySectionTitle {
+  grid-column: 1 / span 6;
+}
+.studiod__stickySectionSubtitle {
+  display: inline-block;
+  grid-column: 1 / span 6;
+  margin-bottom: 1rem;
+  font-size: 1.5vw;
+  font-family: "Ivar", serif;
+}
+.studiod__stickySectionDescriptionWrapper {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  width: 100%;
+}
+.studiod__stickySectionDescription {
+  grid-column: 2 / span 4;
+  font-size: 1.2vw;
+  line-height: 1.5vw;
+}
+.studiod__stickySectionDescription:first-of-type {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+.studiod__stickyParent2 {
+  position: relative;
+  width: 100%;
+  height: 300vh;
+}
+.studiod__stickySection2 {
+  position: sticky;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100vh;
+}
+.studiod__sphereParent {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+.studiod__sphere {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--sphere-border);
+  border-radius: 50%;
+  width: 33vw;
+  height: 33vw;
+}
+.studiod__sphereLeft {
+  transform: translate3d(-70%, 0, 0);
+}
+.studiod__sphereCenter {
+}
+.studiod__sphereRight {
+  transform: translate3d(70%, 0, 0);
+}
+.studiod__sphereText {
+  font-size: 1.5vw;
+  font-family: "Ivar", serif;
+}
+.studiod__sphereCenteredTextWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.studiod__sphereCenteredText {
+  display: inline-block;
+  position: relative;
+  opacity: 0;
+}
+.studiod__stickySectionTrigger {
+  width: 100%;
+  height: 100vh;
+}
+.studiod__footer {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  align-items: center;
+  transform: rotate(180deg);
+  padding: 2rem;
+  writing-mode: vertical-rl;
+}
+.studiod__footerText {
+  writing-mode: vertical-rl;
+}
+.studiod__footerText span {
+  color: rgba(255, 255, 255, 0.4);
+}
+.studiod__main {
+}
+.studiod__main {
+}
+.studiod__main {
+}
+.studiod__main {
+}
+.studiod__main {
+}
+.studiod__main {
+}
+.studiod__main {
+}
+.studiod__main {
+}

@@ -1,0 +1,441 @@
+@font-face {
+  src: url("./assets/fonts/ABCDiatype-Medium.woff2") format("woff2");
+  font-family: "Dia";
+}
+@font-face {
+  src: url("./assets/fonts/Inferi-NormalItalic.woff2") format("woff2");
+  font-family: "Inf";
+}
+.mason__scrollbar {
+  overflow-y: scroll;
+}
+.mason__main {
+  --cubic-carousel: cubic-bezier(0.19, 1, 0.22, 1);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Dia", sans-serif;
+}
+
+.mason__headerWrapper {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6vh;
+  padding: 2rem;
+  width: 100%;
+  font-size: 0.85rem;
+}
+.mason__headerLeft {
+}
+.mason__headerNavWrapper {
+}
+.mason__nav {
+  display: flex;
+  gap: 0.25rem;
+}
+.mason__navItem {
+  opacity: 0.25;
+  transition: opacity 0.35s ease-out;
+}
+.mason__navItem.mason__navItem--active {
+  opacity: 1;
+}
+.mason__navItem:hover {
+  opacity: 1;
+}
+.mason__navLink {
+}
+.mason__headerRight {
+}
+.mason__headerRightBtn {
+  position: relative;
+}
+.mason__headerRightBtn::before {
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: -0.2rem;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 100% 0;
+  transition: transform 0.35s ease-out;
+  will-change: transform;
+  background-color: black;
+  width: 100%;
+  height: 1px;
+  content: "";
+}
+.mason__headerRightBtn:hover::before {
+  transform: scaleX(1);
+  transform-origin: 0 0;
+}
+.mason__carouselWrapper {
+  width: 100%;
+  overflow: hidden;
+}
+.mason__carousel {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin-top: 10rem;
+  overflow: hidden;
+  font-size: 0.85rem;
+}
+.mason__carouselItem {
+  position: relative;
+  transition: width 1s var(--cubic-carousel);
+  will-change: width;
+  aspect-ratio: 3/4;
+  width: 12.5vw;
+}
+.mason__carouselItem--active {
+  width: 25vw;
+}
+.mason__carouselItemTextWrapper {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  margin-bottom: 0.25rem;
+}
+.mason__carouselItemIndex {
+  margin-bottom: 1rem;
+}
+.mason__carouselItemTitle {
+}
+.mason__carouselItemDescription {
+  text-transform: uppercase;
+}
+.mason__carouselItemImgWrapper {
+  position: relative;
+  top: 0;
+  left: 0;
+  transform: translateX(0) translateY(0);
+  cursor: pointer;
+  aspect-ratio: 5/6;
+  width: 100%;
+}
+.mason__carouselItemImgMask {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+}
+.mason__carouselItemImgMask--exclude {
+  background-color: transparent;
+}
+
+.mason__carouselItemImg {
+  will-change: transform width;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.mason__footerWrapper {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  flex-direction: column;
+  padding: 2rem;
+  width: 100%;
+}
+
+.mason__footerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  will-change: opacity;
+  margin-bottom: 1rem;
+  width: 100%;
+  font-size: 0.85rem;
+}
+
+.mason__footerTopLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.mason__footerTopLeftText {
+  opacity: 0.25;
+  transition: opacity 0.35s ease-out;
+  cursor: pointer;
+}
+.mason__footerTopLeftText--active {
+  opacity: 1;
+}
+.mason__footerTopLeftText:hover {
+  opacity: 1;
+}
+.mason__footerTopRight {
+}
+.mason__footerTopRightText {
+}
+.mason__footerBottom {
+  display: flex;
+  position: relative;
+  will-change: transform;
+  width: 100%;
+}
+
+.mason__footerLeft {
+  will-change: transform;
+  width: 40.5%;
+  overflow: hidden;
+}
+.mason__footerLeftSvg {
+  will-change: transform;
+}
+.mason__footerLeftG {
+}
+.mason__footerLeftPath {
+}
+.mason__footerRight {
+  will-change: transform;
+  width: 59.5%;
+  overflow: hidden;
+}
+.mason__footerRightSvg {
+  will-change: transform;
+}
+.mason__footerRightG {
+}
+.mason__footerRightPath {
+}
+.mason__footerSvgPath {
+  will-change: transform;
+}
+
+/* LOADER */
+.mason__loadingOverlay {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  z-index: 1;
+  will-change: transform opacity;
+  background-color: #fff;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+}
+.mason__loadingImgWrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) scale(0);
+  transform-origin: center center;
+  z-index: 3;
+  aspect-ratio: 5/6;
+  width: 15vw;
+  pointer-events: none;
+}
+.mason__loadingTextWrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 3;
+  width: 30vw;
+  pointer-events: none;
+}
+.mason__footerBottom.loading {
+  opacity: 0;
+}
+.mason__main {
+}
+
+/* POULSEN */
+
+.poulsen__wrapper {
+  margin-top: calc(5rem);
+  padding: 2rem;
+  width: 100%;
+}
+.poulsen__headerWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.poulsen__headerTextWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 7rem;
+  width: 100%;
+}
+.poulsen__headerText {
+  position: relative;
+  overflow: hidden;
+  font-size: 8vw;
+  line-height: 9vw;
+  text-transform: uppercase;
+  white-space: pre;
+}
+.poulsen__headerTextChar {
+  display: inline-block;
+  position: relative;
+  will-change: transform;
+}
+.poulsen__headerSubtitle {
+  position: relative;
+  overflow: hidden;
+  font-size: 5.5vw;
+  line-height: 5.5vw;
+  font-family: "inf", serif;
+  white-space: pre;
+}
+.poulsen__headerSubtitleChar {
+  display: inline-block;
+  position: relative;
+  will-change: transform;
+}
+.poulsen__descriptionWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  will-change: transform;
+  margin-bottom: 3rem;
+  padding: 0 16vw;
+  width: 100%;
+  font-size: 0.85rem;
+}
+.poulsen__descriptionItem {
+  display: flex;
+  flex-direction: column;
+}
+.poulsen__descriptionTitle {
+}
+.poulsen__descriptionSubtitle {
+  text-transform: uppercase;
+}
+.poulsen__descriptionRight {
+  display: flex;
+}
+.poulsen__descriptionRight .poulsen__descriptionItem {
+  margin-left: 4rem;
+}
+.poulsen__ImgWrapper {
+  position: relative;
+  aspect-ratio: 7/4;
+  width: 100%;
+  height: 100%;
+}
+.poulsen__ImgWrapper1 {
+  width: 100%;
+  height: 100%;
+}
+.poulsen__imgWrapperOverlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* border: 1px solid red; */
+  width: 100%;
+  /* height: 500px; */
+  height: 100%;
+  /* opacity: 0; */
+}
+.poulsen__ImgWrapper2 {
+}
+.poulsen__ImgWrapper3 {
+  margin: 4rem 0 12rem;
+}
+.poulsen__img {
+  /* border: 1px solid green; */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.poulsen__img1 {
+  opacity: 0;
+}
+.poulsen__img2 {
+}
+.poulsen__img3 {
+}
+.poulsen__contentWrapper {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  padding: 7rem 0 11rem;
+  width: 100%;
+  font-size: 0.85rem;
+}
+.poulsen__contentLeftWrapper {
+  grid-column: 1 / span 3;
+}
+.poulsen__contentLeft {
+}
+.poulsen__contentRightWrapper {
+  grid-column: 4 / span 7;
+}
+.poulsen__contentRightTop {
+  margin-bottom: 4.5rem;
+}
+.poulsen__contentRightTopText {
+  font-size: 4.5vw;
+  line-height: 4.5vw;
+}
+.poulsen__contentRightTopText span {
+  font-size: 5vw;
+  font-family: "inf", serif;
+}
+.poulsen__contentRightBottom {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.poulsen__contentRightBottomLeft span {
+  text-transform: uppercase;
+}
+.poulsen__contentRightBottomRight {
+  display: flex;
+  flex-direction: column;
+}
+.poulsen__contentRightBottomRightTitle {
+  margin-bottom: 1rem;
+}
+.poulsen__contentRightBottomRightSubtitle {
+  color: rgb(134, 134, 134);
+}
+.poulsen__wrapper {
+}
+.poulsen__wrapper {
+}
+.poulsen__wrapper {
+}
+.poulsen__wrapper {
+}
+.poulsen__wrapper {
+}
+
+.mason__transitionImgWrapper {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  bottom: 0;
+  left: 2rem;
+  z-index: 2;
+  pointer-events: none;
+}

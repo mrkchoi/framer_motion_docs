@@ -1,0 +1,39 @@
+@font-face {
+  src: url("./fonts/ABCDiatype-Medium.woff2") format("woff2");
+  font-family: "Dia";
+}
+
+.florian__main {
+  --size: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Dia", sans-serif;
+}
+.florian__container {
+  display: flex;
+  position: fixed;
+  top: 1rem;
+  left: 2rem;
+  gap: calc(var(--size) * 0.375);
+  cursor: pointer;
+}
+.florian__textWrapper {
+  overflow: hidden;
+}
+.florian__textWrapper2 {
+  transform: translate3d(-175%, 0, 0);
+}
+.florian__textChar {
+  display: inline-block;
+  position: relative;
+  font-weight: bold;
+  font-size: var(--size);
+  text-transform: uppercase;
+}
+.florian__textCharAnim {
+  display: inline-block;
+  transform: translate3d(0, 100%, 0);
+}

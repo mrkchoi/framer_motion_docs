@@ -1,30 +1,30 @@
 /* BASE - END */
 .transition02__main {
-  width: 100%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  height: 100vh;
   overflow-x: hidden;
-  font-family: "acumin-pro", sans-serif;
   font-weight: 200;
+  font-family: "acumin-pro", sans-serif;
 }
 
 .transition02__main h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "kudryashev-d-excontrast-sans", serif;
+.transition02__main h2,
+.transition02__main h3,
+.transition02__main h4,
+.transition02__main h5,
+.transition02__main h6 {
   font-weight: normal;
+  font-family: "kudryashev-d-excontrast-sans", serif;
 }
 
 .transition02__header {
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 2rem;
+  width: 100%;
 }
 .transition02__logo {
 }
@@ -35,8 +35,8 @@ h6 {
 }
 
 .transition02__nav li {
-  list-style: none;
   margin: 0 1rem;
+  list-style: none;
 }
 .transition02__logo-svg {
   width: 75px;
@@ -44,15 +44,15 @@ h6 {
 }
 
 .transition02__viewWrapper {
-  width: 100%;
   flex: 1;
+  width: 100%;
 }
 .transition02__view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .transition02__alex {
@@ -69,9 +69,9 @@ h6 {
 
 /* HOME */
 .transition02__homeContainer {
+  position: relative;
   background-color: rgb(198, 193, 183);
   color: black;
-  position: relative;
 }
 
 .transition02__homeGrid {
@@ -88,41 +88,41 @@ h6 {
 .transition02__homeGridItemTop {
 }
 .transition02__homeYear {
-  margin-bottom: 1rem;
   display: inline-block;
+  margin-bottom: 1rem;
 }
 .transition02__homeTitle {
+  margin-bottom: 0.5rem;
   font-size: clamp(1rem, 3vw, 5rem);
   text-transform: uppercase;
-  margin-bottom: 0.5rem;
 }
 .transition02__homeImgWrapper {
-  cursor: pointer;
   position: relative;
+  cursor: pointer;
+  margin-bottom: 2rem;
   aspect-ratio: 500/333;
   width: 100%;
   overflow: hidden;
-  margin-bottom: 2rem;
 }
 
 .transition02__homeImg {
-  height: 100%;
-  width: 100%;
+  background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
+  width: 100%;
+  height: 100%;
 }
 .transition02__homeSubtitle {
-  line-height: 1.4;
   margin-bottom: 4rem;
+  line-height: 1.4;
 }
 .transition02__homeButton {
-  padding: 1rem 4rem;
-  border: 1px solid rgba(75, 75, 75);
-  border-radius: 4rem;
   transition:
     background-color 150ms ease-in-out,
     color 150ms ease-in-out;
+  border: 1px solid rgba(75, 75, 75);
+  border-radius: 4rem;
+  padding: 1rem 4rem;
 }
 
 .transition02__homeButton:hover {
@@ -131,19 +131,19 @@ h6 {
 }
 
 .transition02__transitionOverlay {
+  display: flex;
   position: absolute;
+  flex-direction: column;
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
   overflow: hidden;
   pointer-events: none;
 }
 .transition02__transitionOverlayInner {
   flex: 1;
-  width: 100%;
-  background-color: black;
   will-change: transform;
+  background-color: black;
+  width: 100%;
 }
 .transition02__transitionOverlayTop {
   /* transform: translate3d(0, -100%, 0); */
@@ -158,48 +158,48 @@ h6 {
 .transition02__detailView {
   --color-column-title: #727170;
   --color-link-hover-alt: #a17445;
-  background-color: black;
-  color: white;
   display: flex;
+  background-color: black;
+  padding: 4rem;
   width: 100%;
   height: 100%;
-  padding: 4rem;
+  color: white;
 }
 .transition02__detailViewContainer {
 }
 .transition02__detailViewImgWrapper {
-  width: 100%;
-  aspect-ratio: 500/333;
-  height: auto;
   position: relative;
+  aspect-ratio: 500/333;
+  width: 100%;
+  height: auto;
 }
 .transition02__detailViewImg {
-  width: 100%;
-  height: 100%;
+  background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
+  width: 100%;
+  height: 100%;
 }
 .transition02__detailViewImgOverlay {
+  display: flex;
   position: absolute;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
-  display: flex;
-  align-items: center;
+  left: 0;
   justify-content: center;
+  align-items: center;
 }
 
 .transition02__detailViewTitleWrapper {
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
 }
 .transition02__detailViewTitle {
-  font-size: max(2rem, min(16vw, 14rem));
   display: flex;
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  font-size: max(2rem, min(16vw, 14rem));
 }
 .transition02__detailViewContent {
   display: flex;
@@ -208,11 +208,11 @@ h6 {
 }
 .transition02__detailViewContentLeft {
   display: flex;
+  flex: 1;
   flex-direction: column;
   justify-content: space-between;
-  min-width: 10rem;
-  flex: 1;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  min-width: 10rem;
 }
 .transition02__detailViewContentLeftTop {
   display: flex;
@@ -235,8 +235,8 @@ h6 {
   height: auto;
 }
 .transition02__detailViewContentRight {
-  flex: 1;
   display: flex;
+  flex: 1;
 }
 .transition02__detailViewContentRightItem {
 }
@@ -245,9 +245,9 @@ h6 {
   margin-right: 6rem;
 }
 .transition02__detailViewContentRightItemTitle {
-  color: var(--color-column-title);
-  margin-bottom: 1rem;
   display: block;
+  margin-bottom: 1rem;
+  color: var(--color-column-title);
 }
 .transition02__detailViewContentRightItemDesc {
   line-height: 1;

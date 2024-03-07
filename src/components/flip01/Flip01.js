@@ -21,7 +21,6 @@ gsap.registerPlugin(CustomEase);
 CustomEase.create("cubic", "0.83, 0, 0.17, 1");
 
 function Flip01() {
-  const flipStateRef = useRef(null);
   const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {

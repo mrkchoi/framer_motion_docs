@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import Lenis from "@studio-freight/lenis";
 
 import "./pressPlay.css";
 
@@ -18,7 +19,14 @@ export default function PressPlay() {
   const marqueeRef = useRef(null);
 
   useEffect(() => {
-    console.log(marqueeRef.current.getBoundingClientRect());
+    const lenis = new Lenis();
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
   }, []);
 
   return (

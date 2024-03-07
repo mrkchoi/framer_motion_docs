@@ -1,0 +1,164 @@
+@font-face {
+  src: url("./assets/fonts/SuisseIntl-Light.woff2");
+  font-family: "Suisse Light";
+}
+@font-face {
+  src: url("./assets/fonts/SuisseIntl-Regular.woff2");
+  font-family: "Suisse Regular";
+}
+@font-face {
+  src: url("./assets/fonts/GT-Super-Display-Light.woff2");
+  font-family: "GT light";
+}
+
+.cotterell__main {
+  --slate: #d7d2ca;
+  --gold: #d38d2c;
+  --black: #171716;
+  --light: #978e80;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--slate);
+  padding: 3rem;
+  padding-left: 12vw;
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Suisse Regular", sans-serif;
+}
+
+.cotterell__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3.4rem;
+  width: 100%;
+  font-size: 0.9rem;
+}
+.cotterell__logo {
+  position: fixed;
+  top: 48px;
+  left: 32px;
+  cursor: pointer;
+  background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 20 156" xml:space="preserve" fill="%23171716"><path d="M20,146.4c0,6-4,9.5-10,9.5c-6,0-10-3.5-10-9.5c0-5.1,2.9-8,6.7-8.3v3.8c-2.1,0.5-3.3,2-3.3,4.3v0.3 c0,3.3,2.6,5.5,6.7,5.5c4.1,0,6.7-2.2,6.7-5.5v-0.3c0-2.4-1.1-3.9-3.3-4.3v-3.8C17.2,138.4,20,141.3,20,146.4z M0,127.5 c0-5.7,3.8-9.6,10-9.6c6.2,0,10,3.9,10,9.6c0,5.7-3.8,9.6-10,9.6C3.8,137.1,0,133.1,0,127.5z M3.3,127.6c0,3.5,2.5,5.6,6.7,5.6 c4.2,0,6.7-2.1,6.7-5.6v-0.3c0-3.5-2.5-5.6-6.7-5.6c-4.2,0-6.7,2.1-6.7,5.6V127.6z M19.7,69h-3.3v11.4h-5V71H8.1v9.5H3.6V69.3H0.3 v15h19.4V69z M19.7,67H0.3v-9.2c0-3.4,2.2-6.1,5.3-6.1c2.5,0,4.1,1.1,4.9,3.4c0-2.1,0.9-3.1,2.7-3.1h6.5v3.8h-5.6 c-1.4,0-1.8,0.4-1.8,1.8v5.5h7.4V67z M9.1,59L9.1,59c0-2.2-1-3.4-2.8-3.4c-1.8,0-2.7,1.1-2.7,3.4v4.2h5.5V59z M19.7,34.3h-3.3v11.4 h-5v-9.5H8.1v9.5H3.6V34.6H0.3v15h19.4V34.3z M19.7,17.1h-3.3v11.2H0.3V32h19.4V17.1z M19.7,0.1h-3.3v11.2H0.3v3.8h19.4V0.1z M3.6,101.1v-4.5h16.1v-3.8H3.6V86H0.3v15.2v0.8h3.3V101.1z M3.6,111.8h16.1V108H3.6v-4.5v-0.8H0.3v0.8v15.2h3.3V111.8z"/></svg>');
+  background-position: 50% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 156px;
+  color: transparent;
+}
+.cotterell__navWrapper {
+}
+.cotterell__nav {
+  display: flex;
+  gap: 2rem;
+}
+.cotterell__navItem {
+}
+.cotterell__navItemLink {
+  transition: color 0.8s var(--ease);
+  color: var(--light);
+}
+.cotterell__navItemLink:hover {
+  color: var(--black);
+}
+.cotterell__navItemLink--active {
+  color: var(--black);
+}
+.cotterell__navItemLinkText {
+}
+.cotterell__headerRightWrapper {
+}
+.cotterell__menuWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  /* gap: 2rem; */
+}
+.cotterell__item {
+  position: relative;
+  cursor: pointer;
+  margin-right: 3vw;
+  overflow: visible;
+}
+.cotterell__item--overflowHidden {
+  overflow: hidden;
+}
+.cotterell__item:hover .cotterell__itemImageWrapper {
+  opacity: 1;
+}
+.cotterell__itemInner {
+  position: relative;
+}
+.cotterell__itemTextWrapper {
+  position: relative;
+  overflow: hidden;
+}
+.cotterell__itemText {
+  display: inline-block;
+  position: relative;
+  transition: all 0.8s var(--ease);
+  will-change: transform;
+  font-size: 5.5vw;
+  line-height: 7vw;
+  font-family: "GT light", sans-serif;
+  text-transform: uppercase;
+}
+.cotterell__itemText1 {
+}
+
+.cotterell__itemText2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate3d(0, 6.5vw, 0);
+  color: var(--gold);
+}
+
+.cotterell__item:hover .cotterell__itemText1 {
+  transform: translate3d(0, -6.5vw, 0);
+}
+.cotterell__item:hover .cotterell__itemText2 {
+  transform: translate3d(0, 0, 0);
+}
+
+.cotterell__itemImageWrapper {
+  position: absolute;
+  top: -5vw;
+  right: 0;
+  /* transform: scale(0.95); */
+  opacity: 0;
+  transition: all 0.8s var(--ease);
+  will-change: transform;
+  margin-top: 3rem;
+  width: 225px;
+  height: 280px;
+  overflow: hidden;
+  pointer-events: none;
+}
+.cotterell__itemImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cotterell__itemImage--active {
+  opacity: 1;
+}
+.cotterell__itemText1 {
+}
+.cotterell__itemText1 {
+}
+.cotterell__itemText1 {
+}
+.cotterell__itemText1 {
+}
+.cotterell__itemText1 {
+}
+.cotterell__itemText1 {
+}
+.cotterell__itemText1 {
+}

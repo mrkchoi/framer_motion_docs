@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Neue Haas";
   src: url("./NeueHaasDisplayBold.woff") format("woff");
+  font-family: "Neue Haas";
 }
 
 .pressPlay__main {
@@ -9,22 +9,23 @@
   --blue: #1795f0;
   --green: #30e462;
   --gap: 4rem;
-  width: 100%;
-  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-family: "Neue Haas", sans-serif;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
   overflow: hidden;
+  font-family: "Neue Haas", sans-serif;
 }
 .pressPlay__container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  white-space: nowrap;
+  align-items: center;
   cursor: pointer;
+  width: 100%;
+  white-space: nowrap;
 }
 .pressPlay__item--outer {
   width: 100%;
@@ -34,44 +35,45 @@
   position: relative;
 }
 .pressPlay__title {
-  width: 100%;
-  font-size: max(5rem, min(100px, 10vh));
-  text-transform: uppercase;
-  line-height: 1;
-  transition: all 300ms ease-in-out;
   transform-style: preserve-3d;
+  transition: all 300ms ease-in-out;
   will-change: transform;
+  width: 100%;
+  font-size: min(6rem, 10vw);
+  line-height: 1;
+  text-transform: uppercase;
 }
 .pressPlay__title--primary {
-  position: relative;
   display: block;
-  background-color: white;
+  position: relative;
   transform: rotateX(0deg);
   transform-origin: top;
-  will-change: transform;
+  opacity: 0;
   opacity: 1;
+  will-change: transform;
+  background-color: white;
 }
 .pressPlay__titleSecondary--wrapper {
   display: flex;
-  justify-content: space-around;
-  min-width: 100%;
-  overflow-y: visible;
   position: absolute;
   top: 0;
   left: 0;
-  will-change: transform;
-  opacity: 0;
-  transform-origin: bottom;
-  transition: all 400ms ease-in-out;
+  justify-content: space-around;
   transform: translate3d(0, -100%, 0) rotateX(-90deg);
+  transform-origin: bottom;
+  opacity: 0;
+  transition: all 400ms ease-in-out;
+  will-change: transform;
+  min-width: 100%;
+  overflow-y: visible;
 }
 .pressPlay__title--secondary {
   top: 0;
   left: 0;
   flex: 1;
-  color: black;
-  will-change: transform;
   animation: scrollLeft 40s linear infinite;
+  will-change: transform;
+  color: black;
 }
 
 .pressPlay__item--outer:hover .pressPlay__title--primary {

@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@gsap/react": "^2.1.0",
+    "@mediapipe/tasks-vision": "^0.10.11",
     "@react-three/drei": "^9.97.1",
     "@react-three/fiber": "^8.15.15",
     "@studio-freight/lenis": "^1.0.33",
@@ -54,6 +55,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "postcss": "^8.4.35",
     "prettier": "^3.1.1",
     "prettier-plugin-css-order": "^2.0.1",

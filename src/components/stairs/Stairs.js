@@ -41,7 +41,7 @@ function Stairs() {
     gsap.to(".stairs__navMain", {
       opacity: 1,
       visibility: "visible",
-      duration: 0.5,
+      duration: 0.75,
       ease: "custom",
       delay: 0.2,
     });
@@ -62,7 +62,7 @@ function Stairs() {
     });
     gsap.to(".stairs__navItemLinkText", {
       rotateX: 0,
-      duration: 0.5,
+      duration: 0.75,
       stagger: 0.1,
       ease: "custom",
     });

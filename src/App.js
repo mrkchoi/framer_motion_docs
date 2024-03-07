@@ -8,7 +8,6 @@ import Intro from "./components/Intro";
 import Examples from "./components/Examples";
 import SidebarMenu from "./components/sidebar_menu/SidebarMenu";
 import SlideBox from "./components/slide_box/SlideBox";
-import Trippy from "./components/trippy/Trippy";
 import FruitScroll from "./components/fruit_scroll/FruitScroll";
 import SpringScroll from "./components/spring_scroll/SpringScroll";
 import ImageCarousel from "./components/image_carousel/ImageCarousel";
@@ -70,75 +69,289 @@ import Flip01 from "./components/flip01/Flip01";
 import Rejouice from "./components/rejouice/Rejouice";
 import Bezier from "./components/bezier/Bezier";
 import Stairs from "./components/stairs/Stairs";
+import Cotterell from "./components/cotterell/Cotterell";
+import Mason from "./components/mason/Mason";
+import Curved from "./components/curved/Curved";
+import Florian from "./components/florian/Florian";
+import Studiod from "./components/studiod/Studiod";
+
+const CATEGORY_TITLES = [
+  "Menu/Nav",
+  "Transitions",
+  "Layout",
+  "Scroll",
+  "Hovers, Cursors, Micro Interactions",
+  "Typography",
+  "WebGL & 3D",
+  "SVG/Lottie",
+  "Matter.js",
+  "Misc",
+  "Basic",
+];
+
+const CATEGORIES = {
+  MENU_NAV: "Menu/Nav",
+  TRANSITIONS: "Transitions",
+  LAYOUT: "Layout",
+  SCROLL: "Scroll",
+  HOVERS_CURSORS_MICRO: "Hovers, Cursors, Micro Interactions",
+  TYPOGRAPHY: "Typography",
+  WEBGL_3D: "WebGL & 3D",
+  SVG_LOTTIE: "SVG/Lottie",
+  MATTER_JS: "Matter.js",
+  MISC: "Misc",
+  BASIC: "Basic",
+};
 
 const PAGES = [
-  { path: "/stagger", element: <Stagger /> },
-  { path: "/intro", element: <Intro /> },
-  { path: "/examples", element: <Examples /> },
-  { path: "/trippy", element: <Trippy /> },
-  { path: "/sidebar-menu", element: <SidebarMenu /> },
-  { path: "/slide-box", element: <SlideBox /> },
-  { path: "/fruit-scroll", element: <FruitScroll /> },
-  { path: "/spring-scroll", element: <SpringScroll /> },
-  { path: "/image-carousel", element: <ImageCarousel /> },
-  { path: "/toggle", element: <Toggle /> },
-  { path: "/tabs-fruit", element: <TabsFruit /> },
-  { path: "/parallax", element: <Layout /> },
-  { path: "/smooth-cursor", element: <SmoothCursor /> },
-  { path: "/zoom-parallax", element: <ZoomParallax /> },
-  { path: "/infinite-marquee", element: <InfiniteMarquee /> },
-  { path: "/pixel-transition", element: <PixelTransition /> },
-  { path: "/character-scroll", element: <CharacterScroll /> },
-  { path: "/cursor-hover-mask", element: <CursorHoverMask /> },
-  { path: "/text-disperse", element: <TextDisperse /> },
-  { path: "/pixel-cursor", element: <PixelCursor /> },
-  { path: "/text-mask", element: <TextMask /> },
-  { path: "/image-reveal", element: <ImageReveal /> },
-  { path: "/portfolio", element: <Portfolio /> },
-  { path: "/transition-slide/home", element: <TransitionSlide /> },
-  { path: "/scroll-marquee", element: <ScrollMarquee /> },
-  { path: "/gsap-01", element: <Gsap01 /> },
-  { path: "/smooth-scroll", element: <SmoothScrollLanding /> },
-  { path: "/scroll-trigger-01", element: <ScrollTrigger01 /> },
-  { path: "/smooth-menu", element: <SmoothMenu /> },
-  { path: "/preloader01", element: <Preloader01 /> },
-  { path: "/side-menu", element: <SideMenu /> },
-  { path: "/text-scroll", element: <TextScroll /> },
-  { path: "/gallery-slide", element: <GallerySlide /> },
-  { path: "/text-3d", element: <Text3D /> },
-  { path: "/3d-perspective-text", element: <PerspectiveText3D /> },
-  { path: "/project-gallery-modal", element: <ProjectGalleryModal /> },
-  { path: "/block-menu", element: <BlockMenu /> },
-  { path: "/image-preloader", element: <ImagePreloader /> },
-  { path: "/scroll-svg", element: <ScrollSVG /> },
-  { path: "/hybrid-scroll", element: <HybridScroll /> },
-  { path: "/text-rotate-3d", element: <TextRotate3d /> },
-  { path: "/trionn", element: <Trionn /> },
-  { path: "/mix-blend-text", element: <MixBlendText /> },
-  { path: "/globe-nav", element: <GlobeNav /> },
-  { path: "/magnetic-button", element: <MagneticButton /> },
-  { path: "/press-play", element: <PressPlay /> },
-  { path: "/horizon-studio", element: <HorizonStudio /> },
-  { path: "/nascent", element: <Nascent /> },
-  { path: "/drei01", element: <Drei01 /> },
-  { path: "/transition01", element: <Transition01 /> },
-  { path: "/transition02", element: <Transition02 /> },
-  { path: "/study", element: <Study /> },
-  { path: "/matter01", element: <Matter01 /> },
-  { path: "/zajno", element: <Zajno /> },
-  { path: "/yuri01", element: <Yuri01 /> },
-  { path: "/yuri02", element: <Yuri02 /> },
-  { path: "/shader01", element: <Shader01 /> },
-  { path: "/shader02", element: <Shader02 /> },
-  { path: "/loket", element: <Loket /> },
-  { path: "/gallery01", element: <Gallery01 /> },
-  { path: "/vucko", element: <Vucko /> },
-  { path: "/gradient01", element: <Gradient01 /> },
-  { path: "/raxo", element: <Raxo /> },
-  { path: "/flip01", element: <Flip01 /> },
-  { path: "/rejouice", element: <Rejouice /> },
-  { path: "/bezier", element: <Bezier /> },
-  { path: "/stairs", element: <Stairs /> },
+  { path: "/stagger", element: <Stagger />, category: CATEGORIES.TYPOGRAPHY },
+  { path: "/intro", element: <Intro />, category: CATEGORIES.BASIC },
+  { path: "/examples", element: <Examples />, category: CATEGORIES.BASIC },
+  {
+    path: "/sidebar-menu",
+    element: <SidebarMenu />,
+    category: CATEGORIES.MENU_NAV,
+  },
+  {
+    path: "/slide-box",
+    element: <SlideBox />,
+    category: CATEGORIES.MICRO_INTERACTIONS,
+  },
+  {
+    path: "/fruit-scroll",
+    element: <FruitScroll />,
+    category: CATEGORIES.HOVERS_CURSORS_MICRO,
+  },
+  {
+    path: "/spring-scroll",
+    element: <SpringScroll />,
+    category: CATEGORIES.HOVERS_CURSORS_MICRO,
+  },
+  {
+    path: "/image-carousel",
+    element: <ImageCarousel />,
+    category: CATEGORIES.MISC,
+  },
+  {
+    path: "/toggle",
+    element: <Toggle />,
+    category: CATEGORIES.HOVERS_CURSORS_MICRO,
+  },
+  {
+    path: "/tabs-fruit",
+    element: <TabsFruit />,
+    category: CATEGORIES.MISC,
+  },
+  { path: "/parallax", element: <Layout />, category: CATEGORIES.MISC },
+  {
+    path: "/smooth-cursor",
+    element: <SmoothCursor />,
+    category: CATEGORIES.HOVERS_CURSORS_MICRO,
+  },
+  {
+    path: "/zoom-parallax",
+    element: <ZoomParallax />,
+    category: CATEGORIES.MISC,
+  },
+  {
+    path: "/infinite-marquee",
+    element: <InfiniteMarquee />,
+    category: CATEGORIES.TYPOGRAPHY,
+  },
+  {
+    path: "/pixel-transition",
+    element: <PixelTransition />,
+    category: CATEGORIES.TRANSITIONS,
+  },
+  {
+    path: "/character-scroll",
+    element: <CharacterScroll />,
+    category: CATEGORIES.TYPOGRAPHY,
+  },
+  {
+    path: "/cursor-hover-mask",
+    element: <CursorHoverMask />,
+    category: CATEGORIES.HOVERS_CURSORS,
+  },
+  {
+    path: "/text-disperse",
+    element: <TextDisperse />,
+    category: CATEGORIES.HOVERS_CURSORS,
+  },
+  {
+    path: "/pixel-cursor",
+    element: <PixelCursor />,
+    category: CATEGORIES.HOVERS_CURSORS,
+  },
+  {
+    path: "/text-mask",
+    element: <TextMask />,
+    category: CATEGORIES.TYPOGRAPHY,
+  },
+  {
+    path: "/image-reveal",
+    element: <ImageReveal />,
+    category: CATEGORIES.HOVERS_CURSORS_MICRO,
+  },
+  {
+    path: "/portfolio",
+    element: <Portfolio />,
+    category: CATEGORIES.TRANSITIONS,
+  },
+
+  {
+    path: "/transition-slide/home",
+    element: <TransitionSlide />,
+    category: CATEGORIES.TRANSITIONS,
+  },
+  {
+    path: "/scroll-marquee",
+    element: <ScrollMarquee />,
+    category: CATEGORIES.TYPOGRAPHY,
+  },
+  { path: "/gsap-01", element: <Gsap01 />, category: CATEGORIES.BASIC },
+  {
+    path: "/smooth-scroll",
+    element: <SmoothScrollLanding />,
+    category: CATEGORIES.MISC,
+  },
+  {
+    path: "/scroll-trigger-01",
+    element: <ScrollTrigger01 />,
+    category: CATEGORIES.BASIC,
+  },
+  {
+    path: "/smooth-menu",
+    element: <SmoothMenu />,
+    category: CATEGORIES.MENU_NAV,
+  },
+  {
+    path: "/preloader01",
+    element: <Preloader01 />,
+    category: CATEGORIES.TRANSITIONS,
+  },
+  { path: "/side-menu", element: <SideMenu />, category: CATEGORIES.MENU_NAV },
+  {
+    path: "/text-scroll",
+    element: <TextScroll />,
+    category: CATEGORIES.TYPOGRAPHY,
+  },
+  {
+    path: "/gallery-slide",
+    element: <GallerySlide />,
+    category: CATEGORIES.MENU_NAV,
+  },
+  { path: "/text-3d", element: <Text3D />, category: CATEGORIES.TYPOGRAPHY },
+  {
+    path: "/3d-perspective-text",
+    element: <PerspectiveText3D />,
+    category: CATEGORIES.TYPOGRAPHY,
+  },
+  {
+    path: "/project-gallery-modal",
+    element: <ProjectGalleryModal />,
+    category: CATEGORIES.MENU_NAV,
+  },
+  {
+    path: "/block-menu",
+    element: <BlockMenu />,
+    category: CATEGORIES.MENU_NAV,
+  },
+  {
+    path: "/image-preloader",
+    element: <ImagePreloader />,
+    category: CATEGORIES.TRANSITIONS,
+  },
+  {
+    path: "/scroll-svg",
+    element: <ScrollSVG />,
+    category: CATEGORIES.SVG_ANIMATION,
+  },
+  {
+    path: "/hybrid-scroll",
+    element: <HybridScroll />,
+    category: CATEGORIES.LAYOUT,
+  },
+  {
+    path: "/text-rotate-3d",
+    element: <TextRotate3d />,
+    category: CATEGORIES.MISC,
+  },
+  {
+    path: "/trionn",
+    element: <Trionn />,
+    category: CATEGORIES.HOVERS_CURSORS_MICRO,
+  },
+  {
+    path: "/mix-blend-text",
+    element: <MixBlendText />,
+    category: CATEGORIES.MISC,
+  },
+  { path: "/globe-nav", element: <GlobeNav />, category: CATEGORIES.MENU_NAV },
+  {
+    path: "/magnetic-button",
+    element: <MagneticButton />,
+    category: CATEGORIES.HOVERS_CURSORS_MICRO,
+  },
+  {
+    path: "/press-play",
+    element: <PressPlay />,
+    category: CATEGORIES.MENU_NAV,
+  },
+  {
+    path: "/horizon-studio",
+    element: <HorizonStudio />,
+    category: CATEGORIES.MENU_NAV,
+  },
+  { path: "/nascent", element: <Nascent />, category: CATEGORIES.LAYOUT },
+  { path: "/drei01", element: <Drei01 />, category: CATEGORIES.WEBGL_3D },
+  {
+    path: "/transition01",
+    element: <Transition01 />,
+    category: CATEGORIES.TRANSITIONS,
+  },
+  {
+    path: "/transition02",
+    element: <Transition02 />,
+    category: CATEGORIES.TRANSITIONS,
+  },
+  {
+    path: "/study",
+    element: <Study />,
+    category: CATEGORIES.HOVERS_CURSORS_MICRO,
+  },
+  { path: "/matter01", element: <Matter01 />, category: CATEGORIES.MATTER_JS },
+  { path: "/zajno", element: <Zajno />, category: CATEGORIES.WEBGL_3D },
+  { path: "/yuri01", element: <Yuri01 />, category: CATEGORIES.WEBGL_3D },
+  { path: "/yuri02", element: <Yuri02 />, category: CATEGORIES.WEBGL_3D },
+  { path: "/shader01", element: <Shader01 />, category: CATEGORIES.WEBGL_3D },
+  { path: "/shader02", element: <Shader02 />, category: CATEGORIES.WEBGL_3D },
+  { path: "/loket", element: <Loket />, category: CATEGORIES.TRANSITIONS },
+  { path: "/gallery01", element: <Gallery01 />, category: CATEGORIES.WEBGL_3D },
+  { path: "/vucko", element: <Vucko />, category: CATEGORIES.LAYOUT },
+  { path: "/gradient01", element: <Gradient01 />, category: CATEGORIES.MISC },
+  { path: "/raxo", element: <Raxo />, category: CATEGORIES.SVG_LOTTIE },
+  { path: "/flip01", element: <Flip01 />, category: CATEGORIES.BASIC },
+  { path: "/rejouice", element: <Rejouice />, category: CATEGORIES.MENU_NAV },
+  {
+    path: "/bezier",
+    element: <Bezier />,
+    category: CATEGORIES.HOVERS_CURSORS_MICRO,
+  },
+  { path: "/stairs", element: <Stairs />, category: CATEGORIES.MENU_NAV },
+  { path: "/cotterell", element: <Cotterell />, category: CATEGORIES.MENU_NAV },
+  { path: "/mason", element: <Mason />, category: CATEGORIES.TRANSITIONS },
+  { path: "/curved", element: <Curved />, category: CATEGORIES.MENU_NAV },
+  {
+    path: "/florian",
+    element: <Florian />,
+    category: CATEGORIES.HOVERS_CURSORS_MICRO,
+  },
+  {
+    path: "/studiod",
+    element: <Studiod />,
+    category: CATEGORIES.SCROLL,
+  },
 ];
 
 function App() {
@@ -150,7 +363,6 @@ function App() {
           <Route path="/stagger" element={<Stagger />} />
           <Route path="/intro" element={<Intro />} />
           <Route path="/examples" element={<Examples />} />
-          <Route path="/trippy" element={<Trippy />} />
           <Route path="/sidebar-menu" element={<SidebarMenu />} />
           <Route path="/slide-box" element={<SlideBox />} />
           <Route path="/fruit-scroll" element={<FruitScroll />} />
@@ -217,6 +429,11 @@ function App() {
           <Route path="/rejouice" element={<Rejouice />} />
           <Route path="/bezier" element={<Bezier />} />
           <Route path="/stairs" element={<Stairs />} />
+          <Route path="/cotterell" element={<Cotterell />} />
+          <Route path="/mason/*" element={<Mason />} />
+          <Route path="/curved" element={<Curved />} />
+          <Route path="/florian" element={<Florian />} />
+          <Route path="/studiod" element={<Studiod />} />
         </Routes>
       </BrowserRouter>
     </>
@@ -236,18 +453,28 @@ function Home() {
   }, []);
 
   return (
-    <div className="container mx-auto">
-      <h1 className="mb-6 mt-6 text-2xl font-bold">Motion:</h1>
-      <nav className="mb-6 mt-6">
-        <ul>
-          {PAGES.map((page, idx) => (
-            <li key={idx}>
-              <Link to={page.path} className="py-1">
-                {page.path}
-              </Link>
-            </li>
-          ))}
-        </ul>
+    <div className="min-h-screen w-full p-12">
+      <h1 className="mb-6 text-2xl font-bold">Motion:</h1>
+      <nav className="mb-6 mt-6 flex h-full w-full flex-wrap gap-12">
+        {CATEGORY_TITLES.map((title, idx) => (
+          <div key={idx} className="mb-4">
+            <h2 className="mb-2 text-lg font-bold">{title}</h2>
+            <ul>
+              {PAGES.filter((page) => page.category === title).map(
+                (page, idx) => (
+                  <li
+                    key={idx}
+                    className="underline-offset-2 transition-all hover:underline"
+                  >
+                    <Link to={page.path} className="py-1">
+                      {page.path}
+                    </Link>
+                  </li>
+                ),
+              )}
+            </ul>
+          </div>
+        ))}
       </nav>
     </div>
   );
