@@ -1,0 +1,11 @@
+.canvas01__main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.canvas01__canvas {
+  border: 1px solid black;
+}

@@ -1,0 +1,28 @@
+.slinky__main {
+}
+.slinky__svg {
+}
+.slinky__svg path {
+  stroke: black;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 7px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  pointer-events: none;
+}
+.slinky__main {
+}
+.slinky__main {
+}
+.slinky__main {
+}
+.slinky__main {
+}
+.slinky__main {
+}
+.slinky__main {
+}

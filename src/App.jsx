@@ -74,6 +74,19 @@ import Mason from "./components/mason/Mason";
 import Curved from "./components/curved/Curved";
 import Florian from "./components/florian/Florian";
 import Studiod from "./components/studiod/Studiod";
+import Studio from "./components/studio/Studio";
+import Slinky from "./components/slinky/Slinky";
+import Canvas01 from "./components/canvas01/Canvas01";
+import Arcs from "./components/arcs/Arcs";
+import Sketch03 from "./components/sketch03/Sketch03";
+import CanvasStyles from "./components/canvas_styles/CanvasStyles";
+import Sketch04 from "./components/sketch04/Sketch04";
+import Sketch05 from "./components/sketch05/Sketch05";
+import Sketch06 from "./components/sketch06/Sketch06";
+import Sketch07 from "./components/sketch07/Sketch07";
+import Sketch08 from "./components/sketch08/Sketch08";
+import Midnight from "./components/midnight/Midnight";
+import Sketch09 from "./components/sketch09/Sketch09";
 
 const CATEGORY_TITLES = [
   "Menu/Nav",
@@ -82,6 +95,7 @@ const CATEGORY_TITLES = [
   "Scroll",
   "Hovers, Cursors, Micro Interactions",
   "Typography",
+  "Canvas",
   "WebGL & 3D",
   "SVG/Lottie",
   "Matter.js",
@@ -96,6 +110,7 @@ const CATEGORIES = {
   SCROLL: "Scroll",
   HOVERS_CURSORS_MICRO: "Hovers, Cursors, Micro Interactions",
   TYPOGRAPHY: "Typography",
+  CANVAS: "Canvas",
   WEBGL_3D: "WebGL & 3D",
   SVG_LOTTIE: "SVG/Lottie",
   MATTER_JS: "Matter.js",
@@ -352,6 +367,71 @@ const PAGES = [
     element: <Studiod />,
     category: CATEGORIES.SCROLL,
   },
+  {
+    path: "/studio",
+    element: <Studio />,
+    category: CATEGORIES.LAYOUT,
+  },
+  {
+    path: "/slinky",
+    element: <Slinky />,
+    category: CATEGORIES.HOVERS_CURSORS_MICRO,
+  },
+  {
+    path: "/canvas01",
+    element: <Canvas01 />,
+    category: CATEGORIES.CANVAS,
+  },
+  {
+    path: "/arcs",
+    element: <Arcs />,
+    category: CATEGORIES.CANVAS,
+  },
+  {
+    path: "/sketch03",
+    element: <Sketch03 />,
+    category: CATEGORIES.CANVAS,
+  },
+  {
+    path: "/canvas-styles",
+    element: <CanvasStyles />,
+    category: CATEGORIES.CANVAS,
+  },
+  {
+    path: "/sketch04",
+    element: <Sketch04 />,
+    category: CATEGORIES.CANVAS,
+  },
+  {
+    path: "/sketch05",
+    element: <Sketch05 />,
+    category: CATEGORIES.CANVAS,
+  },
+  {
+    path: "/sketch06",
+    element: <Sketch06 />,
+    category: CATEGORIES.CANVAS,
+  },
+  {
+    path: "/sketch07",
+    element: <Sketch07 />,
+    category: CATEGORIES.CANVAS,
+  },
+  {
+    path: "/sketch08",
+    element: <Sketch08 />,
+    category: CATEGORIES.CANVAS,
+  },
+  {
+    path: "/midnight",
+    element: <Midnight />,
+    category: CATEGORIES.LAYOUT,
+  },
+  {
+    path: "/sketch09",
+    element: <Sketch09 />,
+    category: CATEGORIES.CANVAS,
+  },
 ];
 
 function App() {
@@ -434,6 +514,19 @@ function App() {
           <Route path="/curved" element={<Curved />} />
           <Route path="/florian" element={<Florian />} />
           <Route path="/studiod" element={<Studiod />} />
+          <Route path="/studio" element={<Studio />} />
+          <Route path="/slinky" element={<Slinky />} />
+          <Route path="/canvas01" element={<Canvas01 />} />
+          <Route path="/arcs" element={<Arcs />} />
+          <Route path="/sketch03" element={<Sketch03 />} />
+          <Route path="/canvas-styles" element={<CanvasStyles />} />
+          <Route path="/sketch04" element={<Sketch04 />} />
+          <Route path="/sketch05" element={<Sketch05 />} />
+          <Route path="/sketch06" element={<Sketch06 />} />
+          <Route path="/sketch07" element={<Sketch07 />} />
+          <Route path="/sketch08" element={<Sketch08 />} />
+          <Route path="/midnight" element={<Midnight />} />
+          <Route path="/sketch09" element={<Sketch09 />} />
         </Routes>
       </BrowserRouter>
     </>
