@@ -87,6 +87,12 @@ import Sketch07 from "./components/sketch07/Sketch07";
 import Sketch08 from "./components/sketch08/Sketch08";
 import Midnight from "./components/midnight/Midnight";
 import Sketch09 from "./components/sketch09/Sketch09";
+import Sketch10 from "./components/sketch10/Sketch10";
+import Sketch11 from "./components/sketch11/Sketch11";
+import Sketch12 from "./components/sketch12/Sketch12";
+import Sketch13 from "./components/sketch13/Sketch13";
+import Brands from "./components/brands/Brands";
+import Logma from "./components/logma/Logma";
 
 const CATEGORY_TITLES = [
   "Menu/Nav",
@@ -432,6 +438,36 @@ const PAGES = [
     element: <Sketch09 />,
     category: CATEGORIES.CANVAS,
   },
+  {
+    path: "/sketch10",
+    element: <Sketch10 />,
+    category: CATEGORIES.CANVAS,
+  },
+  {
+    path: "/sketch11",
+    element: <Sketch11 />,
+    category: CATEGORIES.CANVAS,
+  },
+  {
+    path: "/sketch12",
+    element: <Sketch12 />,
+    category: CATEGORIES.CANVAS,
+  },
+  {
+    path: "/sketch13",
+    element: <Sketch13 />,
+    category: CATEGORIES.CANVAS,
+  },
+  {
+    path: "/brands",
+    element: <Brands />,
+    category: CATEGORIES.MATTER_JS,
+  },
+  {
+    path: "/logma",
+    element: <Logma />,
+    category: CATEGORIES.WEBGL_3D,
+  },
 ];
 
 function App() {
@@ -527,6 +563,12 @@ function App() {
           <Route path="/sketch08" element={<Sketch08 />} />
           <Route path="/midnight" element={<Midnight />} />
           <Route path="/sketch09" element={<Sketch09 />} />
+          <Route path="/sketch10" element={<Sketch10 />} />
+          <Route path="/sketch11" element={<Sketch11 />} />
+          <Route path="/sketch12" element={<Sketch12 />} />
+          <Route path="/sketch13" element={<Sketch13 />} />
+          <Route path="/brands" element={<Brands />} />
+          <Route path="/logma" element={<Logma />} />
         </Routes>
       </BrowserRouter>
     </>

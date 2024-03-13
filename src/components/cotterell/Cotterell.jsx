@@ -191,7 +191,7 @@ function MenuItem({ item }) {
         const left = bounds.left;
         const normalizedMouseX = (mouseX - left) / (right - left);
 
-        console.log("normalizedMouseX: ", normalizedMouseX);
+        // console.log("normalizedMouseX: ", normalizedMouseX);
 
         const translateValue = normalizedMouseX * 100 - 50 * 0.2;
         xTo(translateValue);

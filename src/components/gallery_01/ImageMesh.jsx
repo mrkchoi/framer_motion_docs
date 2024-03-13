@@ -32,6 +32,7 @@ function ImageMesh({
     },
   });
 
+  console.log(meshRef);
   useFrame(({ clock }) => {
     if (meshRef) {
       meshRef.material.uniforms.uTime.value = clock.elapsedTime;

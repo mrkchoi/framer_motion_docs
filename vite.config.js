@@ -6,6 +6,7 @@ export default defineConfig(() => {
   return {
     build: {
       outDir: "build",
+      // commonjsOptions: { transformMixedEsModules: true }, // Change
     },
     plugins: [react(), eslint()],
     server: {
