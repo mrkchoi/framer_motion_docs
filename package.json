@@ -6,6 +6,7 @@
     "@gsap/react": "^2.1.0",
     "@react-three/drei": "^9.97.1",
     "@react-three/fiber": "^8.15.15",
+    "@react-three/postprocessing": "^2.16.2",
     "@studio-freight/lenis": "^1.0.33",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",

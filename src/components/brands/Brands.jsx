@@ -69,8 +69,10 @@ function Brands() {
   }, []);
 
   useEffect(() => {
-    const width = window.innerWidth;
-    const height = window.innerHeight;
+    const container = sceneRef.current;
+
+    const width = container.clientWidth;
+    const height = container.clientHeight;
     const world = engineRef.current.world;
 
     const render = Render.create({
@@ -85,7 +87,7 @@ function Brands() {
     });
     const runner = Runner.create();
 
-    engineRef.current.gravity.y = 0.25;
+    engineRef.current.gravity.y = 1;
 
     // MOUSE
     const mouse = Mouse.create(render.canvas);
@@ -175,14 +177,14 @@ function Brands() {
     const handleClick = () => {
       setIsRunning(true);
       runner.enabled = true;
-      console.log("isRunning", isRunning);
     };
 
     window.addEventListener("click", handleClick);
 
     const handleResize = () => {
-      const width = window.innerWidth;
-      const height = window.innerHeight;
+      const container = sceneRef.current;
+      const width = container.clientWidth;
+      const height = container.clientHeight;
       render.canvas.width = width;
       render.canvas.height = height;
 

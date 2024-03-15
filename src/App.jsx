@@ -93,6 +93,9 @@ import Sketch12 from "./components/sketch12/Sketch12";
 import Sketch13 from "./components/sketch13/Sketch13";
 import Brands from "./components/brands/Brands";
 import Logma from "./components/logma/Logma";
+import Monopo from "./components/monopo/Monopo";
+import Monopo2 from "./components/monopo2/Monopo2";
+import Akaru from "./components/akaru/Akaru";
 
 const CATEGORY_TITLES = [
   "Menu/Nav",
@@ -468,6 +471,21 @@ const PAGES = [
     element: <Logma />,
     category: CATEGORIES.WEBGL_3D,
   },
+  {
+    path: "/monopo",
+    element: <Monopo />,
+    category: CATEGORIES.WEBGL_3D,
+  },
+  {
+    path: "/monopo2",
+    element: <Monopo2 />,
+    category: CATEGORIES.WEBGL_3D,
+  },
+  {
+    path: "/akaru",
+    element: <Akaru />,
+    category: CATEGORIES.LAYOUT,
+  },
 ];
 
 function App() {
@@ -569,6 +587,9 @@ function App() {
           <Route path="/sketch13" element={<Sketch13 />} />
           <Route path="/brands" element={<Brands />} />
           <Route path="/logma" element={<Logma />} />
+          <Route path="/monopo" element={<Monopo />} />
+          <Route path="/monopo2" element={<Monopo2 />} />
+          <Route path="/akaru" element={<Akaru />} />
         </Routes>
       </BrowserRouter>
     </>

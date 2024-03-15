@@ -1,0 +1,696 @@
+@font-face {
+  font-family: "Alliance Medium";
+  src: url("./assets/fonts/alliance-neuemedium.woff2");
+}
+@font-face {
+  font-family: "Alliance Regular";
+  src: url("./assets/fonts/alliance-neueregular.woff2");
+}
+@font-face {
+  font-family: "Alliance Platt";
+  src: url("./assets/fonts/alliance-plattsemibold.woff2");
+}
+
+.akaru__main {
+  --terra: #e49366;
+  --green: #798e7b;
+  --pink: #b692a1;
+  --blue: #bfccd8;
+  --black: #0e0e0e;
+  --beige: #f1efeb;
+  --grey: #666d73;
+  --cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+  font-family: "Alliance Regular", sans-serif;
+  background-color: var(--beige);
+  position: relative;
+}
+
+/* TRANSITION OVERLAY */
+.akaru__transitionOverlayWrapper {
+  background-color: black;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  /* opacity: 0.5; */
+  will-change: transform;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  /* transform: translate3d(0, -100%, 0); */
+}
+.akaru__transitionOverlayLogoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.1vw;
+  overflow: hidden;
+  position: relative;
+}
+.akaru__transitionOverlayLogoWrapper svg {
+  fill: white;
+  height: 3.5vw;
+  width: inherit;
+  will-change: transform;
+  position: relative;
+}
+/* HEADER */
+.akaru__header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 1.5rem 0 1.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+.akaru__headerLogoWrapper {
+  height: 2rem;
+  width: 4.5rem;
+  display: flex;
+}
+.akaru__headerLogoWrapper svg {
+  height: 2rem;
+  width: inherit;
+}
+.akaru__header img {
+  height: 3vw;
+}
+.akaru__headerBtn {
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  font-family: "Alliance Medium";
+  color: var(--beige);
+  background-color: var(--black);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.akaru__headerBtnText {
+  display: inline-block;
+  transform: translate3d(0.5rem, 0, 0);
+  transition: transform 0.4s var(--cubic);
+  will-change: transform;
+}
+.akaru__headerBtnBurgerWrapper {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  background-color: var(--terra);
+  position: relative;
+  will-change: transform opacity;
+  transition: all 0.4s var(--cubic);
+  transform: scale(0.2) translate3d(1rem, 0, 0);
+}
+.akaru__headerBtnBurger {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.akaru__headerBtnBurger::before {
+  content: "";
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.4s var(--cubic);
+  width: 1rem;
+  height: 2px;
+  opacity: 0;
+  background-color: var(--black);
+}
+.akaru__headerBtnBurger::after {
+  content: "";
+  position: absolute;
+  top: 57%;
+  left: 50%;
+  transition: all 0.4s var(--cubic);
+  transform: translate(-50%, -50%);
+  width: 1rem;
+  height: 2px;
+  opacity: 0;
+  background-color: var(--black);
+}
+.akaru__headerBtn:hover .akaru__headerBtnBurger::before,
+.akaru__headerBtn:hover .akaru__headerBtnBurger::after {
+  opacity: 1;
+}
+.akaru__headerBtn:hover .akaru__headerBtnBurgerWrapper {
+  transform: scale(1) translate3d(0.25rem, 0, 0);
+}
+.akaru__headerBtn:hover .akaru__headerBtnText {
+  transform: translate3d(0.25rem, 0, 0);
+}
+/* HEADER - END */
+
+/* CURSOR */
+.akaru__cursor {
+  position: fixed;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  /* width: 5vw;
+  height: 5vw; */
+  border-radius: 50%;
+  background-color: black;
+  pointer-events: none;
+  z-index: 1000;
+  /* mix-blend-mode: difference; */
+  will-change: transform;
+  /* transition: transform 0.1s var(--cubic); */
+  transform: translate3d(-50%, -50%, 0);
+}
+.akaru__cursorArrow {
+  position: fixed;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  transform: translate3d(-50%, -50%, 0);
+  width: 0.8rem;
+  height: 0.8rem;
+  pointer-events: none;
+  fill: var(--beige);
+  z-index: 2000;
+  will-change: transform;
+}
+
+/* HERO */
+.akaru__hero {
+  padding: 1.5rem;
+  padding-top: 6rem;
+}
+.akaru__heroTitleWrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 3rem;
+}
+.akaru__heroTitleWrapperInner {
+  position: relative;
+  overflow: hidden;
+}
+.akaru__heroTitleCountWrapper {
+  position: absolute;
+  top: -0.5vw;
+  right: -1vw;
+  font-size: 1.5vw;
+  display: inline-block;
+  overflow: hidden;
+}
+.akaru__heroTitleCount {
+  position: relative;
+  display: inline-block;
+  font-size: 1.5vw;
+  font-family: "Alliance Medium";
+  text-transform: uppercase;
+  will-change: transform;
+}
+.akaru__heroTitle {
+  font-family: "Alliance Regular";
+  font-size: 12vw;
+  line-height: 12vw;
+  position: relative;
+}
+.akaru__heroSubtitleWrapper {
+  margin-bottom: 2rem;
+}
+.akaru__heroSubtitle {
+  font-size: 3vw;
+  line-height: 3.5vw;
+  font-family: "Alliance Regular";
+}
+.akaru__heroSubtitleLine {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+/* HERO - END */
+
+/* PROJECT NAV */
+.akaru__projectNavWrapper {
+  border-top: 1px solid var(--black);
+  border-bottom: 1px solid var(--black);
+}
+.akaru__projectNav {
+  display: flex;
+  width: 100%;
+  padding: 2rem 8rem;
+  gap: 2rem;
+  justify-content: space-around;
+}
+.akaru__projectNavItem {
+}
+.akaru__projectNavLink {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.akaru__projectNavDotWrapperOuter {
+  width: 2.5vw;
+  height: 2.5vw;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.akaru__projectNavDotWrapper {
+  border-radius: 50%;
+  width: 2.5vw;
+  height: 2.5vw;
+  position: relative;
+  transform: scale(0.2);
+  transform-origin: center center;
+  transition: transform 0.4s var(--cubic);
+  will-change: transform;
+}
+.akaru__projectNavDotWrapper svg {
+  width: 0.75vw;
+  height: 0.75vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  fill: var(--beige);
+}
+.akaru__projectNavItem:hover .akaru__projectNavDotWrapper {
+  transform: scale(1);
+}
+.akaru__projectNavCount {
+  position: absolute;
+  top: -0.25vw;
+  right: -1vw;
+  font-size: 0.7vw;
+}
+.akaru__projectNavTitle {
+}
+/* PROJECT NAV - END */
+
+/* PROJECTS - LARGE */
+.akaru__projectsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.akaru__projectLargeWrapper {
+  width: 50%;
+  border-right: 1px solid var(--black);
+  border-bottom: 1px solid var(--black);
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+.akaru__projectLargeWrapper:nth-child(even) {
+  border-right: none;
+}
+.akaru__projectLargeLink {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+}
+.akaru__projectLargeBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+  transform: translate3d(0, -100%, 0);
+}
+.akaru__projectLargeTitleContainer {
+  width: 100%;
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.akaru__projectLargeTitleWrapper {
+  position: relative;
+  overflow: hidden;
+}
+.akaru__projectLargeTitle {
+  font-family: "Alliance Medium", sans-serif;
+  font-size: 2vw;
+  line-height: 2vw;
+  position: relative;
+  transition: transform 0.4s var(--cubic);
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  transition-delay: 25ms;
+}
+.akaru__projectLargeWrapper:hover .akaru__projectLargeTitle {
+  transform: translate3d(0, -150%, 0);
+}
+.akaru__projectLargeDescriptionWrapper {
+  position: relative;
+  overflow: hidden;
+}
+.akaru__projectLargeDescription {
+  position: relative;
+  font-family: "Alliance Regular", sans-serif;
+  font-size: 1.1vw;
+  line-height: 1.1vw;
+  display: inline-block;
+  transition: transform 0.4s var(--cubic);
+  will-change: transform;
+  transition-delay: 50ms;
+}
+.akaru__projectLargeWrapper:hover .akaru__projectLargeDescription {
+  transform: translate3d(0, -200%, 0);
+}
+.akaru__projectLargeImageWrapper {
+  position: absolute;
+  width: calc(100% - 13vw);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s var(--cubic);
+  will-change: transform;
+  clip-path: inset(9% 9% 0 9%);
+  transition-delay: 50ms;
+}
+.akaru__projectLargeWrapper:hover .akaru__projectLargeImageWrapper {
+  clip-path: inset(0 0 0 0);
+}
+
+.akaru__projectLargeImage {
+  will-change: transform;
+  transition: transform 0.5s var(--cubic);
+}
+.akaru__projectLargeWrapper:hover .akaru__projectLargeImage {
+  transform: scale(1.2);
+}
+.akaru__projectLargeImageOverlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--beige);
+  font-size: 3vw;
+  text-align: center;
+  line-height: 3vw;
+}
+.akaru__projectLargeImageTitleWrapper {
+  position: relative;
+  overflow: hidden;
+}
+.akaru__projectLargeImageTitle {
+  position: relative;
+  display: inline-block;
+  transform: translate3d(0, 200%, 0);
+  will-change: transform;
+  transition: transform 0.4s var(--cubic);
+}
+.akaru__projectLargeWrapper:hover .akaru__projectLargeImageTitle {
+  transform: translate3d(0, 0, 0);
+}
+.akaru__projectLargeFooterWrapper {
+  width: 100%;
+  font-family: "Alliance Platt", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.7vw;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  z-index: 1;
+}
+.akaru__projectLargeType {
+}
+.akaru__projectLargeYear {
+  display: inline-block;
+  border: 1px solid var(--black);
+  padding: 0.1rem 0.5rem;
+  border-radius: 25px;
+}
+
+/* PROJECTS - LARGE - END */
+
+/* PROJECTS - MEDIUM */
+.akaru__projectMediumWrapper {
+  width: 50%;
+  border-bottom: 1px solid var(--black);
+  position: relative;
+  overflow: hidden;
+}
+.akaru__projectMediumWrapper:nth-child(odd) {
+  border-right: 1px solid var(--black);
+}
+.akaru__projectMediumLink {
+  display: flex;
+}
+.akaru__projectMediumBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+  /* opacity: 0.2; */
+  transform: translate3d(0, -100%, 0);
+}
+.akaru__projectMediumImageWrapper {
+  position: relative;
+  width: 20vw;
+  height: 20vw;
+  aspect-ratio: 1 / 1;
+  padding: 1.5vw;
+}
+.akaru__projectMediumImageWrapperInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  clip-path: inset(0 0 0 0);
+}
+.akaru__projectMediumImage {
+  position: relative;
+  will-change: transform;
+  transition: transform 0.5s var(--cubic);
+}
+.akaru__projectMediumWrapper:hover .akaru__projectMediumImage {
+  transform: scale(1.2);
+}
+.akaru__projectMediumContentWrapper {
+  padding: 1.5vw;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+.akaru__projectMediumFooterWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-family: "Alliance Platt", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.7vw;
+}
+.akaru__projectMediumYear {
+  display: inline-block;
+  border: 1px solid var(--black);
+  padding: 0.1rem 0.5rem;
+  border-radius: 25px;
+  position: relative;
+}
+.akaru__projectMediumType {
+  max-width: 40%;
+  position: relative;
+}
+.akaru__projectMediumTitleContainer {
+}
+.akaru__projectMediumTitleWrapper {
+}
+.akaru__projectMediumTitle {
+  font-family: "Alliance Medium", sans-serif;
+  font-size: 2vw;
+  line-height: 2vw;
+  position: relative;
+}
+.akaru__projectMediumDescriptionWrapper {
+}
+.akaru__projectMediumDescription {
+  position: relative;
+  font-family: "Alliance Regular", sans-serif;
+  font-size: 1.1vw;
+  line-height: 1.1vw;
+}
+
+/* PROJECTS - MEDIUM - END */
+
+/* PROJECTS - SMALL */
+.akaru__projectSmallWrapper {
+  width: 100%;
+  border-bottom: 1px solid var(--black);
+  position: relative;
+  overflow: hidden;
+}
+.akaru__projectSmallWrapper:last-of-type {
+  border-bottom: none;
+}
+.akaru__projectSmallLink {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 1.5vw;
+  align-items: center;
+}
+.akaru__projectSmallBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+  transform: translate3d(0, -100%, 0);
+}
+.akaru__projectSmallTitleWrapper {
+  grid-column: 1 / span 4;
+}
+.akaru__projectSmallTitle {
+  font-family: "Alliance Medium", sans-serif;
+  font-size: 2vw;
+  line-height: 2vw;
+  position: relative;
+}
+.akaru__projectSmallDescriptionWrapper {
+  grid-column: 5 / span 3;
+}
+.akaru__projectSmallDescription {
+  position: relative;
+  font-family: "Alliance Regular", sans-serif;
+  font-size: 1.1vw;
+  line-height: 1.1vw;
+}
+.akaru__projectSmallFooterWrapper {
+  grid-column: 8 / span 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Alliance Platt", sans-serif;
+  position: relative;
+  text-transform: uppercase;
+  font-size: 0.7vw;
+}
+.akaru__projectSmallYear {
+  font-family: "Alliance Platt", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.7vw;
+  display: inline-block;
+  position: relative;
+  border: 1px solid var(--black);
+  padding: 0.1rem 0.5rem;
+  border-radius: 25px;
+}
+.akaru__projectSmallType {
+  font-family: "Alliance Platt", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.7vw;
+}
+.akaru__projectSmallLink {
+}
+.akaru__projectSmallLink {
+}
+
+/* PROJECTS - SMALL - END */
+
+/* FOOTER */
+.akaru__footerWrapper {
+  width: 100%;
+  background-color: var(--terra);
+  padding: 1.5vw;
+  height: 70vw;
+}
+.akaru__footerTop {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  border-bottom: 1px solid var(--black);
+  padding-top: 2.5vw;
+  padding-bottom: 1.5vw;
+  font-family: "Alliance Platt", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.7vw;
+}
+.akaru__footerTopAddress {
+  grid-column: 1 / span 4;
+}
+.akaru__footerTopAddressLink {
+  display: flex;
+  flex-direction: column;
+}
+.akaru__footerTopAddressLink span {
+}
+.akaru__footerTopContact {
+  grid-column: 5 / span 3;
+  display: flex;
+  flex-direction: column;
+}
+.akaru__footerTopContact div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.75vw;
+}
+.akaru__footerTopContactLink {
+}
+.akaru__footerTopSocial {
+  grid-column: 8 / span 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.akaru__footerTopSocialLink {
+}
+.akaru__footerTopMention {
+  grid-column: 10 / span 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.akaru__footerTopMentionLink {
+  margin-bottom: 0.75vw;
+}
+
+.akaru__footerLink {
+  will-change: color;
+  transition: color 0.3s var(--cubic);
+}
+.akaru__footerLink:hover {
+  color: var(--beige);
+}
+.akaru__footerTopMentionLink span {
+}
+.akaru__footerTopMentionCopy {
+}
+.akaru__footerBottom {
+  width: 100%;
+}
+.akaru__footerLogoWrapper {
+  width: 100%;
+  height: inherit;
+  display: flex;
+  gap: 1.5rem;
+  padding-top: 1.5vw;
+}
+.akaru__footerLogoWrapper svg {
+  flex: 1;
+  height: inherit;
+}
+.akaru__footerWrapper {
+}
+.akaru__footerWrapper {
+}
+.akaru__footerWrapper {
+}

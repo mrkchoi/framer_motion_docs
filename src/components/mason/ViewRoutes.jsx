@@ -7,6 +7,7 @@ import gsap from "gsap";
 
 function ViewRoutes() {
   const [isInitialLoad, setIsInitialLoad] = useState(true);
+  const [isLoaderComplete, setIsLoaderComplete] = useState(false);
 
   return (
     <Routes>
@@ -35,6 +36,8 @@ function ViewRoutes() {
             <Home
               isInitialLoad={isInitialLoad}
               setIsInitialLoad={setIsInitialLoad}
+              isLoaderComplete={isLoaderComplete}
+              setIsLoaderComplete={setIsLoaderComplete}
             />
           </TransitionWrapper>
         }

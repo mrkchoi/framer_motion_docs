@@ -1,0 +1,148 @@
+.monopo2__main {
+  --blue: #0101ec;
+  --black: #000000;
+  --white: #ffffff;
+  width: 100%;
+  min-height: 100vh;
+
+  color: white;
+}
+.monopo2__background {
+  background-color: var(--black);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -2;
+}
+
+.monopo2__canvasWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  /* z-index: -1; */
+  mix-blend-mode: screen;
+}
+
+.monopo2__main canvas {
+  /* opacity: 0.7; */
+}
+.monopo2__section {
+  width: 100%;
+  height: 100vh;
+  padding: 2rem;
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(12, 1fr);
+}
+.monopo2__section1 {
+}
+.monopo2__section2 {
+  background-color: var(--blue);
+  mix-blend-mode: screen;
+  height: 120vh;
+}
+.monopo2__section3 {
+}
+.monopo2__sectionTop {
+  grid-column: 2 / span 10;
+  margin-bottom: 2rem;
+}
+
+.monopo2__section2 .monopo2__sectionTop {
+  grid-column: 6 / span 6;
+  text-align: end;
+  margin-bottom: 2rem;
+}
+.monopo2__section2 .monopo2__sectionBottom {
+  grid-column: 2 / span 2;
+  text-align: start;
+}
+.monopo2__num {
+  font-size: 25vw;
+  line-height: 15vw;
+  text-transform: uppercase;
+  font-weight: 500;
+  position: relative;
+  display: inline-block;
+}
+.monopo2__title {
+  font-size: 15vw;
+  line-height: 12vw;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.monopo2__sectionBottom {
+  grid-column: 10 / span 2;
+}
+.monopo2__subtitle {
+  margin-bottom: 2rem;
+  line-height: 1.2;
+}
+.monopo2__btn {
+  padding: 0.75rem 2rem;
+  border: 1px solid white;
+  border-radius: 50px;
+  background-color: transparent;
+  /* transition: all 0.3s ease-in-out; */
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  position: relative;
+  display: inline-block;
+}
+.monopo2__btn:hover {
+  background-color: white;
+  color: black;
+}
+.monopo2__loadingWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  /* visibility: visible; */
+  pointer-events: none;
+  transition: all 1s ease-in-out;
+}
+.monopo2__loadingWrapper.monopo2__loaded {
+  opacity: 0;
+  pointer-events: none;
+  /* visibility: hidden; */
+}
+.monopo2__loadingDot {
+  width: 1rem;
+  height: 1rem;
+  background-color: var(--blue);
+  border-radius: 50%;
+  margin: 0 0.5rem;
+  animation: pulse 2s infinite ease-in-out;
+}
+.monopo2__section {
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1.25);
+  }
+  25% {
+    transform: scale(2);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  75% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1.25);
+  }
+}

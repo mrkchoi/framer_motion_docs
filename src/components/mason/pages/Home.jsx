@@ -95,7 +95,22 @@ const ITEMS = [
   },
 ];
 
-function Home({ isInitialLoad, setIsInitialLoad }) {
+function Home({
+  isInitialLoad,
+  setIsInitialLoad,
+  isLoaderComplete,
+  setIsLoaderComplete,
+}) {
+  useEffect(() => {
+    // if isLoaderComplete is false, then disable all pointer events
+    const body = document.querySelector("body");
+    if (!isLoaderComplete) {
+      body.style.pointerEvents = "none";
+    } else {
+      body.style.pointerEvents = "auto";
+    }
+  }, [isLoaderComplete]);
+
   useEffect(() => {
     if (isInitialLoad) {
       const img = document.querySelector(
@@ -180,6 +195,9 @@ function Home({ isInitialLoad, setIsInitialLoad }) {
         duration: 2,
         ease: "cubic",
         stagger: 0.125,
+        onComplete: () => {
+          setIsLoaderComplete(true);
+        },
       });
       tl.to(
         [
@@ -225,6 +243,9 @@ function Home({ isInitialLoad, setIsInitialLoad }) {
         });
       };
       setIsInitialLoad(false);
+      // setIsLoaderComplete(true);
+    } else {
+      setIsLoaderComplete(true);
     }
   }, []);
 
