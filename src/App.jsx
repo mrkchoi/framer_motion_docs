@@ -96,6 +96,8 @@ import Logma from "./components/logma/Logma";
 import Monopo from "./components/monopo/Monopo";
 import Monopo2 from "./components/monopo2/Monopo2";
 import Akaru from "./components/akaru/Akaru";
+import Maxime01 from "./components/maxime01/Maxime01";
+import RGBDistortion from "./components/rgb_distortion/RGBDistortion";
 
 const CATEGORY_TITLES = [
   "Menu/Nav",
@@ -486,6 +488,16 @@ const PAGES = [
     element: <Akaru />,
     category: CATEGORIES.LAYOUT,
   },
+  {
+    path: "/maxime01",
+    element: <Maxime01 />,
+    category: CATEGORIES.WEBGL_3D,
+  },
+  {
+    path: "/rgb-distortion",
+    element: <RGBDistortion />,
+    category: CATEGORIES.WEBGL_3D,
+  },
 ];
 
 function App() {
@@ -590,6 +602,8 @@ function App() {
           <Route path="/monopo" element={<Monopo />} />
           <Route path="/monopo2" element={<Monopo2 />} />
           <Route path="/akaru" element={<Akaru />} />
+          <Route path="/maxime01" element={<Maxime01 />} />
+          <Route path="/rgb-distortion" element={<RGBDistortion />} />
         </Routes>
       </BrowserRouter>
     </>

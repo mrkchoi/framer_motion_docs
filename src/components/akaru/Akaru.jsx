@@ -409,7 +409,7 @@ function Akaru() {
     tl.to(
       ".akaru__projectLargeLink",
       {
-        duration: 1.25,
+        duration: 1.5,
         y: 0,
         stagger: 0.1,
         delay: 0.1,
@@ -426,7 +426,7 @@ function Akaru() {
     gsap.from(".akaru__footerLogoWrapper svg", {
       scrollTrigger: {
         trigger: ".akaru__footerLogoWrapper svg",
-        start: "top 70%",
+        start: "top 90%",
         end: "bottom bottom",
         scrub: 1,
         // markers: true,
