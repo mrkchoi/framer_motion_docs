@@ -1,4 +1,3 @@
-import React from "react";
 import MeshImage from "./MeshImage";
 
 function Scene({ images, targetScroll, actualScroll }) {

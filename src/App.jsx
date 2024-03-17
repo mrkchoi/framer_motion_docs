@@ -1,7 +1,7 @@
 import "./App.css";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Lenis from "@studio-freight/lenis";
+// import Lenis from "@studio-freight/lenis";
 
 import Stagger from "./components/Stagger";
 import Intro from "./components/Intro";
@@ -611,16 +611,16 @@ function App() {
 }
 
 function Home() {
-  useEffect(() => {
-    const lenis = new Lenis();
+  //   useEffect(() => {
+  //     const lenis = new Lenis();
 
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+  //     function raf(time) {
+  //       lenis.raf(time);
+  //       requestAnimationFrame(raf);
+  //     }
 
-    requestAnimationFrame(raf);
-  }, []);
+  //     requestAnimationFrame(raf);
+  //   }, []);
 
   return (
     <div className="min-h-screen w-full p-12">

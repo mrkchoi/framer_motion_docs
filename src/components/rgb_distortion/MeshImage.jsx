@@ -1,40 +1,21 @@
 import { useFrame } from "@react-three/fiber";
-import React, { useEffect, useRef, useState, useMemo } from "react";
+import { useRef, useMemo } from "react";
 import * as THREE from "three";
 
 function MeshImage({ image, idx, targetScroll, actualScroll }) {
   const meshRef = useRef(null);
-  const [size, setSize] = useState({ width: 0, height: 0 });
-  const [offset, setOffset] = useState({ x: 0, y: 0 });
 
-  useEffect(() => {
-    // use DOM position and sizing of image to position and size mesh
-    const handleImageResize = () => {
-      const { width, height, top, left } = image.getBoundingClientRect();
-      setSize({ width, height });
-      setOffset({ x: left, y: top });
-    };
-    handleImageResize();
-
-    window.addEventListener("resize", handleImageResize);
-    window.addEventListener("scroll", handleImageResize);
-    return () => {
-      window.removeEventListener("resize", handleImageResize);
-      window.removeEventListener("scroll", handleImageResize);
-    };
-  }, []);
-
-  useFrame(() => {
+  useFrame(({ clock }) => {
+    const { width, height, top, left } = image.getBoundingClientRect();
     if (meshRef.current) {
       // TODO: Account for width of scrollbar in width offset calculation
+      // SYNC MESH POSITION + SCALE WITH DOM IMAGE
       meshRef.current.position.x =
-        offset.x - (window.innerWidth - 16) / 2 + size.width / 2;
-      meshRef.current.position.y =
-        -offset.y + window.innerHeight / 2 - size.height / 2;
-      meshRef.current.scale.x = size.width;
-      meshRef.current.scale.y = size.height;
-
-      // update the offset uniform in the shader based on scroll direction and velocity
+        left - (window.innerWidth - 16) / 2 + width / 2;
+      meshRef.current.position.y = -top + window.innerHeight / 2 - height / 2;
+      meshRef.current.scale.x = width;
+      meshRef.current.scale.y = height;
+      // UPDATE SHADER UNIFORM
       meshRef.current.material.uniforms.uOffset.value.set(
         0,
         -(targetScroll - actualScroll) * 0.0002,
@@ -80,8 +61,10 @@ function MeshImage({ image, idx, targetScroll, actualScroll }) {
 
           void main() {
             vUv = uv;
+
             vec3 newPosition = position;
             newPosition = deformationCurve(newPosition, uv, uOffset);
+            
             gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);
           }
         `}

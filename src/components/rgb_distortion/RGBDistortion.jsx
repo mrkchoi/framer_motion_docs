@@ -1,8 +1,6 @@
-import React, { Suspense, useEffect, useState } from "react";
-import Lenis from "@studio-freight/lenis";
+import { Suspense, useEffect, useState, useRef } from "react";
 import { Canvas, addEffect } from "@react-three/fiber";
 import { OrthographicCamera } from "@react-three/drei";
-import { useProgress } from "@react-three/drei";
 
 import Scene from "./Scene";
 
@@ -20,21 +18,22 @@ const IMAGES = [
   { title: "Rose", src: img04 },
 ];
 
-const lenis = new Lenis({
-  syncTouch: true,
-});
+const PERSPECTIVE = 1000;
+const FOV =
+  (180 * (2 * Math.atan(window.innerHeight / 2 / PERSPECTIVE))) / Math.PI;
 
-const perspective = 1000;
-const fov =
-  (180 * (2 * Math.atan(window.innerHeight / 2 / perspective))) / Math.PI;
+const lerp = (start, end, t) => {
+  return start * (1 - t) + end * t;
+};
+let current = 0;
+let target = 0;
+let ease = 0.075;
 
 function RGBDistortion() {
+  const scrollableRef = useRef(null);
   const [images, setImages] = useState([]);
   const [targetScroll, setTargetScroll] = useState(0);
   const [actualScroll, setActualScroll] = useState(0);
-
-  // const { active, progress, errors, item, loaded, total, transition } =
-  //   useProgress();
 
   useEffect(() => {
     // get all images from DOM and set them to state for use in canvas scene
@@ -42,15 +41,39 @@ function RGBDistortion() {
     setImages(allImages);
   }, []);
 
-  addEffect((time) => {
-    lenis.raf(time);
-    setTargetScroll(lenis.targetScroll);
-    setActualScroll(lenis.actualScroll);
+  // SMOOTH SCROLL SYNC SETUP
+  useEffect(() => {
+    // SET VIRTUAL SCROLL PARENT HEIGHT, UPDATE ON RESIZE
+    const init = () => {
+      document.body.style.height = `${
+        scrollableRef.current.getBoundingClientRect().height
+      }px`;
+    };
+    init();
+    window.addEventListener("resize", init);
+
+    // UPDATE SCROLLABLE CONTAINER Y POSITION IN ANIMATION LOOP
+    const smoothScroll = () => {
+      target = window.scrollY;
+      current = lerp(current, target, ease);
+      setTargetScroll(target);
+      setActualScroll(current);
+      scrollableRef.current.style.transform = `
+        translate3d(0, -${current}px, 0)
+        `;
+      requestAnimationFrame(smoothScroll);
+    };
+    smoothScroll();
+
+    return () => {
+      cancelAnimationFrame(smoothScroll);
+      window.removeEventListener("resize", init);
+    };
   }, []);
 
   return (
     <div className="rgbDistortion__main">
-      <div className="rgbDistortion__contentWrapper">
+      <div ref={scrollableRef} className="rgbDistortion__scrollable">
         {IMAGES.map((image, index) => (
           <div key={index} className="rgbDistortion__section">
             <img
@@ -76,9 +99,9 @@ function RGBDistortion() {
         <Canvas>
           <OrthographicCamera
             makeDefault
-            position={[0, 0, perspective]}
+            position={[0, 0, PERSPECTIVE]}
             zoom={1}
-            fov={fov}
+            fov={FOV}
             aspect={window.innerWidth / window.innerHeight}
             near={0.01}
             far={1000}

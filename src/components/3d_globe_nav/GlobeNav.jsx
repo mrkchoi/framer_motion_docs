@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState, Suspense } from "react";
-import SmoothScroll from "../lenis/SmoothScroll";
+import Lenis from "@studio-freight/lenis";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -11,6 +11,17 @@ import "./globeNav.css";
 
 function GlobeNav() {
   const meshRef = useRef(null);
+
+  useEffect(() => {
+    const lenis = new Lenis();
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  }, []);
 
   useGSAP(() => {
     // meshRef is not loaded immediately resulting in gsap undefined target issue (setTImeout is temp fix)
@@ -33,16 +44,14 @@ function GlobeNav() {
   });
 
   return (
-    <SmoothScroll>
-      <div className="globeNav__main">
-        <div className="globeNav__container">
-          <Suspense fallback={<div>Loading...</div>}>
-            <Earth meshRef={meshRef} />
-          </Suspense>
-          <Projects />
-        </div>
+    <div className="globeNav__main">
+      <div className="globeNav__container">
+        <Suspense fallback={<div>Loading...</div>}>
+          <Earth meshRef={meshRef} />
+        </Suspense>
+        <Projects />
       </div>
-    </SmoothScroll>
+    </div>
   );
 }
 
