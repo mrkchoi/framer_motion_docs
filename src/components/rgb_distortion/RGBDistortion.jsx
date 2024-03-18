@@ -58,9 +58,11 @@ function RGBDistortion() {
       current = lerp(current, target, ease);
       setTargetScroll(target);
       setActualScroll(current);
-      scrollableRef.current.style.transform = `
+      if (scrollableRef.current) {
+        scrollableRef.current.style.transform = `
         translate3d(0, -${current}px, 0)
         `;
+      }
       requestAnimationFrame(smoothScroll);
     };
     smoothScroll();
@@ -68,6 +70,7 @@ function RGBDistortion() {
     return () => {
       cancelAnimationFrame(smoothScroll);
       window.removeEventListener("resize", init);
+      document.body.style.height = "";
     };
   }, []);
 

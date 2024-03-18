@@ -98,6 +98,9 @@ import Monopo2 from "./components/monopo2/Monopo2";
 import Akaru from "./components/akaru/Akaru";
 import Maxime01 from "./components/maxime01/Maxime01";
 import RGBDistortion from "./components/rgb_distortion/RGBDistortion";
+import Math01 from "./components/math/Math01";
+import Math02 from "./components/math/Math02";
+import Artists from "./components/artists/Artists";
 
 const CATEGORY_TITLES = [
   "Menu/Nav",
@@ -112,6 +115,7 @@ const CATEGORY_TITLES = [
   "Matter.js",
   "Misc",
   "Basic",
+  "Math",
 ];
 
 const CATEGORIES = {
@@ -127,6 +131,7 @@ const CATEGORIES = {
   MATTER_JS: "Matter.js",
   MISC: "Misc",
   BASIC: "Basic",
+  MATH: "Math",
 };
 
 const PAGES = [
@@ -498,6 +503,21 @@ const PAGES = [
     element: <RGBDistortion />,
     category: CATEGORIES.WEBGL_3D,
   },
+  {
+    path: "/math01",
+    element: <Math01 />,
+    category: CATEGORIES.MATH,
+  },
+  {
+    path: "/math02",
+    element: <Math02 />,
+    category: CATEGORIES.MATH,
+  },
+  {
+    path: "/artists",
+    element: <Artists />,
+    category: CATEGORIES.WEBGL_3D,
+  },
 ];
 
 function App() {
@@ -604,6 +624,9 @@ function App() {
           <Route path="/akaru" element={<Akaru />} />
           <Route path="/maxime01" element={<Maxime01 />} />
           <Route path="/rgb-distortion" element={<RGBDistortion />} />
+          <Route path="/math01" element={<Math01 />} />
+          <Route path="/math02" element={<Math02 />} />
+          <Route path="/artists" element={<Artists />} />
         </Routes>
       </BrowserRouter>
     </>
