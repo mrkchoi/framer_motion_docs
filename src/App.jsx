@@ -101,6 +101,9 @@ import RGBDistortion from "./components/rgb_distortion/RGBDistortion";
 import Math01 from "./components/math/Math01";
 import Math02 from "./components/math/Math02";
 import Artists from "./components/artists/Artists";
+import Vectors from "./components/vectors/Vectors";
+import Velocity from "./components/Velocity/Velocity";
+import Cursor01 from "./components/cursor01/Cursor01";
 
 const CATEGORY_TITLES = [
   "Menu/Nav",
@@ -518,6 +521,21 @@ const PAGES = [
     element: <Artists />,
     category: CATEGORIES.WEBGL_3D,
   },
+  {
+    path: "/vectors",
+    element: <Vectors />,
+    category: CATEGORIES.MATH,
+  },
+  {
+    path: "/velocity",
+    element: <Velocity />,
+    category: CATEGORIES.MATH,
+  },
+  {
+    path: "/cursor01",
+    element: <Cursor01 />,
+    category: CATEGORIES.WEBGL_3D,
+  },
 ];
 
 function App() {
@@ -627,6 +645,9 @@ function App() {
           <Route path="/math01" element={<Math01 />} />
           <Route path="/math02" element={<Math02 />} />
           <Route path="/artists" element={<Artists />} />
+          <Route path="/vectors" element={<Vectors />} />
+          <Route path="/velocity" element={<Velocity />} />
+          <Route path="/cursor01" element={<Cursor01 />} />
         </Routes>
       </BrowserRouter>
     </>

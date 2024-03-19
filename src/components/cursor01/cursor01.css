@@ -1,0 +1,185 @@
+@font-face {
+  font-family: "Eudoxus Bold";
+  src: url("./assets/fonts/EudoxusSans-Bold.ttf");
+}
+@font-face {
+  font-family: "Eudoxus Medium";
+  src: url("./assets/fonts/EudoxusSans-Medium.ttf");
+}
+@font-face {
+  font-family: "Eudoxus Regular";
+  src: url("./assets/fonts/EudoxusSans-Regular.ttf");
+}
+@font-face {
+  font-family: "Modern Era";
+  src: url("./assets//fonts/ModernEraMono-Medium.woff2");
+}
+
+.cursor01__main {
+  --primary: #eee;
+  --secondary: #151417;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--primary);
+  color: var(--secondary);
+  font-family: "Eudoxus Regular";
+}
+.cursor01__scrollable {
+  width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+  z-index: 1;
+}
+.cursor01__canvasWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+}
+.cursor01__headerWrapper {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  padding: 2rem;
+  z-index: 100;
+  font-family: "Modern Era";
+}
+.cursor01__headerWrapper a {
+  cursor: pointer;
+}
+.cursor01__headerLogoWrapper {
+  font-family: "Eudoxus Bold";
+  font-size: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+.cursor01__headerLogoSpan {
+  line-height: 0.8;
+  display: flex;
+}
+.cursor01__headerLogoSpan span {
+  font-size: 0.7rem;
+  font-family: "Eudoxus Regular";
+}
+.cursor01__headerContactWrapper {
+  grid-column: 2 / span 2;
+}
+.cursor01__headerContactRow {
+}
+.cursor01__headerContactLink {
+  text-decoration: underline;
+}
+.cursor01__headerSkillWrapper {
+  grid-column: 7 / span 2;
+}
+.cursor01__headerSkillRow {
+}
+.cursor01__headerSocialWrapper {
+  grid-column: 11 / span 1;
+}
+.cursor01__headerSocialSpan {
+}
+.cursor01__headerSocialLinks {
+  display: flex;
+  justify-content: flex-start;
+  gap: 0.75rem;
+}
+.cursor01__headerSocialItem {
+}
+.cursor01__headerSocialItemLink {
+}
+.cursor01__headerLinksWrapper {
+  grid-column: 12 / span 1;
+  justify-self: end;
+}
+.cursor01__headerNav {
+}
+.cursor01__headerNavItem {
+}
+.cursor01__headerNavItemLink {
+}
+
+.cursor01__section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.cursor01__sectionImgWrapper {
+  width: max(50%, 300px);
+  aspect-ratio: 1 / 1;
+  opacity: 0;
+  visibility: hidden;
+}
+.cursor01__sectionImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cursor01__sectionTitleWrapper {
+  position: absolute;
+  top: 50%;
+  left: 65%;
+  text-align: end;
+}
+.cursor01__sectionTitle {
+  font-size: 8vw;
+  line-height: 7vw;
+  text-align: end;
+  font-family: "Eudoxus Bold";
+  margin-bottom: 3rem;
+}
+.cursor01__sectionTitle span {
+  display: block;
+}
+.cursor01__sectionSubtitle {
+  font-family: "Eudoxus Bold";
+  width: 50%;
+  display: inline-block;
+  font-size: 0.9rem;
+  text-align: left;
+}
+.cursor01__footerWrapper {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  padding: 2rem;
+  z-index: 100;
+  font-family: "Modern Era";
+}
+.cursor01__footerLeft {
+  grid-column: 2 / span 2;
+}
+.cursor01__footerLeft span {
+  display: block;
+}
+.cursor01__footerRight {
+  grid-column: 11 / span 2;
+  justify-self: end;
+  text-align: end;
+}
+.cursor01__footerRight span {
+  display: block;
+}
