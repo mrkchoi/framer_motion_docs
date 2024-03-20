@@ -104,6 +104,8 @@ import Artists from "./components/artists/Artists";
 import Vectors from "./components/vectors/Vectors";
 import Velocity from "./components/Velocity/Velocity";
 import Cursor01 from "./components/cursor01/Cursor01";
+import Vision from "./components/vision/Vision";
+import Vision02 from "./components/vision02/Vision02";
 
 const CATEGORY_TITLES = [
   "Menu/Nav",
@@ -536,6 +538,16 @@ const PAGES = [
     element: <Cursor01 />,
     category: CATEGORIES.WEBGL_3D,
   },
+  {
+    path: "/vision",
+    element: <Vision />,
+    category: CATEGORIES.WEBGL_3D,
+  },
+  {
+    path: "/vision02",
+    element: <Vision02 />,
+    category: CATEGORIES.WEBGL_3D,
+  },
 ];
 
 function App() {
@@ -648,6 +660,8 @@ function App() {
           <Route path="/vectors" element={<Vectors />} />
           <Route path="/velocity" element={<Velocity />} />
           <Route path="/cursor01" element={<Cursor01 />} />
+          <Route path="/vision" element={<Vision />} />
+          <Route path="/vision02" element={<Vision02 />} />
         </Routes>
       </BrowserRouter>
     </>

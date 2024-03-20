@@ -139,8 +139,8 @@ function MeshImage({
             newPosition = deformationCurve(newPosition, uv, uOffset);
 
             // on hover, uHovered is set to 1, on leave, uHovered is set to 0, when hovered, use uTime to animate subtle wave effect on uv
-            newPosition.x += sin(uv.y * PI + uTime) * 0.01;
-            newPosition.y += sin(uv.x * PI + uTime) * 0.01;
+            newPosition.x += sin(uv.y * PI + uTime * 1.5) * 0.01;
+            newPosition.y += sin(uv.x * PI + uTime * 1.5) * 0.01;
 
             
             gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);
