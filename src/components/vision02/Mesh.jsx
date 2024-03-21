@@ -8,7 +8,7 @@ function Mesh() {
   const meshRef = useRef(null);
   const { speed, multiplier } = useControls("Vision", {
     speed: {
-      value: 0.2,
+      value: 0.1,
       min: 0.01,
       max: 1,
       step: 0.01,
@@ -39,7 +39,7 @@ function Mesh() {
 const Vision02Material = shaderMaterial(
   {
     uTime: 0,
-    uSpeed: 0.5,
+    uSpeed: 0.1,
     uMultiplier: 1.0,
   },
   /* VERTEX SHADER */

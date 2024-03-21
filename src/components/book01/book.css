@@ -1,0 +1,14 @@
+.book__main {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(40, 40, 40);
+}
+
+.book__canvasWrapper {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

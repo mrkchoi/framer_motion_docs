@@ -34,6 +34,7 @@
     "three": "^0.161.0",
     "three-custom-shader-material": "^5.4.0",
     "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-glsl": "^1.2.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

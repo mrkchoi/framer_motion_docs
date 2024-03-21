@@ -4,37 +4,40 @@ import { shaderMaterial } from "@react-three/drei";
 import * as THREE from "three";
 import { useControls } from "leva";
 import img01 from "./assets/images/image.jpg";
+// import vertexShader from "./shaders/vertex.glsl";
+// import fragmentShader from "./shaders/fragment.glsl";
 
 function Mesh() {
   const meshRef = useRef(null);
-  const { uRadius } = useControls("Vision", {
-    uRadius: {
-      value: 0.5,
+  const { speed } = useControls("Vision", {
+    speed: {
+      value: 1,
       min: 0.01,
-      max: 1,
+      max: 20,
       step: 0.01,
     },
   });
 
   useFrame(() => {
     meshRef.current.material.uniforms.uTime.value += 0.01;
-    meshRef.current.material.uniforms.uRadius.value = uRadius;
+    meshRef.current.material.uniforms.uSpeed.value = speed;
   });
 
   return (
-    <mesh ref={meshRef} scale={[300, 300, 300]}>
+    <mesh ref={meshRef} scale={[500, 500, 500]}>
       <planeGeometry args={[2, 2, 32]} />
       {/* <sphereGeometry args={[1, 32, 32]} /> */}
-      <visionMaterial key={VisionMaterial.key} side={THREE.DoubleSide} />
+      {/* <torusKnotGeometry args={[1, 0.4, 100, 16]} /> */}
+      <bookMaterial key={BookMaterial.key} side={THREE.DoubleSide} />
     </mesh>
   );
 }
 
-const VisionMaterial = shaderMaterial(
+const BookMaterial = shaderMaterial(
   {
     uTime: 0,
-    uRadius: 0.5,
-    uTexture: new THREE.TextureLoader().load(img01),
+    uSpeed: 1,
+    // uTexture: new THREE.TextureLoader().load(img01),
   },
   /* VERTEX SHADER */
   /* glsl */ `
@@ -51,8 +54,6 @@ const VisionMaterial = shaderMaterial(
 
     // use noise to displace the vertices
     vec3 newPosition = position;
-    newPosition.z += sin(position.x * 3.0 + uTime) * 0.1;
-    newPosition.z += sin(position.y * 5.0 + uTime) * 0.1;
 
 
     vec4 modelViewPosition = modelViewMatrix * vec4(newPosition, 1.0);
@@ -63,23 +64,14 @@ const VisionMaterial = shaderMaterial(
 `,
   /* FRAGMENT SHADER */
   /* glsl */ `
+  #define PI 3.14159265359
+
+  // uniform vec2 u_resolution;
+  // uniform vec2 u_mouse;
   uniform float uTime;
-  uniform float uRadius;
-  uniform sampler2D uTexture;
+  uniform float uSpeed;
 
   varying vec2 vUv;
-  varying vec3 vPosition;
-  varying vec3 vNormal;
-
-  // Signed distanced fields
-  float drawCircle(vec2 position, vec2 center, float radius) {
-    return step(radius, distance(position, center));
-  }
- 
-  float sdBox( in vec2 p, in vec2 b ) {
-    vec2 d = abs(p)-b;
-    return length(max(d,0.0)) + min(max(d.x,d.y),0.0);
-  }
 
   //	Classic Perlin 3D Noise 
   //	by Stefan Gustavson
@@ -154,32 +146,47 @@ const VisionMaterial = shaderMaterial(
     vec2 n_yz = mix(n_z.xy, n_z.zw, fade_xyz.y);
     float n_xyz = mix(n_yz.x, n_yz.y, fade_xyz.x); 
     return 2.2 * n_xyz;
-  }  
+  }
+
+  //  Function from Iñigo Quiles
+  //  https://www.shadertoy.com/view/MsS3Wc
+  vec3 hsb2rgb( in vec3 c ){
+    vec3 rgb = clamp(abs(mod(c.x*6.0+vec3(0.0,4.0,2.0),
+                              6.0)-3.0)-1.0,
+                      0.0,
+                      1.0 );
+    rgb = rgb*rgb*(3.0-2.0*rgb);
+    return c.z * mix(vec3(1.0), rgb, c.y);
+  }
 
   void main() {
+    // vec2 uv = gl_FragCoord.xy / u_resolution.xy;
     vec2 uv = vUv;
+    
+    float time = uTime * 0.2 * uSpeed;
+    
+    vec3 color = vec3(0.0);
+    vec2 toCenter = vec2(0.5) - uv;
+    float angle = atan(toCenter.y, toCenter.x) + sin(time * 0.2) * 0.3;
+    float radius = length(toCenter) * 2.0;
+    
+    color = hsb2rgb(vec3((angle / (PI * 2.0)) + 0.5, radius, 1.0));
+    color = vec3(noise(color * 10.0 + time));    
+    color = vec3(noise(sin(color * 4.0 + time)));    
+    color.r = pow(color.g, 0.1);
+    color.g = pow(color.b, 0.7);
+    color.b = pow(color.g, 0.0);
+    color.r *= 2.0;
+    color.g *= 3.0;
+    color.b *= 0.7;
+    
 
-    // line
-    // gl_FragColor = vec4(vec3(step(0.998, 1.0 - abs(vUv.y - 0.5))), 1); 
     
-    // circle
-    // gl_FragColor = vec4(vec3(step(uRadius, length(vUv - 0.5))), 1);
-    
-    // const vec2 center = vec2(0.5);
-    // gl_FragColor = vec4(vec3(drawCircle(vUv, center, uRadius)), 1);
-    
-    // sdf box
-    // gl_FragColor = vec4(vec3(step(0.9, 1.0 - sdBox(vUv - 0.5, vec2(0.15)))), 1);
-
-    // texture
-    const vec3 DESATURATE = vec3(0.2126, 0.7152, 0.0122);
-    vec3 color = texture2D(uTexture, uv).xyz;
-    float finalColor = dot(DESATURATE, color);
-    gl_FragColor = vec4(vec3(finalColor), 1.0);
+    gl_FragColor = vec4(color, 1.0);
   }
 `,
 );
 
-extend({ VisionMaterial });
+extend({ BookMaterial });
 
 export default Mesh;

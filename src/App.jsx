@@ -106,6 +106,10 @@ import Velocity from "./components/Velocity/Velocity";
 import Cursor01 from "./components/cursor01/Cursor01";
 import Vision from "./components/vision/Vision";
 import Vision02 from "./components/vision02/Vision02";
+import Book from "./components/book01/Book";
+import Cursor02 from "./components/cursor02/Cursor02";
+import Book02 from "./components/book02/Book02";
+import Pixel01 from "./components/pixel01/Pixel01";
 
 const CATEGORY_TITLES = [
   "Menu/Nav",
@@ -548,6 +552,26 @@ const PAGES = [
     element: <Vision02 />,
     category: CATEGORIES.WEBGL_3D,
   },
+  {
+    path: "/book01",
+    element: <Book />,
+    category: CATEGORIES.WEBGL_3D,
+  },
+  {
+    path: "/cursor02",
+    element: <Cursor02 />,
+    category: CATEGORIES.WEBGL_3D,
+  },
+  {
+    path: "/book02",
+    element: <Book02 />,
+    category: CATEGORIES.WEBGL_3D,
+  },
+  {
+    path: "/pixel01",
+    element: <Pixel01 />,
+    category: CATEGORIES.WEBGL_3D,
+  },
 ];
 
 function App() {
@@ -662,6 +686,10 @@ function App() {
           <Route path="/cursor01" element={<Cursor01 />} />
           <Route path="/vision" element={<Vision />} />
           <Route path="/vision02" element={<Vision02 />} />
+          <Route path="/book01" element={<Book />} />
+          <Route path="/cursor02" element={<Cursor02 />} />
+          <Route path="/book02" element={<Book02 />} />
+          <Route path="/pixel01" element={<Pixel01 />} />
         </Routes>
       </BrowserRouter>
     </>

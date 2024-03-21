@@ -1,19 +1,20 @@
 import { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
+import { Leva } from "leva";
 
 import Mesh from "./Mesh";
 
-import "./vision.css";
+import "./book.css";
 
 const PERSPECTIVE = 1000;
 const FOV =
   (180 * (2 * Math.atan(window.innerHeight / 2 / PERSPECTIVE))) / Math.PI;
 
-function Vision() {
+function Book() {
   return (
-    <div className="vision__main">
-      <div className="vision__canvasWrapper">
+    <div className="book__main">
+      <div className="book__canvasWrapper">
         <Canvas>
           <PerspectiveCamera
             makeDefault
@@ -29,9 +30,10 @@ function Vision() {
             <Mesh />
           </Suspense>
         </Canvas>
+        <Leva collapsed={true} />
       </div>
     </div>
   );
 }
 
-export default Vision;
+export default Book;
