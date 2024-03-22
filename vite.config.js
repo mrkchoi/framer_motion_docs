@@ -1,7 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import eslint from "vite-plugin-eslint";
-import glsl from "vite-plugin-glsl";
 
 export default defineConfig(() => {
   return {
@@ -9,7 +8,7 @@ export default defineConfig(() => {
       outDir: "build",
       // commonjsOptions: { transformMixedEsModules: true }, // Change
     },
-    plugins: [react(), eslint(), glsl()],
+    plugins: [react(), eslint()],
     server: {
       // this ensures that the browser opens upon server start
       open: true,

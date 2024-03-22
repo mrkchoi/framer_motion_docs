@@ -1,25 +1,10 @@
 import MeshImage from "./MeshImage";
 
-function Scene({
-  images,
-  targetScroll,
-  actualScroll,
-  normalizedMouse,
-  actualMouse,
-  scrollStrengthMultiplier,
-}) {
+function Scene({ images }) {
   return (
     <>
       {images.map((image, idx) => (
-        <MeshImage
-          key={idx}
-          image={image}
-          idx={idx}
-          targetScroll={targetScroll}
-          actualScroll={actualScroll}
-          normalizedMouse={normalizedMouse}
-          actualMouse={actualMouse}
-        />
+        <MeshImage key={idx} image={image} />
       ))}
     </>
   );

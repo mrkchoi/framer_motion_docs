@@ -2,28 +2,17 @@ import React from "react";
 import { Suspense, useEffect, useState, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrthographicCamera } from "@react-three/drei";
-
+// import * as THREE from "three";
 import Scene from "./Scene";
 import "./pixel01.css";
 
-// import img01 from "./assets/images/zajno01.webp";
+// import img02 from "./assets/images/asuka.webp";
+// import img01 from "./assets/images/bachelor.webp";
+
+// import img01 from "./assets/images/3.jpg";
+
 import img01 from "./assets/images/zajno01.png";
 import img02 from "./assets/images/zajno02.webp";
-
-// import { useControls } from "leva";
-
-const ARTIST_DATA = [
-  {
-    id: "01",
-    title: "Gemmy Woud-Binnendijk",
-    src: img01,
-  },
-  {
-    id: "02",
-    title: "Bachelor Maxwell",
-    src: img02,
-  },
-];
 
 const PERSPECTIVE = 1000;
 const FOV =
@@ -36,8 +25,10 @@ let current = 0;
 let target = 0;
 let ease = 0.075;
 
-let normalizedMouse = { x: 0, y: 0 };
-let actualMouse = { x: 0, y: 0 };
+// let normalizedMouse = { x: 0, y: 0 };
+// let actualMouse = { x: 0, y: 0 };
+// let prevMouse = { x: 0, y: 0 };
+// let mouseVelocity = { x: 0, y: 0 };
 
 function Pixel01() {
   const scrollableRef = useRef(null);
@@ -51,18 +42,6 @@ function Pixel01() {
     setImages(allImages);
   }, []);
 
-  useEffect(() => {
-    const onMouseMove = (e) => {
-      normalizedMouse.x = e.clientX / window.innerWidth;
-      normalizedMouse.y = 1 - e.clientY / window.innerHeight;
-      actualMouse.x = e.clientX;
-      actualMouse.y = e.clientY;
-      // console.log(mouse);
-    };
-    window.addEventListener("mousemove", onMouseMove);
-    return () => window.removeEventListener("mousemove", onMouseMove);
-  }, []);
-
   // SMOOTH SCROLL SYNC SETUP
   useEffect(() => {
     // SET VIRTUAL SCROLL PARENT HEIGHT, UPDATE ON RESIZE
@@ -73,6 +52,7 @@ function Pixel01() {
     };
     init();
     window.addEventListener("resize", init);
+    window.addEventListener("load", init);
 
     // UPDATE SCROLLABLE CONTAINER Y POSITION IN ANIMATION LOOP
     const smoothScroll = () => {
@@ -92,6 +72,7 @@ function Pixel01() {
     return () => {
       cancelAnimationFrame(smoothScroll);
       window.removeEventListener("resize", init);
+      window.removeEventListener("load", init);
       document.body.style.height = "";
     };
   }, []);
@@ -110,13 +91,7 @@ function Pixel01() {
             far={2000}
           />
           <Suspense fallback={<span>loading...</span>}>
-            <Scene
-              images={images}
-              targetScroll={targetScroll}
-              actualScroll={actualScroll}
-              normalizedMouse={normalizedMouse}
-              actualMouse={actualMouse}
-            />
+            <Scene images={images} />
           </Suspense>
         </Canvas>
       </div>
@@ -186,12 +161,22 @@ function Pixel01() {
         </header>
         <div className="pixel01__section">
           <div className="pixel01__sectionImgWrapper">
-            <img src={img01} alt="zajno" className="pixel01__sectionImg" />
+            <img
+              src={img01}
+              alt="zajno"
+              className="pixel01__sectionImg"
+              data-shift={0}
+            />
           </div>
         </div>
         <div className="pixel01__section pixel01__section2">
           <div className="pixel01__sectionImgWrapper pixel01__sectionImgWrapper2">
-            <img src={img02} alt="zajno" className="pixel01__sectionImg" />
+            <img
+              src={img02}
+              alt="zajno"
+              className="pixel01__sectionImg"
+              data-shift={1}
+            />
           </div>
         </div>
       </div>
