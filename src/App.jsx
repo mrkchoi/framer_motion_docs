@@ -110,6 +110,7 @@ import Book from "./components/book01/Book";
 import Cursor02 from "./components/cursor02/Cursor02";
 import Book02 from "./components/book02/Book02";
 import Pixel01 from "./components/pixel01/Pixel01";
+import Slider from "./components/slider/Slider";
 
 const CATEGORY_TITLES = [
   "Menu/Nav",
@@ -572,6 +573,11 @@ const PAGES = [
     element: <Pixel01 />,
     category: CATEGORIES.WEBGL_3D,
   },
+  {
+    path: "/slider",
+    element: <Slider />,
+    category: CATEGORIES.MISC,
+  },
 ];
 
 function App() {
@@ -690,6 +696,7 @@ function App() {
           <Route path="/cursor02" element={<Cursor02 />} />
           <Route path="/book02" element={<Book02 />} />
           <Route path="/pixel01" element={<Pixel01 />} />
+          <Route path="/slider" element={<Slider />} />
         </Routes>
       </BrowserRouter>
     </>

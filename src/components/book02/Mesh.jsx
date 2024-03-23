@@ -28,12 +28,12 @@ function Mesh() {
       <planeGeometry args={[2, 2, 32]} />
       {/* <sphereGeometry args={[1, 32, 32]} /> */}
       {/* <torusKnotGeometry args={[1, 0.4, 100, 16]} /> */}
-      <bookMaterial key={BookMaterial.key} side={THREE.DoubleSide} />
+      <book02Material key={Book02Material.key} side={THREE.DoubleSide} />
     </mesh>
   );
 }
 
-const BookMaterial = shaderMaterial(
+const Book02Material = shaderMaterial(
   {
     uTime: 0,
     uSpeed: 1,
@@ -82,6 +82,6 @@ const BookMaterial = shaderMaterial(
 `,
 );
 
-extend({ BookMaterial });
+extend({ Book02Material });
 
 export default Mesh;

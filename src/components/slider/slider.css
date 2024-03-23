@@ -1,0 +1,43 @@
+.slider__main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider__container {
+  width: 100%;
+  position: absolute;
+  /* border: 1px solid black; */
+  overflow: hidden;
+}
+.slider__container:hover {
+  cursor: grab;
+}
+// clearfix for slider__container using display block
+.slider__container::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.slider__inner {
+  display: flex;
+  position: relative;
+  /* top: 0;
+  left: 0; */
+  width: fit-content;
+  /* transform: translate3d(0, 0, 0); */
+  /* border: 1px solid red; */
+  gap: 2vw;
+}
+.slider__item {
+  width: 25vw;
+  flex-shrink: 0;
+  aspect-ratio: 5/4;
+}
+.slider__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  -webkit-user-drag: none;
+}
