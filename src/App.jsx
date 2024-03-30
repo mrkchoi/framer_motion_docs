@@ -1,7 +1,7 @@
 import "./App.css";
-// import { useEffect } from "react";
+import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-// import Lenis from "@studio-freight/lenis";
+import Lenis from "@studio-freight/lenis";
 
 import Stagger from "./components/Stagger";
 import Intro from "./components/Intro";
@@ -111,6 +111,23 @@ import Cursor02 from "./components/cursor02/Cursor02";
 import Book02 from "./components/book02/Book02";
 import Pixel01 from "./components/pixel01/Pixel01";
 import Slider from "./components/slider/Slider";
+import Depth01 from "./components/depth01/Depth01";
+import Instance01 from "./components/instance01/Instance01";
+import Lusion from "./components/lusion/Lusion";
+import Lusion02 from "./components/lusion02/Lusion02";
+import Book03 from "./components/book03/Book03";
+import Homunculus01 from "./components/homunculus01/Homunculus01";
+import Postprocessing01 from "./components/postprocessing01/Postprocessing01";
+import RenderTarget01 from "./components/render_target_01/RenderTarget01";
+import RenderTarget02 from "./components/render_target_02/RenderTarget02";
+import RenderTargetShader01 from "./components/render_target_shader_01/RenderTargetShader01";
+import RenderTargetLens01 from "./components/render_target_lens_01/RenderTargetLens01";
+import RenderTargetPortal01 from "./components/render_target_portal_01/RenderTargetPortal01";
+import Ripple01 from "./components/ripple_01/Ripple01";
+import RenderTargetPostprocessing01 from "./components/render_target_postprocessing_01/RenderTargetPostprocessing01";
+import RenderTargetScenes01 from "./components/render_target_scenes_01/RenderTargetScenes01";
+import TextureTransition01 from "./components/texture_transition_01/TextureTransition01";
+import Taotajima from "./components/taotajima/Taotajima";
 
 const CATEGORY_TITLES = [
   "Menu/Nav",
@@ -578,6 +595,91 @@ const PAGES = [
     element: <Slider />,
     category: CATEGORIES.MISC,
   },
+  {
+    path: "/depth01",
+    element: <Depth01 />,
+    category: CATEGORIES.WEBGL_3D,
+  },
+  {
+    path: "/instance01",
+    element: <Instance01 />,
+    category: CATEGORIES.WEBGL_3D,
+  },
+  {
+    path: "/lusion",
+    element: <Lusion />,
+    category: CATEGORIES.WEBGL_3D,
+  },
+  {
+    path: "/lusion02",
+    element: <Lusion02 />,
+    category: CATEGORIES.WEBGL_3D,
+  },
+  {
+    path: "/book03",
+    element: <Book03 />,
+    category: CATEGORIES.WEBGL_3D,
+  },
+  {
+    path: "/homunculus01",
+    element: <Homunculus01 />,
+    category: CATEGORIES.WEBGL_3D,
+  },
+  {
+    path: "/custom-postprocessing",
+    element: <Postprocessing01 />,
+    category: CATEGORIES.WEBGL_3D,
+  },
+  {
+    path: "/render-target-01",
+    element: <RenderTarget01 />,
+    category: CATEGORIES.WEBGL_3D,
+  },
+  {
+    path: "/render-target-02",
+    element: <RenderTarget02 />,
+    category: CATEGORIES.WEBGL_3D,
+  },
+  {
+    path: "/render-target-shader-01",
+    element: <RenderTargetShader01 />,
+    category: CATEGORIES.WEBGL_3D,
+  },
+  {
+    path: "/render-target-lens-01",
+    element: <RenderTargetLens01 />,
+    category: CATEGORIES.WEBGL_3D,
+  },
+  {
+    path: "/render-target-portal-01",
+    element: <RenderTargetPortal01 />,
+    category: CATEGORIES.WEBGL_3D,
+  },
+  {
+    path: "/ripple-01",
+    element: <Ripple01 />,
+    category: CATEGORIES.WEBGL_3D,
+  },
+  {
+    path: "/render-target-postprocessing-01",
+    element: <RenderTargetPostprocessing01 />,
+    category: CATEGORIES.WEBGL_3D,
+  },
+  {
+    path: "/render-target-scenes-01",
+    element: <RenderTargetScenes01 />,
+    category: CATEGORIES.WEBGL_3D,
+  },
+  {
+    path: "/texture-transition-01",
+    element: <TextureTransition01 />,
+    category: CATEGORIES.WEBGL_3D,
+  },
+  {
+    path: "/taotajima",
+    element: <Taotajima />,
+    category: CATEGORIES.WEBGL_3D,
+  },
 ];
 
 function App() {
@@ -697,6 +799,41 @@ function App() {
           <Route path="/book02" element={<Book02 />} />
           <Route path="/pixel01" element={<Pixel01 />} />
           <Route path="/slider" element={<Slider />} />
+          <Route path="/depth01" element={<Depth01 />} />
+          <Route path="/instance01" element={<Instance01 />} />
+          <Route path="/lusion" element={<Lusion />} />
+          <Route path="/lusion02" element={<Lusion02 />} />
+          <Route path="/book03" element={<Book03 />} />
+          <Route path="/homunculus01" element={<Homunculus01 />} />
+          <Route path="/custom-postprocessing" element={<Postprocessing01 />} />
+          <Route path="/render-target-01" element={<RenderTarget01 />} />
+          <Route path="/render-target-02" element={<RenderTarget02 />} />
+          <Route
+            path="/render-target-shader-01"
+            element={<RenderTargetShader01 />}
+          />
+          <Route
+            path="/render-target-lens-01"
+            element={<RenderTargetLens01 />}
+          />
+          <Route
+            path="/render-target-portal-01"
+            element={<RenderTargetPortal01 />}
+          />
+          <Route path="/ripple-01" element={<Ripple01 />} />
+          <Route
+            path="/render-target-postprocessing-01"
+            element={<RenderTargetPostprocessing01 />}
+          />
+          <Route
+            path="/render-target-scenes-01"
+            element={<RenderTargetScenes01 />}
+          />
+          <Route
+            path="/texture-transition-01"
+            element={<TextureTransition01 />}
+          />
+          <Route path="/taotajima" element={<Taotajima />} />
         </Routes>
       </BrowserRouter>
     </>
@@ -704,16 +841,16 @@ function App() {
 }
 
 function Home() {
-  //   useEffect(() => {
-  //     const lenis = new Lenis();
+  useEffect(() => {
+    const lenis = new Lenis();
 
-  //     function raf(time) {
-  //       lenis.raf(time);
-  //       requestAnimationFrame(raf);
-  //     }
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
 
-  //     requestAnimationFrame(raf);
-  //   }, []);
+    requestAnimationFrame(raf);
+  }, []);
 
   return (
     <div className="min-h-screen w-full p-12">

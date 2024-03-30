@@ -1,0 +1,209 @@
+@font-face {
+  font-family: Garamond;
+  src: url("./assets/fonts/garamond.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Garamond Bold";
+  src: url("./assets/fonts/garamond-bold.woff2") format("woff2");
+}
+
+.taotajima__main {
+  font-family: "Garamond Bold";
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background-color: white;
+}
+.taotajima__canvasWrapper {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+.taotajima__scrollable {
+  width: 100%;
+  position: absolute;
+  min-height: 100vh;
+  top: 0;
+  left: 0;
+  will-change: transform;
+  z-index: 2;
+}
+
+.taotajima__link {
+  position: relative;
+}
+.taotajima__header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 99;
+  padding: 2rem;
+  mix-blend-mode: difference;
+  color: white;
+}
+.taotajima__headerLeft {
+  text-transform: uppercase;
+}
+.taotajima__logoLink {
+  font-family: "Garamond Bold", serif;
+  position: relative;
+}
+.taotajima__headerRight {
+}
+.taotajima__social {
+  display: flex;
+  gap: 0.5rem;
+  font-family: "Garamond", serif;
+}
+.taotajima__socialItem {
+  position: relative;
+}
+.taotajima__socialLink {
+  position: relative;
+}
+
+.taotajima__link::before {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transform: scaleX(0) translateZ(0);
+  transform-origin: 100% 0;
+  transition: transform 0.3s ease-in-out;
+  will-change: transform;
+  margin-bottom: 0.5rem;
+  /* background-color: black; */
+  background-color: white;
+
+  width: 100%;
+  height: 1px;
+  content: "";
+}
+
+.taotajima__link:hover.taotajima__link::before {
+  transform: scaleX(1) translateZ(0);
+  transform-origin: 0 0;
+}
+.taotajima__section {
+  margin-top: max(4rem, 10vw);
+  padding: 2rem;
+  position: relative;
+}
+.taotajima__grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.taotajima__gridItem {
+  flex: 1;
+  min-width: 400px;
+  margin: 2rem;
+  margin-bottom: 4rem;
+}
+.taotajima__gridItemInner {
+}
+.taotajima__itemNumberWrapper {
+  position: relative;
+  z-index: 2;
+}
+.taotajima__itemNumber {
+}
+.taotajima__itemImageWrapper {
+  margin: 0.5rem 0;
+  width: 100%;
+  position: relative;
+  z-index: 3;
+}
+.taotajima__itemImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  visibility: hidden;
+}
+.taotajima__itemTextWrapper {
+  position: relative;
+  z-index: 2;
+}
+.taotajima__itemText {
+}
+
+/* FOOTER - START */
+.taotajima__footer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  margin-bottom: 10vw;
+  margin-top: 10vw;
+}
+.taotajima__footerTitle {
+}
+.taotajima__footerSubtitle {
+  display: block;
+  font-size: 2vw;
+  letter-spacing: 0.75vw;
+}
+.taotajima__footerName {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 5vw;
+  letter-spacing: 5vw;
+  text-transform: uppercase;
+  font-family: Garamond;
+}
+.taotajima__footerFrom {
+  font-size: max(0.85rem, 1.25vw);
+  margin-bottom: 2vw;
+}
+.taotajima__footerFrom span {
+  display: block;
+  line-height: 1;
+}
+.taotajima__footerFrom a {
+}
+.taotajima__footerDescription {
+  font-family: Garamond;
+  margin-bottom: 2vw;
+}
+.taotajima__footerDescription span {
+  display: block;
+}
+.taotajima__footerContact {
+}
+.taotajima__footerContact span {
+  display: block;
+  font-family: Garamond;
+}
+.taotajima__footerContact a {
+  font-family: "Garamond Bold";
+}
+.taotajima__main {
+}
+.taotajima__main {
+}
+.taotajima__main {
+}
+.taotajima__main {
+}
+.taotajima__main {
+}
+.taotajima__main {
+}

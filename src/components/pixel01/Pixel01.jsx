@@ -140,16 +140,6 @@ function Pixel01() {
 
   // SMOOTH SCROLL SYNC SETUP
   useEffect(() => {
-    // SET VIRTUAL SCROLL PARENT HEIGHT, UPDATE ON RESIZE
-    const init = () => {
-      document.body.style.height = `${
-        scrollableRef.current.getBoundingClientRect().height
-      }px`;
-    };
-    init();
-    window.addEventListener("resize", init);
-    window.addEventListener("load", init);
-
     // UPDATE SCROLLABLE CONTAINER Y POSITION IN ANIMATION LOOP
     const smoothScroll = () => {
       target = window.scrollY;
@@ -158,6 +148,9 @@ function Pixel01() {
         scrollableRef.current.style.transform = `
         translate3d(0, -${current}px, 0)
         `;
+        document.body.style.height = `${
+          scrollableRef.current.getBoundingClientRect().height
+        }px`;
       }
       requestAnimationFrame(smoothScroll);
     };
@@ -165,8 +158,6 @@ function Pixel01() {
 
     return () => {
       cancelAnimationFrame(smoothScroll);
-      window.removeEventListener("resize", init);
-      window.removeEventListener("load", init);
       document.body.style.height = "";
     };
   }, []);

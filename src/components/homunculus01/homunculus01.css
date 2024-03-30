@@ -1,0 +1,140 @@
+@font-face {
+  font-family: "Homu";
+  src: url("./assets/fonts/homu.woff2") format("woff2");
+}
+
+/* SETUP - START */
+.homunculus01__main {
+  --bg: #0f0f0f;
+  --white: #ffffff;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-family: "Homu", sans-serif;
+  background-color: var(--bg);
+  color: var(--white);
+}
+.homunculus01__canvasWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+}
+.homunculus01__scrollable {
+  width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+  z-index: 1;
+}
+/* SETUP - END */
+
+/* HEADER - START */
+.homunculus01__header {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+.homunculus01__logoWrapper {
+  height: 3rem;
+}
+.homunculus01__logo {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+}
+.homunculus01__nav {
+  display: flex;
+  gap: 0.5rem;
+}
+.homunculus01__navLink {
+}
+.homunculus01__nav span {
+  color: rgb(100, 100, 100);
+}
+/* HEADER - END */
+
+/* SECTION - START */
+.homunculus01__section {
+  width: 100%;
+  padding: 1rem;
+}
+.homunculus01__projects {
+  margin-top: 20vw;
+}
+.homunculus01__projectsHeader {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-bottom: 20vw; */
+}
+.homunculus01__projectsTitle {
+  font-size: 2vw;
+  text-transform: uppercase;
+  position: relative;
+}
+.homunculus01__projectsTitle::before {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-bottom: 0.5rem;
+  background-color: var(--white);
+  width: 100%;
+  height: 1px;
+  content: "";
+}
+.homunculus01__projectsGridWrapper {
+  width: 100%;
+}
+.homunculus01__projectsGrid {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4vw;
+}
+.homunculus01__project {
+  flex: 50%;
+  padding: 4vw;
+  cursor: pointer;
+}
+.homunculus01__ImgWrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+}
+.homunculus01__Img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.homunculus01__projectInfo {
+  color: rgb(200, 200, 200);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  line-height: 1.3;
+}
+.homunculus01__projectTitle {
+}
+.homunculus01__projectSubtitle {
+}
+/* SECTION - END */

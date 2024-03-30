@@ -268,7 +268,7 @@ const Pixel01ShaderMaterial = shaderMaterial(
 
     varying vec2 vUv;
 
-    float gamma = 2.2;
+
 
     // ASPECT RATIO CORRECTION (background-size: cover equivalent)
     vec2 getUV(vec2 uv, vec2 uTextureSize, vec2 uPlaneResolution){
@@ -283,7 +283,8 @@ const Pixel01ShaderMaterial = shaderMaterial(
       tempUV += vec2(0.5);
       return tempUV;
     }
-
+    
+    float gamma = 2.2;
     // GAMMA CORRECTION (image texture)
     vec4 colorCorrection(vec4 color, float gamma) {
       return pow(color, vec4(1.0 / gamma));

@@ -1,0 +1,12 @@
+.lusion02__main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lusion02__canvasWrapper {
+  width: 100%;
+  height: 100%;
+  /* padding: 5vw; */
+}

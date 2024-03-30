@@ -492,6 +492,7 @@
   padding-left: 0.5rem;
   position: relative;
   grid-column: 7 / span 2;
+  padding-bottom: 1rem;
 }
 .pixel01__footerMenuLeftList {
   margin-bottom: 1rem;
