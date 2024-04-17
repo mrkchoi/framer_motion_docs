@@ -4,6 +4,7 @@ import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import "./fbo01.css";
 import Scene from "./Scene";
 
+// comment
 const PERSPECTIVE = 1000;
 const FAR = PERSPECTIVE * 3;
 const FOV =
