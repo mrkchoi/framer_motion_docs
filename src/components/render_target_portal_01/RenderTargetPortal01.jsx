@@ -25,8 +25,8 @@ function RenderTargetPortal01() {
           </Suspense>
           <OrbitControls
             enableZoom={false}
-            autoRotate={true}
-            autoRotateSpeed={3}
+            // autoRotate={true}
+            // autoRotateSpeed={3}
           />
         </Canvas>
       </div>

@@ -1,0 +1,83 @@
+@font-face {
+  font-family: Ampersand;
+  src: url("./assets/fonts/ampersand.woff2") format("woff2");
+}
+
+.bizarro02__main {
+  --background: #151c13;
+  --text: #d3d5d5;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  font-family: Ampersand, serif;
+  background-color: var(--background);
+  color: var(--text);
+}
+.bizarro02__canvasWrapper {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+.bizarro02__listWrapper {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.bizarro02__list {
+  width: 100%;
+  position: absolute;
+  /* min-height: 100vh; */
+  top: 0;
+  left: 0;
+}
+.bizarro02__listItem {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* padding: 10vh; */
+  /* height: 40vh; */
+  /* margin: 1rem 0; */
+  will-change: transform;
+}
+/* .bizarro02__listItem:hover {
+  color: white;
+} */
+.bizarro02__listItem:last-of-type {
+  margin-bottom: 0;
+}
+.bizarro02__listItemLink {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.bizarro02__listItem:nth-of-type(odd) .bizarro02__listItemLink {
+  flex-direction: row-reverse;
+}
+.bizarro02__listItemText {
+  font-size: max(1rem, 8vw);
+  line-height: 0.9;
+}
+.bizarro02__listItemImageWrapper {
+  height: 6vw;
+}
+.bizarro02__listItemImage {
+  height: 100%;
+  object-fit: cover;
+  width: auto;
+  opacity: 0;
+  visibility: hidden;
+}

@@ -37,6 +37,7 @@ const outputFragmentShader =
 
     vec4 color = texture2D(uTextureImage, uv);
     gl_FragColor = color;
+    // gl_FragColor = displacement;
     // gl_FragColor = vec4(uv, 1.0, 1.0);
   }
 `;

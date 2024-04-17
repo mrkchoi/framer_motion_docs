@@ -1,0 +1,10 @@
+.gpgpu03__main {
+  width: 100%;
+  height: 100vh;
+  background-color: #111;
+}
+
+.gpgpu03__canvasWrapper {
+  width: 100%;
+  height: 100%;
+}

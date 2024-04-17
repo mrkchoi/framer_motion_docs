@@ -86,7 +86,7 @@ function Lusion02() {
             />
           </EffectComposer>
           <Environment
-            // preset="city"
+            // preset="sunset"
             files="./assets/textures/environment/adamsbridge.hdr"
           >
             <Lightformer form="circle" intensity={10} />

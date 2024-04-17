@@ -16,11 +16,11 @@ const fragmentShader07 =
   varying vec2 vUv;
 
   const float PI = 3.141592653589793;
-  float intensity = 50.0;
+  float intensity = 100.0;
 
   // Preserve aspect ratio of texture
   vec2 getUV(vec2 uv, vec2 uTextureSize, vec2 uPlaneResolution){
-    vec2 tempUV = uv - vec2(0.5);
+    vec2 tempUV = uv - vec2(0.5);3
 
     float planeAspect = uPlaneResolution.x / uPlaneResolution.y;
     float textureAspect = uTextureSize.x / uTextureSize.y;

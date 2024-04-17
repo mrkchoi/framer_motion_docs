@@ -61,7 +61,6 @@ import Yuri02 from "./components/yuri_02/Yuri02";
 import Shader01 from "./components/shader_01/Shader01";
 import Shader02 from "./components/shader_02/Shader02";
 import Loket from "./components/loket/Loket";
-import Gallery01 from "./components/gallery_01/Gallery01";
 import Vucko from "./components/vucko/Vucko";
 import Gradient01 from "./components/gradient01/Gradient01";
 import Raxo from "./components/raxo/Raxo";
@@ -128,6 +127,19 @@ import RenderTargetPostprocessing01 from "./components/render_target_postprocess
 import RenderTargetScenes01 from "./components/render_target_scenes_01/RenderTargetScenes01";
 import TextureTransition01 from "./components/texture_transition_01/TextureTransition01";
 import Taotajima from "./components/taotajima/Taotajima";
+import Bizarro01 from "./components/bizarro01/Bizarro01";
+import Infinite01 from "./components/infinite_01/Infinite01";
+import Bizarro02 from "./components/bizarro_02/Bizarro02";
+import Grid01 from "./components/grid01/Grid01";
+import Max01 from "./components/max01/Max01";
+import Gooey01 from "./components/gooey01/Gooey01";
+import Shape01 from "./components/shape01/Shape01";
+import Roll01 from "./components/roll01/Roll01";
+import Gallery01 from "./components/gallery01/Gallery01";
+import GPGPU01 from "./components/gpgpu01/GPGPU01";
+import GPGPU02 from "./components/gpgpu02/GPGPU02";
+import GPGPU03 from "./components/gpgpu03/GPGPU03";
+import FBO01 from "./components/fbo01/FBO01";
 
 const CATEGORY_TITLES = [
   "Menu/Nav",
@@ -385,7 +397,6 @@ const PAGES = [
   { path: "/shader01", element: <Shader01 />, category: CATEGORIES.WEBGL_3D },
   { path: "/shader02", element: <Shader02 />, category: CATEGORIES.WEBGL_3D },
   { path: "/loket", element: <Loket />, category: CATEGORIES.TRANSITIONS },
-  { path: "/gallery01", element: <Gallery01 />, category: CATEGORIES.WEBGL_3D },
   { path: "/vucko", element: <Vucko />, category: CATEGORIES.LAYOUT },
   { path: "/gradient01", element: <Gradient01 />, category: CATEGORIES.MISC },
   { path: "/raxo", element: <Raxo />, category: CATEGORIES.SVG_LOTTIE },
@@ -680,6 +691,71 @@ const PAGES = [
     element: <Taotajima />,
     category: CATEGORIES.WEBGL_3D,
   },
+  {
+    path: "/bizarro-01",
+    element: <Bizarro01 />,
+    category: CATEGORIES.WEBGL_3D,
+  },
+  {
+    path: "/infinite-01",
+    element: <Infinite01 />,
+    category: CATEGORIES.MISC,
+  },
+  {
+    path: "/bizarro-02",
+    element: <Bizarro02 />,
+    category: CATEGORIES.WEBGL_3D,
+  },
+  {
+    path: "/grid-01",
+    element: <Grid01 />,
+    category: CATEGORIES.WEBGL_3D,
+  },
+  {
+    path: "/max-01",
+    element: <Max01 />,
+    category: CATEGORIES.WEBGL_3D,
+  },
+  {
+    path: "/gooey-01",
+    element: <Gooey01 />,
+    category: CATEGORIES.WEBGL_3D,
+  },
+  {
+    path: "/shape-01",
+    element: <Shape01 />,
+    category: CATEGORIES.WEBGL_3D,
+  },
+  {
+    path: "/roll-01",
+    element: <Roll01 />,
+    category: CATEGORIES.WEBGL_3D,
+  },
+  {
+    path: "/gallery-01",
+    element: <Gallery01 />,
+    category: CATEGORIES.WEBGL_3D,
+  },
+  {
+    path: "/gpgpu-01",
+    element: <GPGPU01 />,
+    category: CATEGORIES.WEBGL_3D,
+  },
+  {
+    path: "/gpgpu-02",
+    element: <GPGPU02 />,
+    category: CATEGORIES.WEBGL_3D,
+  },
+  {
+    path: "/gpgpu-03",
+    element: <GPGPU03 />,
+    category: CATEGORIES.WEBGL_3D,
+  },
+  {
+    path: "/fbo-01",
+    element: <FBO01 />,
+    category: CATEGORIES.WEBGL_3D,
+  },
 ];
 
 function App() {
@@ -749,7 +825,6 @@ function App() {
           <Route path="/shader01" element={<Shader01 />} />
           <Route path="/shader02" element={<Shader02 />} />
           <Route path="/loket" element={<Loket />} />
-          <Route path="/gallery01" element={<Gallery01 />} />
           <Route path="/vucko" element={<Vucko />} />
           <Route path="/gradient01" element={<Gradient01 />} />
           <Route path="/raxo" element={<Raxo />} />
@@ -834,6 +909,19 @@ function App() {
             element={<TextureTransition01 />}
           />
           <Route path="/taotajima" element={<Taotajima />} />
+          <Route path="/bizarro-01" element={<Bizarro01 />} />
+          <Route path="/infinite-01" element={<Infinite01 />} />
+          <Route path="/bizarro-02" element={<Bizarro02 />} />
+          <Route path="/grid-01" element={<Grid01 />} />
+          <Route path="/max-01" element={<Max01 />} />
+          <Route path="/gooey-01" element={<Gooey01 />} />
+          <Route path="/shape-01" element={<Shape01 />} />
+          <Route path="/roll-01" element={<Roll01 />} />
+          <Route path="/gallery-01" element={<Gallery01 />} />
+          <Route path="/gpgpu-01" element={<GPGPU01 />} />
+          <Route path="/gpgpu-02" element={<GPGPU02 />} />
+          <Route path="/gpgpu-03" element={<GPGPU03 />} />
+          <Route path="/fbo-01" element={<FBO01 />} />
         </Routes>
       </BrowserRouter>
     </>

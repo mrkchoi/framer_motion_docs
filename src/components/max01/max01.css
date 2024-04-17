@@ -1,0 +1,64 @@
+.max01__main {
+  --black: #16161d;
+  --white: #fdfdfd;
+  --white-dark: #ececec;
+  --gray: #9c9c9c;
+
+  width: 100%;
+  height: 100vh;
+  background-color: var(--black);
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.max01__canvasWrapper {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.max01__scrollable {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  /* z-index: 1; */
+}
+
+.max01__projectWrapper {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.max01__projects {
+  position: relative;
+  height: 100%;
+  left: 0;
+  display: flex;
+  align-items: flex-end;
+  cursor: pointer;
+}
+.max01__projects2 {
+  bottom: 0;
+  left: 0;
+  align-items: flex-start;
+}
+.max01__project {
+  margin: 1vw;
+  will-change: transform;
+}
+.max01__projectImgWrapper {
+  width: 22vw;
+}
+.max01__projectImg {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  opacity: 0;
+  visibility: hidden;
+}

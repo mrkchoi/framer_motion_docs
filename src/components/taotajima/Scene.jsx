@@ -7,18 +7,24 @@ import { v4 as uuidv4 } from "uuid";
 import MeshImage from "./MeshImage";
 import vertexShader from "./shaders/vertexShader";
 import fragmentShader from "./shaders/postprocessing/fragmentShader";
+// import fragmentShader from "./shaders/postprocessing/fragmentShader02";
 
 function Scene({ images }) {
+  const viewportDOM = document.querySelector(".taotajima__main");
   const mouseRef = useRef({
-    target: { x: 0, y: 0 },
-    current: { x: 0, y: 0 },
-    previous: { x: 0, y: 0 },
+    target: { x: 0.5, y: 0.5 },
+    current: { x: 0.5, y: 0.5 },
+    previous: { x: 0.5, y: 0.5 },
     targetSpeed: 0,
     speed: 0,
   });
   const outputMesh = useRef(null);
   const renderTarget = useFBO();
   const imageScene = new THREE.Scene();
+
+  const scrollBarWidth = useMemo(() => {
+    return window.innerWidth - document.documentElement.clientWidth;
+  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -33,8 +39,13 @@ function Scene({ images }) {
   useFrame((state) => {
     const { gl, camera } = state;
 
-    outputMesh.current.scale.x = window.innerWidth;
-    outputMesh.current.scale.y = window.innerHeight;
+    const { width, height, top, left } = viewportDOM.getBoundingClientRect();
+
+    outputMesh.current.position.x =
+      left - (window.innerWidth - scrollBarWidth) / 2 + width / 2;
+    outputMesh.current.position.y = -top + window.innerHeight / 2 - height / 2;
+    outputMesh.current.scale.x = width;
+    outputMesh.current.scale.y = height;
 
     gl.setRenderTarget(renderTarget);
     gl.render(imageScene, camera);
@@ -90,13 +101,15 @@ function Scene({ images }) {
         imageScene,
       )}
       <mesh ref={outputMesh}>
-        <planeGeometry args={[1, 1, 32, 32]} />
+        <planeGeometry args={[1, 1, 1, 1]} />
+        {/* <ScreenQuad ref={outputMesh}> */}
         <shaderMaterial
           key={uuidv4()}
           uniforms={uniforms}
           vertexShader={vertexShader}
           fragmentShader={fragmentShader}
         />
+        {/* </ScreenQuad> */}
       </mesh>
     </>
   );

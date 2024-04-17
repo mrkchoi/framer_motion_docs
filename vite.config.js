@@ -4,6 +4,7 @@ import eslint from "vite-plugin-eslint";
 
 export default defineConfig(() => {
   return {
+    assetsInclude: ["**/*.gltf", "**/*.glb"],
     build: {
       outDir: "build",
       // commonjsOptions: { transformMixedEsModules: true }, // Change

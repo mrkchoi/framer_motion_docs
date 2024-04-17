@@ -1,6 +1,5 @@
-import React, { Suspense, useEffect, useMemo, useRef, useState } from "react";
-import { useFrame, useThree } from "@react-three/fiber";
-import { useVideoTexture } from "@react-three/drei";
+import React, { useEffect, useMemo, useRef, useState } from "react";
+import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import gsap from "gsap";
 import { v4 as uuidv4 } from "uuid";
@@ -51,7 +50,9 @@ function MeshImage({ image }) {
     };
 
     window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
   }, []);
 
   const uniforms = useMemo(
